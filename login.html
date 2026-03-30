@@ -2115,13 +2115,17 @@
                 </div>
 
                 <!-- Form Fields -->
-                <form @submit.prevent class="mt-5 space-y-6">
+                <form id="login-form" class="mt-5 space-y-6">
                   <!-- Email -->
                   <div class="relative">
                     <input
+                      id="login-email"
+                      name="email"
                       type="email"
                       placeholder=" "
                       aria-required="true"
+                      required
+                      autocomplete="email"
                       class="peer border-border focus:border-dark-1 text-15 h-17.5 w-full rounded border px-4 placeholder-transparent outline-none focus:border-2"
                     />
                     <label
@@ -2133,9 +2137,13 @@
                   <!-- Password -->
                   <div class="relative" x-data="{show:false}">
                     <input
+                      id="login-password"
+                      name="password"
                       :type="show ? 'text':'password'"
                       placeholder=" "
                       aria-required="true"
+                      required
+                      autocomplete="current-password"
                       class="peer border-border focus:border-dark-1 text-15 h-17.5 w-full rounded border pr-12 pl-4 placeholder-transparent outline-none focus:border-2"
                     />
                     <label
@@ -2164,6 +2172,7 @@
 
                   <div>
                     <button
+                      id="login-submit-btn"
                       type="submit"
                       class="bg-blue-1 hover:bg-dark-1 text-15 relative flex h-15 w-full cursor-pointer items-center justify-center gap-3 rounded font-medium text-white transition disabled:cursor-not-allowed disabled:opacity-50"
                     >
@@ -2173,6 +2182,7 @@
                     </button>
                   </div>
                 </form>
+                <p id="login-message" class="mt-4 text-sm"></p>
 
                 <!-- Social Login -->
                 <div class="mt-10 space-y-4">
@@ -2476,7 +2486,8 @@
 </footer>
 </div>
     <!-- ===== Page Wrapper End ===== -->
-  <script defer src="bundle.js"></script></body>
+  <script defer src="bundle.js"></script>
+  <script defer src="login-auth.js"></script></body>
 
 <!-- Mirrored from gotrip-tailwind-template.vercel.app/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:44:51 GMT -->
 </html>

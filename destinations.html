@@ -2127,10 +2127,10 @@
                 class="w-full rounded"
               />
               <div class="absolute top-0 left-0 z-10 px-12 py-16">
-                <h1 class="text-[50px] leading-tight font-semibold text-white">
+                <h1 id="destination-hero-title" class="text-[50px] leading-tight font-semibold text-white">
                   Explore London
                 </h1>
-                <p class="text-white">
+                <p id="destination-hero-subtitle" class="text-white">
                   Explore deals, travel guides and things to do in London
                 </p>
               </div>
@@ -2163,31 +2163,32 @@
           </div>
         </section>
 
+        <!-- Dynamic Destinations -->
+        <section class="pb-8">
+          <div class="container">
+            <div class="mb-8 flex items-end justify-between">
+              <h2 class="text-dark-1 text-3xl font-semibold">Popular destinations</h2>
+              <span id="destinations-count" class="text-light-1 text-sm"></span>
+            </div>
+            <div
+              id="destinations-grid"
+              class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              <p id="destinations-loading" class="text-light-1 text-sm">Loading destinations...</p>
+            </div>
+          </div>
+        </section>
+
         <!-- What to know -->
         <section class="pb-8">
           <div class="container">
             <div class="grid gap-6 lg:grid-cols-4">
               <div class="lg:col-span-3">
-                <h2 class="text-dark-1 mb-5 text-3xl font-semibold">
+                <h2 id="destination-about-title" class="text-dark-1 mb-5 text-3xl font-semibold">
                   What to know before visiting London
                 </h2>
-                <p class="text-15 text-dark-1 leading-relaxed">
-                  London is a shining example of a metropolis at the highest
-                  peak of modernity and boasts an economy and cultural diversity
-                  that’s the envy of other global superpowers.
-                  <br /><br />
-                  Take the opportunity to acquaint yourself with its fascinating
-                  history chronicled by institutions like the British Museum as
-                  well as see how far it has come by simply riding the Tube and
-                  passing by celebrated landmarks like Buckingham Palace,
-                  Westminster Abbey, and marvels like Big Ben, the London Eye,
-                  and the Tower Bridge.
-                  <br /><br />
-                  You can also immerse yourself in its ever-evolving and
-                  impactful culture by visiting places like the National
-                  Gallery, the Tate Modern, West End, Abbey Road, the Royal
-                  Albert Hall, Oxford Street and the Westfield Shopping Centers,
-                  and areas referenced and seen in literature and film.
+                <p id="destination-about-description" class="text-15 text-dark-1 leading-relaxed">
+                  London is a shining example of a metropolis at the highest peak of modernity and boasts an economy and cultural diversity that’s the envy of other global superpowers.
                 </p>
                 <a
                   href="#"
@@ -4811,7 +4812,8 @@
 </footer>
 </div>
     <!-- ===== Page Wrapper End ===== -->
-  <script defer src="bundle.js"></script></body>
+  <script defer src="bundle.js"></script>
+  <script defer src="destinations-api.js"></script></body>
 
 <!-- Mirrored from gotrip-tailwind-template.vercel.app/destinations.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:44:25 GMT -->
 </html>
