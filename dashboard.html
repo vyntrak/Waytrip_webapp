@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+  
+<!-- Mirrored from gotrip-tailwind-template.vercel.app/db-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:44:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard | GoTrip - Your Travel Dashboard</title>
+  <link rel="icon" href="favicon.png"><link href="style.css" rel="stylesheet"></head>
+  <body x-data="dashboardPage()">
+    <!-- ===== Preloader Start ===== -->
+    <!-- no-JS: if JavaScript is disabled, don't block the page -->
+<noscript>
+  <style>
+    #gt-preloader {
+      display: none !important;
+    }
+  </style>
+</noscript>
+
+<!-- Preloader overlay -->
+<div
+  id="gt-preloader"
+  class="js-preloader fixed inset-0 z-5000 flex flex-col items-center justify-center bg-white transition-opacity duration-500"
+  role="status"
+  aria-live="polite"
+  aria-label="Loading"
+  x-show="loaded"
+  x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
+>
+  <!-- Wrapper (72x72, rounded 30px, soft shadow) -->
+  <div
+    class="animate-gt-wrap relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-[30px] bg-white shadow-[0_2px_24px_rgba(0,0,0,0.08)]"
+  >
+    <!-- Icon moves vertically and scales/rotates similar to original -->
+    <div class="animate-gt-icon absolute">
+      <svg
+        class="h-[37px] w-[38px] text-blue-600"
+        width="38"
+        height="37"
+        viewBox="0 0 38 37"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g clip-path="url(#clip0_1_41)">
+          <path
+            d="M32.9675 13.9422C32.9675 6.25436 26.7129 0 19.0251 0C11.3372 0 5.08289 6.25436 5.08289 13.9422C5.08289 17.1322 7.32025 21.6568 11.7327 27.3906C13.0538 29.1071 14.3656 30.6662 15.4621 31.9166V35.8212C15.4621 36.4279 15.9539 36.92 16.561 36.92H21.4895C22.0965 36.92 22.5883 36.4279 22.5883 35.8212V31.9166C23.6849 30.6662 24.9966 29.1071 26.3177 27.3906C30.7302 21.6568 32.9675 17.1322 32.9675 13.9422V13.9422ZM30.7699 13.9422C30.7699 16.9956 27.9286 21.6204 24.8175 25.7245H23.4375C25.1039 20.7174 25.9484 16.7575 25.9484 13.9422C25.9484 10.3587 25.3079 6.97207 24.1445 4.40684C23.9229 3.91841 3.6857 3.46886 23.4347 3.05761C27.732 4.80457 30.7699 9.02494 30.7699 13.9422ZM20.3906 34.7224H17.6598V32.5991H20.3906V34.7224ZM21.0007 30.4014H17.0587C16.4167 29.6679 15.7024 28.8305 14.9602 27.9224H16.1398C16.1429 27.9224 16.146 27.9227 16.1489 27.9227C16.152 27.9227 23.0902 27.9224 23.0902 27.9224C22.3725 28.8049 21.6658 29.6398 21.0007 30.4014ZM19.0251 2.19765C20.1084 2.19765 21.2447 3.33365 22.1429 5.3144C23.1798 7.60078 23.7508 10.6649 23.7508 13.9422C23.7508 16.6099 22.8415 20.6748 21.1185 25.7245H16.9322C15.2086 20.6743 14.2994 16.6108 14.2994 13.9422C14.2994 10.6649 14.8706 7.60078 15.9075 5.3144C16.8057 3.33365 17.942 2.19765 19.0251 2.19765V2.19765ZM7.28053 13.9422C7.28053 9.02494 10.3184 4.80457 14.6157 3.05761C14.3647 3.46886 14.1273 3.91841 13.9059 4.40684C12.7425 6.97207 12.102 10.3587 12.102 13.9422C12.102 16.7584 12.9462 20.7176 14.6126 25.7245H13.2259C9.33565 20.6126 7.28053 16.5429 7.28053 13.9422Z"
+            fill="currentColor"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_41">
+            <rect
+              width="36.92"
+              height="36.92"
+              fill="white"
+              transform="translate(0.540039)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div
+    class="mt-4 text-4xl leading-[68px] font-semibold text-slate-800 dark:text-slate-100"
+  >
+    GoTrip
+  </div>
+
+  <!-- Screen reader text -->
+  <span class="sr-only">Loading, please wait…</span>
+</div>
+
+<!-- Minimal CSS to support the hide transition and custom keyframes -->
+<style>
+  .js-preloader.-is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  @keyframes gtWrap {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes gtIcon {
+    0% {
+      transform: translateY(150%) scale(1);
+    }
+    50% {
+      transform: translateY(0%) scale(1.2) rotate(20deg);
+    }
+    100% {
+      transform: translateY(-150%) rotate(-20deg);
+    }
+  }
+  .animate-gt-wrap {
+    animation: gtWrap 1.8s ease infinite;
+  }
+  .animate-gt-icon {
+    animation: gtIcon 1.8s ease infinite;
+  }
+</style>
+<!-- ===== Preloader End ===== -->
+
+    <!-- ===== Page Wrapper Start ===== -->
+    <!-- Header -->
+    <header
+      class="fixed top-0 z-40 w-full bg-white"
+      x-data="{ searchOpen: false, notificationsOpen: false, profileOpen: false }"
+    >
+      <div class="px-6 py-4 sm:px-8">
+        <div class="flex items-center justify-between">
+          <!-- Left Side -->
+          <div class="flex items-center gap-6">
+            <!-- Logo -->
+            <div class="w-50">
+              <a href="index.html" class="flex min-w-[140px] items-center">
+                <img
+                  src="src/images/general/logo-dark.svg"
+                  alt="GoTrip Logo"
+                  class="w-[140px]"
+                />
+              </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button
+              @click="sidebarOpen = !sidebarOpen"
+              class="rounded-lg p-2 transition-colors hover:bg-gray-100 lg:hidden"
+            >
+              <i class="icon-menu-2 text-xl"></i>
+            </button>
+
+            <!-- Desktop Menu Toggle -->
+            <button
+              @click="sidebarOpen = !sidebarOpen"
+              class="hidden rounded-lg p-2 transition-colors hover:bg-gray-100 lg:block"
+            >
+              <i class="icon-menu-2 text-xl"></i>
+            </button>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="relative hidden md:block">
+              <input
+                type="search"
+                placeholder="Search"
+                class="border-border focus:border-dark-1 w-64 rounded border py-2.5 pr-4 pl-12 outline-none focus:border-2"
+              />
+              <i
+                class="icon-search text-light-1 absolute top-1/2 left-4 -translate-y-1/2 transform text-lg"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-4">
+            <!-- Notifications -->
+            <div class="relative" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="relative hidden h-12 w-12 items-center justify-center rounded-full bg-blue-50 transition-colors hover:bg-blue-100 lg:flex"
+              >
+                <i class="icon-notification text-blue-1 text-xl"></i>
+                <span
+                  class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"
+                ></span>
+              </button>
+
+              <!-- Notifications Dropdown -->
+              <div
+                x-show="open"
+                @click.away="open = false"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform scale-95"
+                x-transition:enter-end="opacity-100 transform scale-100"
+                class="absolute right-0 z-50 mt-2 w-80 rounded bg-white shadow-2xl"
+                style="display: none"
+              >
+                <div class="border-b border-gray-100 p-4">
+                  <h3 class="text-dark-1 font-semibold">Notifications</h3>
+                </div>
+                <div class="custom-scrollbar max-h-96 overflow-y-auto">
+                  <div
+                    class="hover:bg-light-2 cursor-pointer border-b border-gray-50 p-4"
+                  >
+                    <div class="flex gap-3">
+                      <div
+                        class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100"
+                      >
+                        <i class="icon-check text-blue-1"></i>
+                      </div>
+                      <div class="flex-1">
+                        <p class="text-dark-1 text-sm font-medium">
+                          Booking Confirmed
+                        </p>
+                        <p class="text-light-1 mt-1 text-xs">
+                          Your booking for New York Tour has been confirmed
+                        </p>
+                        <p class="text-light-1 mt-1 text-xs">2 hours ago</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="hover:bg-light-2 cursor-pointer border-b border-gray-50 p-4"
+                  >
+                    <div class="flex gap-3">
+                      <div
+                        class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-yellow-100"
+                      >
+                        <i class="icon-clock text-yellow-600"></i>
+                      </div>
+                      <div class="flex-1">
+                        <p class="text-dark-1 text-sm font-medium">
+                          Payment Pending
+                        </p>
+                        <p class="text-light-1 mt-1 text-xs">
+                          Complete payment for Paris Adventure
+                        </p>
+                        <p class="text-light-1 mt-1 text-xs">5 hours ago</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 p-3">
+                  <button
+                    class="text-blue-1 w-full text-center text-sm font-medium hover:text-blue-700"
+                  >
+                    View All Notifications
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Messages -->
+            <button
+              class="hidden h-12 w-12 items-center justify-center rounded-full bg-blue-50 transition-colors hover:bg-blue-100 lg:flex"
+            >
+              <i class="icon-email-2 text-blue-1 text-xl"></i>
+            </button>
+
+            <!-- Profile Dropdown -->
+            <div class="relative" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                class="flex items-center gap-3 transition-opacity hover:opacity-80"
+              >
+                <img
+                  src="src/images/avatars/3.png"
+                  alt="Profile"
+                  class="h-12 w-12 rounded-full border-2 border-blue-100 object-cover"
+                />
+                <div class="hidden text-left lg:block">
+                  <div class="text-dark-1 text-sm font-semibold" data-auth-user-name>John Doe</div>
+                  <div class="text-light-1 text-xs" data-auth-user-email>john@example.com</div>
+                </div>
+                <i
+                  class="icon-chevron-sm-down text-light-1 hidden lg:block"
+                ></i>
+              </button>
+
+              <!-- Profile Dropdown Menu -->
+              <div
+                x-show="open"
+                @click.away="open = false"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform scale-95"
+                x-transition:enter-end="opacity-100 transform scale-100"
+                class="absolute right-0 z-50 mt-2 w-56 rounded bg-white shadow-2xl"
+                style="display: none"
+              >
+                <div class="border-b border-gray-100 p-4">
+                  <div class="text-dark-1 text-sm font-semibold" data-auth-user-name>John Doe</div>
+                  <div class="text-light-1 text-xs" data-auth-user-email>john@example.com</div>
+                </div>
+                <div class="py-2">
+                  <a
+                    href="db-settings.html"
+                    class="text-dark-1 hover:bg-light-2 flex items-center gap-3 px-4 py-2 text-sm"
+                  >
+                    <i class="icon-shield text-light-1"></i>
+                    <span>Settings</span>
+                  </a>
+                  <a
+                    href="db-booking.html"
+                    class="text-dark-1 hover:bg-light-2 flex items-center gap-3 px-4 py-2 text-sm"
+                  >
+                    <i class="icon-like text-light-1"></i>
+                    <span>My Bookings</span>
+                  </a>
+                  <a
+                    href="db-wishlist.html"
+                    class="text-dark-1 hover:bg-light-2 flex items-center gap-3 px-4 py-2 text-sm"
+                  >
+                    <i class="icon-heart text-light-1"></i>
+                    <span>Wishlist</span>
+                  </a>
+                </div>
+                <div class="border-t border-gray-100 py-2">
+                  <button
+                    class="flex w-full items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+                  >
+                    <i class="icon-log-out"></i>
+                    <span>Logout</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Container -->
+    <div class="flex pt-20">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar-transition fixed inset-y-0 left-0 z-30 mt-20 w-64 transform bg-white shadow-lg transition-transform duration-300"
+        :class="sidebarOpen ? 'translate-x-0 lg:-translate-x-full' : '-translate-x-full lg:translate-x-0'"
+      >
+        <div class="custom-scrollbar h-full overflow-y-auto pt-6 pb-6">
+          <nav class="space-y-2 px-4">
+            <!-- Dashboard -->
+            <a
+              href="db-dashboard.html"
+              class="text-blue-1 flex items-center gap-4 rounded bg-blue-50 px-4 py-3 font-medium"
+            >
+              <img
+                src="src/images/dashboard/sidebar/compass.svg"
+                alt="Dashboard"
+                class="h-5 w-5"
+              />
+              <span>Dashboard</span>
+            </a>
+
+            <!-- Booking History -->
+            <a
+              href="db-booking.html"
+              class="text-dark-1 hover:bg-light-2 flex items-center gap-4 rounded px-4 py-3 font-medium"
+            >
+              <img
+                src="src/images/dashboard/sidebar/booking.svg"
+                alt="Booking"
+                class="h-5 w-5"
+              />
+              <span>Booking History</span>
+            </a>
+
+            <!-- Wishlist -->
+            <a
+              href="db-wishlist.html"
+              class="text-dark-1 hover:bg-light-2 flex items-center gap-4 rounded px-4 py-3 font-medium"
+            >
+              <img
+                src="src/images/dashboard/sidebar/bookmark.svg"
+                alt="Wishlist"
+                class="h-5 w-5"
+              />
+              <span>Wishlist</span>
+            </a>
+
+            <!-- Settings -->
+            <a
+              href="db-settings.html"
+              class="text-dark-1 hover:bg-light-2 flex items-center gap-4 rounded px-4 py-3 font-medium"
+            >
+              <img
+                src="src/images/dashboard/sidebar/gear.svg"
+                alt="Settings"
+                class="h-5 w-5"
+              />
+              <span>Settings</span>
+            </a>
+
+            <!-- Logout -->
+            <button
+              class="text-dark-1 flex w-full items-center gap-4 rounded px-4 py-3 font-medium hover:bg-red-50"
+            >
+              <img
+                src="src/images/dashboard/sidebar/log-out.svg"
+                alt="Logout"
+                class="h-5 w-5"
+              />
+              <span>Logout</span>
+            </button>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Sidebar Overlay (Mobile) -->
+      <div
+        x-show="sidebarOpen"
+        @click="sidebarOpen = false"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        class="fixed inset-0 z-20 bg-black/50 lg:hidden"
+        style="display: none"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        class="bg-light-2 @container flex min-h-screen flex-1 flex-col justify-between gap-5 p-6 duration-300 lg:p-8"
+        :class="sidebarOpen ? '' : 'lg:pl-72'"
+      >
+        <div class="flex-1">
+          <!-- Page Header -->
+          <div class="mb-8">
+            <h1 class="text-dark-1 mb-2 text-3xl font-semibold">Dashboard</h1>
+            <p class="text-light-1">
+              Welcome back! Here's what's happening with your bookings.
+            </p>
+          </div>
+
+          <!-- Stats Grid -->
+          <div
+            class="mb-8 grid grid-cols-1 gap-6 @lg:grid-cols-2 @5xl:grid-cols-4"
+          >
+            <!-- Upcoming Trips Card -->
+            <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="mb-2 font-medium text-gray-600">Upcoming Trips</p>
+                  <h3 class="text-dark-1 mb-1 text-3xl font-semibold" x-text="stats.upcomingTrips"></h3>
+                  <p class="text-light-1 text-sm">Total upcoming bookings</p>
+                </div>
+                <div class="flex size-15 items-center justify-center">
+                  <img src="src/images/dashboard/icons/1.svg" alt="Upcoming Trips" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Completed Trips Card -->
+            <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="mb-2 font-medium text-gray-600">Completed Trips</p>
+                  <h3 class="text-dark-1 mb-1 text-3xl font-semibold" x-text="stats.completedTrips"></h3>
+                  <p class="text-light-1 text-sm">Trips completed</p>
+                </div>
+                <div class="flex size-15 items-center justify-center">
+                  <img src="src/images/dashboard/icons/2.svg" alt="Completed Trips" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Booking History Card -->
+            <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="mb-2 font-medium text-gray-600">Booking History</p>
+                  <h3 class="text-dark-1 mb-1 text-3xl font-semibold" x-text="stats.bookingHistory"></h3>
+                  <p class="text-light-1 text-sm">All bookings</p>
+                </div>
+                <div class="flex size-15 items-center justify-center">
+                  <img src="src/images/dashboard/icons/3.svg" alt="Booking History" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Services Card -->
+            <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="mb-2 font-medium text-gray-600">Services</p>
+                  <h3 class="text-dark-1 mb-1 text-3xl font-semibold">
+                    22,786
+                  </h3>
+                  <p class="text-light-1 text-sm">Total bookable services</p>
+                </div>
+                <div class="flex size-15 items-center justify-center">
+                  <img src="src/images/dashboard/icons/4.svg" alt="Services" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts and Table Row -->
+          <div class="grid grid-cols-1 gap-6 @5xl:grid-cols-12">
+            <!-- Earning Statistics Chart -->
+            <div
+              class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608] @5xl:col-span-7"
+            >
+              <div class="mb-6 flex items-center justify-between">
+                <h2 class="text-dark-1 text-xl font-semibold">
+                  Earning Statistics
+                </h2>
+
+                <!-- Time Period Selector -->
+                <div class="relative" x-data="{ open: false }">
+                  <button
+                    @click="open = !open"
+                    class="border-border hover:bg-light-2 flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-medium"
+                  >
+                    <span x-text="chartPeriod"></span>
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </button>
+
+                  <div
+                    x-show="open"
+                    @click.away="open = false"
+                    x-transition
+                    class="absolute right-0 z-50 mt-2 w-40 rounded bg-white py-2 shadow-xl"
+                    style="display: none"
+                  >
+                    <button
+                      @click="changeChartPeriod('This Week'); open = false"
+                      class="hover:bg-light-2 block w-full px-4 py-2 text-left text-sm"
+                    >
+                      This Week
+                    </button>
+                    <button
+                      @click="changeChartPeriod('This Month'); open = false"
+                      class="hover:bg-light-2 block w-full px-4 py-2 text-left text-sm"
+                    >
+                      This Month
+                    </button>
+                    <button
+                      @click="changeChartPeriod('This Year'); open = false"
+                      class="hover:bg-light-2 block w-full px-4 py-2 text-left text-sm"
+                    >
+                      This Year
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="h-80">
+                <div id="earningsChart"></div>
+              </div>
+            </div>
+
+            <!-- Recent Bookings Table -->
+            <div
+              class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608] @5xl:col-span-5"
+            >
+              <div class="mb-6 flex items-center justify-between">
+                <h2 class="text-dark-1 text-xl font-semibold">
+                  Recent Bookings
+                </h2>
+                <a
+                  href="db-booking.html"
+                  class="text-blue-1 text-sm font-medium hover:text-blue-700"
+                >
+                  View All
+                </a>
+              </div>
+
+              <div
+                class="custom-scrollbar overflow-auto"
+                style="max-height: 400px"
+              >
+                <table class="w-full">
+                  <thead class="border-border sticky top-0 border-b bg-white">
+                    <tr
+                      class="text-left text-xs font-semibold text-gray-600 uppercase"
+                    >
+                      <th class="pb-3">#</th>
+                      <th class="pb-3">Item</th>
+                      <th class="pb-3">Total</th>
+                      <th class="pb-3">Status</th>
+                      <th class="pb-3">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-sm">
+                    <template
+                      x-for="(booking, index) in recentBookings"
+                      :key="booking.id"
+                    >
+                      <tr class="hover:bg-light-2 border-b border-gray-100">
+                        <td
+                          class="py-4 text-gray-600"
+                          x-text="'#' + booking.id"
+                        ></td>
+                        <td class="py-4">
+                          <div
+                            class="text-dark-1 font-medium"
+                            x-text="booking.destination"
+                          ></div>
+                          <div
+                            class="text-light-1 text-xs"
+                            x-text="booking.tour"
+                          ></div>
+                        </td>
+                        <td
+                          class="text-dark-1 py-4 font-semibold"
+                          x-text="'$' + booking.total"
+                        ></td>
+                        <td class="py-4">
+                          <span
+                            class="inline-flex h-6.5 items-center justify-center rounded-full px-2.5 text-sm font-medium"
+                            :class="{
+                          'text-yellow-1 bg-yellow-100': booking.status === 'Upcoming',
+                          'text-blue-1 bg-blue-100': booking.status === 'Completed' || booking.status === 'Confirmed',
+                          'text-red-1 bg-red-100': booking.status === 'Cancelled' || booking.status === 'Rejected'
+                        }"
+                            x-text="booking.status"
+                          ></span>
+                        </td>
+                        <td class="text-light-1 py-4 text-xs">
+                          <div x-text="booking.date"></div>
+                          <div x-text="booking.time"></div>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-wrap items-center gap-6">
+              <div class="text-dark-1 text-sm">
+                © <span x-text="new Date().getFullYear()"></span> GoTrip LLC
+                All rights reserved.
+              </div>
+              <div class="flex flex-wrap items-center gap-5 text-sm">
+                <a href="#" class="text-dark-1 hover:text-blue-1 transition">
+                  Privacy
+                </a>
+                <a href="#" class="text-dark-1 hover:text-blue-1 transition">
+                  Terms
+                </a>
+                <a href="#" class="text-dark-1 hover:text-blue-1 transition">
+                  Site Map
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <button
+                class="text-dark-1 hover:text-blue-1 text-sm font-medium underline transition"
+              >
+                English (US)
+              </button>
+              <button
+                class="text-dark-1 hover:text-blue-1 text-sm font-medium underline transition"
+              >
+                USD
+              </button>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+
+    <!-- Alpine.js Component -->
+    <script>
+      function dashboardPage() {
+        return {
+          loaded: false,
+          loading: true,
+          sidebarOpen: false,
+          chartPeriod: "This Week",
+          chart: null,
+
+          stats: {
+            upcomingTrips: 0,
+            completedTrips: 0,
+            bookingHistory: 0,
+            services: 22786,
+          },
+
+          recentBookings: [],
+
+          init() {
+            // Simulate loading
+            setTimeout(() => {
+              this.loading = false;
+              this.$nextTick(() => {
+                this.initChart();
+              });
+            }, 1000);
+
+            this.fetchBookings();
+
+            // Auto-close sidebar on mobile when clicking outside
+            window.addEventListener("resize", () => {
+              if (window.innerWidth >= 1024) {
+                this.sidebarOpen = false;
+              }
+            });
+          },
+
+          async fetchBookings() {
+            const token = localStorage.getItem("waytrip_token");
+            if (!token) return;
+
+            try {
+              const response = await fetch("/api/bookings/me", {
+                headers: {
+                  Authorization: "Bearer " + token,
+                },
+              });
+
+              if (!response.ok) return;
+
+              const data = await response.json();
+              const bookings = data.bookings || [];
+
+              this.stats.bookingHistory = bookings.length;
+              this.stats.upcomingTrips = bookings.filter(
+                (item) => (item.status || "").toLowerCase() === "upcoming",
+              ).length;
+              this.stats.completedTrips = bookings.filter((item) =>
+                ["completed", "confirmed"].includes((item.status || "").toLowerCase()),
+              ).length;
+
+              this.recentBookings = bookings.map((item) => {
+                const createdAt = new Date(item.created_at);
+                return {
+                  id: item.id,
+                  destination: item.package_location || "Travel Package",
+                  tour: item.package_title || "Package booking",
+                  total: Number(item.package_price || 0),
+                  status:
+                    (item.status || "upcoming").charAt(0).toUpperCase() +
+                    (item.status || "upcoming").slice(1),
+                  date: createdAt.toLocaleDateString(),
+                  time: createdAt.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }),
+                };
+              });
+            } catch (error) {
+              this.recentBookings = [];
+            }
+          },
+
+          initChart() {
+            const chartEl = document.getElementById("earningsChart");
+            if (!chartEl) return;
+
+            const options = {
+              series: [
+                {
+                  name: "Earnings",
+                  data: [1200, 1900, 1500, 2200, 1800, 2400, 2100],
+                },
+              ],
+              chart: {
+                type: "area",
+                height: 320,
+                toolbar: {
+                  show: false,
+                },
+                zoom: {
+                  enabled: false,
+                },
+              },
+              dataLabels: {
+                enabled: false,
+              },
+              stroke: {
+                curve: "smooth",
+                width: 3,
+                colors: ["#3554d1"],
+              },
+              fill: {
+                type: "gradient",
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.4,
+                  opacityTo: 0.1,
+                  stops: [0, 90, 100],
+                },
+                colors: ["#3554d1"],
+              },
+              xaxis: {
+                categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                labels: {
+                  style: {
+                    colors: "#9ca3af",
+                  },
+                },
+              },
+              yaxis: {
+                labels: {
+                  formatter: function (value) {
+                    return "$" + value;
+                  },
+                  style: {
+                    colors: "#9ca3af",
+                  },
+                },
+              },
+              tooltip: {
+                y: {
+                  formatter: function (value) {
+                    return "$" + value.toLocaleString();
+                  },
+                },
+              },
+              grid: {
+                borderColor: "#f3f4f6",
+              },
+              markers: {
+                size: 5,
+                colors: ["#3554d1"],
+                strokeColors: "#fff",
+                strokeWidth: 2,
+                hover: {
+                  size: 7,
+                },
+              },
+            };
+
+            this.chart = new ApexCharts(chartEl, options);
+            this.chart.render();
+          },
+
+          changeChartPeriod(period) {
+            this.chartPeriod = period;
+
+            // Update chart data based on period
+            let newData = [];
+            if (period === "This Week") {
+              newData = [1200, 1900, 1500, 2200, 1800, 2400, 2100];
+            } else if (period === "This Month") {
+              newData = [5200, 6900, 5500, 7200, 6800, 8400, 7100];
+            } else {
+              newData = [45000, 52000, 48000, 55000, 51000, 58000, 54000];
+            }
+
+            if (this.chart) {
+              this.chart.updateSeries([
+                {
+                  name: "Earnings",
+                  data: newData,
+                },
+              ]);
+            }
+          },
+        };
+      }
+    </script>
+  <script defer src="bundle.js"></script>
+  <script defer src="auth-guard.js"></script></body>
+
+<!-- Mirrored from gotrip-tailwind-template.vercel.app/db-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:44:57 GMT -->
+</html>
