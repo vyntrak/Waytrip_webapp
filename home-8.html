@@ -1,0 +1,3609 @@
+<!doctype html>
+<html lang="en">
+  
+<!-- Mirrored from gotrip-tailwind-template.vercel.app/home-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:43:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GoTrip - Plan Your Perfect Trip</title>
+  <link rel="icon" href="favicon.png"><link href="style.css" rel="stylesheet"></head>
+  <body x-data="{'loaded': true}">
+    <!-- ===== Preloader Start ===== -->
+    <!-- no-JS: if JavaScript is disabled, don't block the page -->
+<noscript>
+  <style>
+    #gt-preloader {
+      display: none !important;
+    }
+  </style>
+</noscript>
+
+<!-- Preloader overlay -->
+<div
+  id="gt-preloader"
+  class="js-preloader fixed inset-0 z-5000 flex flex-col items-center justify-center bg-white transition-opacity duration-500"
+  role="status"
+  aria-live="polite"
+  aria-label="Loading"
+  x-show="loaded"
+  x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
+>
+  <!-- Wrapper (72x72, rounded 30px, soft shadow) -->
+  <div
+    class="animate-gt-wrap relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-[30px] bg-white shadow-[0_2px_24px_rgba(0,0,0,0.08)]"
+  >
+    <!-- Icon moves vertically and scales/rotates similar to original -->
+    <div class="animate-gt-icon absolute">
+      <svg
+        class="h-[37px] w-[38px] text-blue-600"
+        width="38"
+        height="37"
+        viewBox="0 0 38 37"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g clip-path="url(#clip0_1_41)">
+          <path
+            d="M32.9675 13.9422C32.9675 6.25436 26.7129 0 19.0251 0C11.3372 0 5.08289 6.25436 5.08289 13.9422C5.08289 17.1322 7.32025 21.6568 11.7327 27.3906C13.0538 29.1071 14.3656 30.6662 15.4621 31.9166V35.8212C15.4621 36.4279 15.9539 36.92 16.561 36.92H21.4895C22.0965 36.92 22.5883 36.4279 22.5883 35.8212V31.9166C23.6849 30.6662 24.9966 29.1071 26.3177 27.3906C30.7302 21.6568 32.9675 17.1322 32.9675 13.9422V13.9422ZM30.7699 13.9422C30.7699 16.9956 27.9286 21.6204 24.8175 25.7245H23.4375C25.1039 20.7174 25.9484 16.7575 25.9484 13.9422C25.9484 10.3587 25.3079 6.97207 24.1445 4.40684C23.9229 3.91841 3.6857 3.46886 23.4347 3.05761C27.732 4.80457 30.7699 9.02494 30.7699 13.9422ZM20.3906 34.7224H17.6598V32.5991H20.3906V34.7224ZM21.0007 30.4014H17.0587C16.4167 29.6679 15.7024 28.8305 14.9602 27.9224H16.1398C16.1429 27.9224 16.146 27.9227 16.1489 27.9227C16.152 27.9227 23.0902 27.9224 23.0902 27.9224C22.3725 28.8049 21.6658 29.6398 21.0007 30.4014ZM19.0251 2.19765C20.1084 2.19765 21.2447 3.33365 22.1429 5.3144C23.1798 7.60078 23.7508 10.6649 23.7508 13.9422C23.7508 16.6099 22.8415 20.6748 21.1185 25.7245H16.9322C15.2086 20.6743 14.2994 16.6108 14.2994 13.9422C14.2994 10.6649 14.8706 7.60078 15.9075 5.3144C16.8057 3.33365 17.942 2.19765 19.0251 2.19765V2.19765ZM7.28053 13.9422C7.28053 9.02494 10.3184 4.80457 14.6157 3.05761C14.3647 3.46886 14.1273 3.91841 13.9059 4.40684C12.7425 6.97207 12.102 10.3587 12.102 13.9422C12.102 16.7584 12.9462 20.7176 14.6126 25.7245H13.2259C9.33565 20.6126 7.28053 16.5429 7.28053 13.9422Z"
+            fill="currentColor"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_41">
+            <rect
+              width="36.92"
+              height="36.92"
+              fill="white"
+              transform="translate(0.540039)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div
+    class="mt-4 text-4xl leading-[68px] font-semibold text-slate-800 dark:text-slate-100"
+  >
+    GoTrip
+  </div>
+
+  <!-- Screen reader text -->
+  <span class="sr-only">Loading, please wait…</span>
+</div>
+
+<!-- Minimal CSS to support the hide transition and custom keyframes -->
+<style>
+  .js-preloader.-is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  @keyframes gtWrap {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes gtIcon {
+    0% {
+      transform: translateY(150%) scale(1);
+    }
+    50% {
+      transform: translateY(0%) scale(1.2) rotate(20deg);
+    }
+    100% {
+      transform: translateY(-150%) rotate(-20deg);
+    }
+  }
+  .animate-gt-wrap {
+    animation: gtWrap 1.8s ease infinite;
+  }
+  .animate-gt-icon {
+    animation: gtIcon 1.8s ease infinite;
+  }
+</style>
+<!-- ===== Preloader End ===== -->
+
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="flex min-h-screen flex-col justify-between overflow-hidden">
+      <!-- Navbar -->
+<header
+  x-data="navbar()"
+  :class="isSticky ? 'bg-white fixed border-border' : 'border-transparent bg-transparent absolute'"
+  class="inset-x-0 top-0 z-50 border-b transition-all duration-300"
+>
+  <div class="mx-auto max-w-[1500px] px-8 sm:px-5">
+    <div class="flex h-20 items-center justify-between">
+      <!-- Left: Logo + Desktop Navigation -->
+      <div class="flex items-center">
+        <!-- Logo -->
+        <a href="index.html" class="mr-12 min-w-[140px]">
+          <img
+            src="src/images/general/logo-dark-2.svg"
+            alt="logo icon"
+            class="w-[140px]"
+          />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden xl:flex">
+          <ul class="text-dark-1 flex items-center gap-6">
+            <!-- Home dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['index.html','home-2.html','home-3.html','home-4.html','home-5.html','home-6.html','home-7.html','home-8.html','home-9.html','home-10.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Home</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === 'index.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="index.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 1
+                </a>
+                <a
+                  :class="currentPage === 'home-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-2.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 2
+                </a>
+                <a
+                  :class="currentPage === 'home-3.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-3.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 3
+                </a>
+                <a
+                  :class="currentPage === 'home-4.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-4.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 4
+                </a>
+                <a
+                  :class="currentPage === 'home-5.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-5.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 5
+                </a>
+                <a
+                  :class="currentPage === 'home-6.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-6.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 6
+                </a>
+                <a
+                  :class="currentPage === 'home-7.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-7.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 7
+                </a>
+                <a
+                  :class="currentPage === 'home-8.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-8.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 8
+                </a>
+                <a
+                  :class="currentPage === 'home-9.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-9.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 9
+                </a>
+                <a
+                  :class="currentPage === 'home-10.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-10.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 10
+                </a>
+              </div>
+            </li>
+
+            <!-- Categories mega menu -->
+            <li
+              class="relative"
+              x-data="megaMenu()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button class="hover:text-blue-1 flex items-center py-8">
+                <span class="mr-2">Categories</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+
+              <!-- Mega menu dropdown -->
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="absolute top-full left-0 mt-0 w-[900px] max-w-[90vw] rounded bg-white p-6 shadow-xl"
+              >
+                <!-- Tabs -->
+                <div
+                  class="border-border mb-6 flex flex-wrap gap-10 border-b-2 pb-6"
+                >
+                  <button
+                    @click="activeTab='hotel'"
+                    :class="activeTab==='hotel'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Hotel
+                  </button>
+                  <button
+                    @click="activeTab='tour'"
+                    :class="activeTab==='tour'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Tour
+                  </button>
+                  <button
+                    @click="activeTab='activity'"
+                    :class="activeTab==='activity'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Activity
+                  </button>
+                  <button
+                    @click="activeTab='rental'"
+                    :class="activeTab==='rental'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Holiday Rentals
+                  </button>
+                  <button
+                    @click="activeTab='car'"
+                    :class="activeTab==='car'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Car
+                  </button>
+                  <button
+                    @click="activeTab='cruise'"
+                    :class="activeTab==='cruise'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Cruise
+                  </button>
+                  <button
+                    @click="activeTab='flights'"
+                    :class="activeTab==='flights'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Flights
+                  </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="flex gap-8">
+                  <!-- Links section -->
+                  <div class="flex-1">
+                    <!-- Hotel tab -->
+                    <div x-show="activeTab==='hotel'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Hotel List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-list-1.html"
+                            >
+                              Hotel List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-list-2.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-list-2.html"
+                            >
+                              Hotel List v2
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-half-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-half-map.html"
+                            >
+                              Hotel List v3
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-grid-1.html"
+                            >
+                              Hotel List v4
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-grid-2.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-grid-2.html"
+                            >
+                              Hotel List v5
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Hotel Single</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-single-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-single-1.html"
+                            >
+                              Hotel Single v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-single-2.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-single-2.html"
+                            >
+                              Hotel Single v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Hotel Booking</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'booking-pages.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="booking-pages.html"
+                            >
+                              Booking Page
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tour tab -->
+                    <div x-show="activeTab==='tour'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Tour List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-list-1.html"
+                            >
+                              Tour List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-grid-1.html"
+                            >
+                              Tour List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Tour Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-map.html"
+                            >
+                              Tour Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-single.html"
+                            >
+                              Tour Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Activity tab -->
+                    <div x-show="activeTab==='activity'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Activity List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-list-1.html"
+                            >
+                              Activity List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-grid-1.html"
+                            >
+                              Activity List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">
+                            Activity Pages
+                          </div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-map.html"
+                            >
+                              Activity Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-single.html"
+                            >
+                              Activity Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Rental tab -->
+                    <div x-show="activeTab==='rental'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Rental List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-list-1.html"
+                            >
+                              Rental List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-grid-1.html"
+                            >
+                              Rental List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Rental Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-map.html"
+                            >
+                              Rental Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-single.html"
+                            >
+                              Rental Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Car tab -->
+                    <div x-show="activeTab==='car'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Car List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-list-1.html"
+                            >
+                              Car List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-grid-1.html"
+                            >
+                              Car List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Car Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-map.html"
+                            >
+                              Car Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-single.html"
+                            >
+                              Car Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cruise tab -->
+                    <div x-show="activeTab==='cruise'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Cruise List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-list-1.html"
+                            >
+                              Cruise List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-grid-1.html"
+                            >
+                              Cruise List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Cruise Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-map.html"
+                            >
+                              Cruise Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-single.html"
+                            >
+                              Cruise Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Flights tab -->
+                    <div x-show="activeTab==='flights'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Flight List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'flights-list.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="flights-list.html"
+                            >
+                              Flight list v1
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Promo Image -->
+                  <div class="relative w-64 overflow-hidden rounded">
+                    <img
+                      src="src/images/backgrounds/7.png"
+                      alt="image"
+                      class="h-full w-full object-cover"
+                    />
+                    <div class="absolute inset-0 flex flex-col justify-end p-6">
+                      <div
+                        class="mb-4 text-xl leading-tight font-medium text-white"
+                      >
+                        Things to do on <br />
+                        your trip
+                      </div>
+                      <button
+                        class="text-dark-1 inline-flex h-12 items-center justify-center rounded bg-white px-8 font-medium hover:bg-gray-50"
+                      >
+                        Experinces
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Destinations link -->
+            <li>
+              <a
+                :class="currentPage === 'destinations.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                href="destinations.html"
+                class="block py-8"
+              >
+                Destinations
+              </a>
+            </li>
+
+            <!-- Blog dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['blog-list-1.html','blog-list-2.html','blog-single.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Blog</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === 'blog-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="blog-list-1.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Blog list v1
+                </a>
+                <a
+                  :class="currentPage === 'blog-list-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="blog-list-2.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Blog list v2
+                </a>
+                <a
+                  :class="currentPage === 'blog-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="blog-single.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Blog single
+                </a>
+              </div>
+            </li>
+
+            <!-- Pages dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['404.html','about.html','become-expert.html','help-center.html','login.html','signup.html','terms.html','invoice.html','ui-elements.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Pages</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === '404.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="404.html"
+                  class="block rounded px-5 py-2"
+                >
+                  404
+                </a>
+                <a
+                  :class="currentPage === 'about.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="about.html"
+                  class="block rounded px-5 py-2"
+                >
+                  About
+                </a>
+                <a
+                  :class="currentPage === 'become-expert.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="become-expert.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Become expert
+                </a>
+                <a
+                  :class="currentPage === 'help-center.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="help-center.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Help center
+                </a>
+                <a
+                  :class="currentPage === 'login.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="login.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Login
+                </a>
+                <a
+                  :class="currentPage === 'signup.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="signup.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Register
+                </a>
+                <a
+                  :class="currentPage === 'terms.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="terms.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Terms
+                </a>
+                <a
+                  :class="currentPage === 'invoice.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="invoice.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Invoice
+                </a>
+                <a
+                  :class="currentPage === 'ui-elements.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="ui-elements.html"
+                  class="block rounded px-5 py-2"
+                >
+                  UI elements
+                </a>
+              </div>
+            </li>
+
+            <!-- Dashboard dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['db-dashboard.html','db-booking.html','db-settings.html','db-wishlist.html','db-vendor-dashboard.html','db-vendor-add-hotel.html','db-vendor-booking.html','db-vendor-hotels.html','db-vendor-recovery.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Dashboard</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === 'db-dashboard.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-dashboard.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Dashboard
+                </a>
+                <a
+                  :class="currentPage === 'db-booking.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-booking.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Booking
+                </a>
+                <a
+                  :class="currentPage === 'db-settings.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-settings.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Settings
+                </a>
+                <a
+                  :class="currentPage === 'db-wishlist.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-wishlist.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Wishlist
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-dashboard.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-dashboard.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor dashboard
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-add-hotel.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-add-hotel.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor add hotel
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-booking.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-booking.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor booking
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-hotels.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-hotels.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor hotels
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-recovery.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-recovery.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor recovery
+                </a>
+              </div>
+            </li>
+
+            <!-- Contact link -->
+            <li>
+              <a
+                :class="currentPage === 'contact.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                href="contact.html"
+                class="block py-8"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right: Search Icon + Action Buttons + Mobile Menu -->
+      <div class="flex items-center">
+        <!-- Search Button (Hidden on smaller screens) -->
+        <button
+          @click="searchOpen = !searchOpen"
+          class="text-dark-1 hover:text-blue-1 mr-4 hidden items-center justify-center transition-colors 2xl:flex"
+        >
+          <i class="icon-search text-xl"></i>
+        </button>
+
+        <!-- Action Buttons (Desktop) -->
+        <div class="ml-5 hidden items-center space-x-4 md:flex">
+          <a
+            href="login.html"
+            class="hover:bg-blue-1 bg-dark-1 inline-flex h-12 items-center rounded px-8 text-sm font-normal whitespace-nowrap text-white transition-colors"
+          >
+            Become An Expert
+          </a>
+          <a
+            href="signup.html"
+            class="border-dark-1 text-dark-1 hover:bg-dark-1 inline-flex h-12 items-center rounded border px-8 text-sm font-normal whitespace-nowrap transition-colors hover:text-white"
+          >
+            Sign In / Register
+          </a>
+        </div>
+
+        <!-- Mobile Icons -->
+        <div class="ml-8 flex items-center space-x-5 xl:hidden">
+          <a
+            href="login.html"
+            class="text-dark-1 hover:text-blue-1 transition-colors"
+          >
+            <i class="icon-user text-xl"></i>
+          </a>
+          <button
+            @click="mobileOpen = !mobileOpen"
+            class="text-dark-1 hover:text-blue-1 transition-colors"
+          >
+            <i class="icon-menu text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div
+    x-show="searchOpen"
+    x-cloak
+    @keydown.escape.window="searchOpen=false"
+    class="fixed inset-0 z-50 flex items-start justify-center bg-black/70 pt-32 backdrop-blur-sm"
+  >
+    <div
+      @click.outside="searchOpen=false"
+      class="shadow-1 mx-4 w-full max-w-2xl rounded bg-white p-6"
+    >
+      <div class="mb-4 flex items-center gap-5">
+        <i class="icon-search text-light-1 text-xl"></i>
+        <input
+          type="text"
+          placeholder="Search..."
+          class="placeholder-light-1 text-dark-1 flex-1 bg-transparent text-sm outline-none"
+        />
+        <button
+          @click="searchOpen=false"
+          class="text-light-1 hover:text-dark-1 ml-3"
+          aria-label="Close search"
+        >
+          <i class="icon-close text-lg"></i>
+        </button>
+      </div>
+      <div class="text-light-1 text-xs">Press ESC to close.</div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div x-cloak x-show="mobileOpen" class="fixed inset-0 z-50">
+    <div
+      @click="mobileOpen=false"
+      x-show="mobileOpen"
+      x-transition.opacity
+      class="absolute inset-0 bg-black/40"
+    ></div>
+
+    <aside
+      x-show="mobileOpen"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      class="text-dark-1 absolute top-0 right-0 h-full w-[85%] max-w-md overflow-y-auto bg-white p-6 shadow-xl"
+      x-trap.inert.noscroll="mobileOpen"
+    >
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-flex min-w-[140px] items-center">
+          <img
+            src="src/images/general/logo-dark.svg"
+            alt="logo"
+            class="w-[140px]"
+          />
+        </a>
+        <button @click="mobileOpen=false" aria-label="Close Menu">
+          <i class="icon-close text-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu Content -->
+      <nav class="mt-6" x-data="{ accordionOpen: null }">
+        <ul class="space-y-1">
+          <!-- Home accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 1 ? null : 1"
+              class="hover:text-blue-1 flex w-full items-center justify-between py-3 text-left font-medium"
+              :class="['index.html','home-2.html','home-3.html','home-4.html','home-5.html','home-6.html','home-7.html','home-8.html','home-9.html','home-10.html'].includes(currentPage) ? 'text-blue-1' : ''"
+            >
+              <span>Home</span>
+              <span :class="accordionOpen === 1 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 1"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'index.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="index.html"
+              >
+                Home 1
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-2.html"
+              >
+                Home 2
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-3.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-3.html"
+              >
+                Home 3
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-4.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-4.html"
+              >
+                Home 4
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-5.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-5.html"
+              >
+                Home 5
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-6.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-6.html"
+              >
+                Home 6
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-7.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-7.html"
+              >
+                Home 7
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-8.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-8.html"
+              >
+                Home 8
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-9.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-9.html"
+              >
+                Home 9
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-10.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="home-10.html"
+              >
+                Home 10
+              </a>
+            </div>
+          </li>
+
+          <!-- Categories accordion with nested accordions -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 2 ? null : 2"
+              class="hover:text-blue-1 flex w-full items-center justify-between py-3 text-left font-medium"
+              :class="['hotel-list-1.html','hotel-list-2.html','hotel-half-map.html','hotel-grid-1.html','hotel-grid-2.html','hotel-single-1.html','hotel-single-2.html','booking-pages.html','tour-list-1.html','tour-grid-1.html','tour-map.html','tour-single.html','activity-list-1.html','activity-grid-1.html','activity-map.html','activity-single.html','rental-list-1.html','rental-grid-1.html','rental-map.html','rental-single.html','car-list-1.html','car-grid-1.html','car-map.html','car-single.html','cruise-list-1.html','cruise-grid-1.html','cruise-map.html','cruise-single.html','flights-list.html'].includes(currentPage) ? 'text-blue-1' : ''"
+            >
+              <span>Categories</span>
+              <span :class="accordionOpen === 2 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 2"
+              x-collapse
+              x-data="{ nestedAccordion: null }"
+              class="space-y-2 pb-2 pl-4 text-sm"
+            >
+              <!-- Hotel nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 1 ? null : 1"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['hotel-list-1.html','hotel-list-2.html','hotel-half-map.html','hotel-grid-1.html','hotel-grid-2.html','hotel-single-1.html','hotel-single-2.html','booking-pages.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Hotel</span>
+                  <span :class="nestedAccordion === 1 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 1"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="hotel-list-1.html"
+                  >
+                    Hotel List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-list-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="hotel-list-2.html"
+                  >
+                    Hotel List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-single-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="hotel-single-1.html"
+                  >
+                    Hotel Single v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-single-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="hotel-single-2.html"
+                  >
+                    Hotel Single v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'booking-pages.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="booking-pages.html"
+                  >
+                    Booking Page
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tour nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 2 ? null : 2"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['tour-list-1.html','tour-grid-1.html','tour-map.html','tour-single.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Tour</span>
+                  <span :class="nestedAccordion === 2 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 2"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="tour-list-1.html"
+                  >
+                    Tour List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-grid-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="tour-grid-1.html"
+                  >
+                    Tour List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-map.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="tour-map.html"
+                  >
+                    Tour Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="tour-single.html"
+                  >
+                    Tour Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Activity nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 3 ? null : 3"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['activity-list-1.html','activity-grid-1.html','activity-map.html','activity-single.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Activity</span>
+                  <span :class="nestedAccordion === 3 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 3"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="activity-list-1.html"
+                  >
+                    Activity List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-grid-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="activity-grid-1.html"
+                  >
+                    Activity List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-map.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="activity-map.html"
+                  >
+                    Activity Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="activity-single.html"
+                  >
+                    Activity Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Rental nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 4 ? null : 4"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['rental-list-1.html','rental-grid-1.html','rental-map.html','rental-single.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Rental</span>
+                  <span :class="nestedAccordion === 4 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 4"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="rental-list-1.html"
+                  >
+                    Rental List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-grid-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="rental-grid-1.html"
+                  >
+                    Rental List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-map.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="rental-map.html"
+                  >
+                    Rental Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="rental-single.html"
+                  >
+                    Rental Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Car nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 5 ? null : 5"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['car-list-1.html','car-grid-1.html','car-map.html','car-single.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Car</span>
+                  <span :class="nestedAccordion === 5 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 5"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="car-list-1.html"
+                  >
+                    Car List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-grid-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="car-grid-1.html"
+                  >
+                    Car List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-map.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="car-map.html"
+                  >
+                    Car Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="car-single.html"
+                  >
+                    Car Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Cruise nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 6 ? null : 6"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['cruise-list-1.html','cruise-grid-1.html','cruise-map.html','cruise-single.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Cruise</span>
+                  <span :class="nestedAccordion === 6 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 6"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="cruise-list-1.html"
+                  >
+                    Cruise List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-grid-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="cruise-grid-1.html"
+                  >
+                    Cruise List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-map.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="cruise-map.html"
+                  >
+                    Cruise Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="cruise-single.html"
+                  >
+                    Cruise Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Flights nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 7 ? null : 7"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['flights-list.html'].includes(currentPage) ? 'text-blue-1' : ''"
+                >
+                  <span class="font-medium">Flights</span>
+                  <span :class="nestedAccordion === 7 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 7"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'flights-list.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                    href="flights-list.html"
+                  >
+                    Flights List v1
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Destinations link -->
+          <li>
+            <a
+              class="block py-3 font-medium"
+              :class="currentPage === 'destinations.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+              href="destinations.html"
+            >
+              Destinations
+            </a>
+          </li>
+
+          <!-- Blog accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 3 ? null : 3"
+              class="hover:text-blue-1 flex w-full items-center justify-between py-3 text-left font-medium"
+              :class="['blog-list-1.html','blog-list-2.html','blog-single.html'].includes(currentPage) ? 'text-blue-1' : ''"
+            >
+              <span>Blog</span>
+              <span :class="accordionOpen === 3 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 3"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'blog-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="blog-list-1.html"
+              >
+                Blog list v1
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'blog-list-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="blog-list-2.html"
+              >
+                Blog list v2
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'blog-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="blog-single.html"
+              >
+                Blog single
+              </a>
+            </div>
+          </li>
+
+          <!-- Pages accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 4 ? null : 4"
+              class="hover:text-blue-1 flex w-full items-center justify-between py-3 text-left font-medium"
+              :class="['404.html','about.html','become-expert.html','help-center.html','login.html','signup.html','terms.html','invoice.html','ui-elements.html'].includes(currentPage) ? 'text-blue-1' : ''"
+            >
+              <span>Pages</span>
+              <span :class="accordionOpen === 4 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 4"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === '404.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="404.html"
+              >
+                404
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'about.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="about.html"
+              >
+                About
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'become-expert.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="become-expert.html"
+              >
+                Become expert
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'help-center.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="help-center.html"
+              >
+                Help center
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'login.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="login.html"
+              >
+                Login
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'signup.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="signup.html"
+              >
+                Register
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'terms.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="terms.html"
+              >
+                Terms
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'invoice.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="invoice.html"
+              >
+                Invoice
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'ui-elements.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="ui-elements.html"
+              >
+                UI elements
+              </a>
+            </div>
+          </li>
+
+          <!-- Dashboard accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 5 ? null : 5"
+              class="hover:text-blue-1 flex w-full items-center justify-between py-3 text-left font-medium"
+              :class="['db-dashboard.html','db-booking.html','db-settings.html','db-wishlist.html','db-vendor-dashboard.html','db-vendor-add-hotel.html','db-vendor-booking.html','db-vendor-hotels.html','db-vendor-recovery.html'].includes(currentPage) ? 'text-blue-1' : ''"
+            >
+              <span>Dashboard</span>
+              <span :class="accordionOpen === 5 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 5"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-dashboard.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-dashboard.html"
+              >
+                Dashboard
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-booking.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-booking.html"
+              >
+                Booking
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-settings.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-settings.html"
+              >
+                Settings
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-wishlist.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-wishlist.html"
+              >
+                Wishlist
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-dashboard.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-vendor-dashboard.html"
+              >
+                Vendor dashboard
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-add-hotel.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-vendor-add-hotel.html"
+              >
+                Vendor add hotel
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-booking.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-vendor-booking.html"
+              >
+                Vendor booking
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-hotels.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-vendor-hotels.html"
+              >
+                Vendor hotels
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-recovery.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:bg-blue-1/5 hover:text-blue-1'"
+                href="db-vendor-recovery.html"
+              >
+                Vendor recovery
+              </a>
+            </div>
+          </li>
+
+          <!-- Contact link -->
+          <li>
+            <a
+              class="block py-3 font-medium"
+              :class="currentPage === 'contact.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+              href="contact.html"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</header>
+
+<script>
+  // Dropdown Component
+  function dropdown() {
+    return {
+      open: false,
+      toggle() {
+        this.open = !this.open;
+      },
+      close() {
+        this.open = false;
+      },
+    };
+  }
+
+  // Mega Menu Component
+  function megaMenu() {
+    return {
+      open: false,
+      activeTab: "hotel",
+      toggle() {
+        this.open = !this.open;
+      },
+      close() {
+        this.open = false;
+      },
+    };
+  }
+
+  // Navbar Component
+  function navbar() {
+    return {
+      mobileOpen: false,
+      searchOpen: false,
+      isSticky: false,
+      currentPage: "",
+      handleScroll() {
+        this.isSticky = window.scrollY > 50;
+      },
+      init() {
+        // run once to set initial state
+        this.handleScroll();
+        // attach a stable listener bound to this component
+        this._scrollHandler = () => this.handleScroll();
+        window.addEventListener("scroll", this._scrollHandler, {
+          passive: true,
+        });
+        this.currentPage = this.getCurrentPage();
+      },
+      getCurrentPage() {
+        const path = window.location.pathname;
+        const page = path.substring(path.lastIndexOf("index-2.html") + 1);
+        return page || "index.html";
+      },
+      isActive(href) {
+        if (!href) return false;
+        const linkPage = href.includes("index-2.html")
+          ? href.substring(href.lastIndexOf("index-2.html") + 1)
+          : href;
+        return this.currentPage === linkPage;
+      },
+      // optional cleanup if Alpine's cleanup hook is available
+      destroy() {
+        if (this._scrollHandler)
+          window.removeEventListener("scroll", this._scrollHandler);
+      },
+    };
+  }
+</script>
+<main class="flex-grow">
+        <!-- Masthead: bg image, title, search, and image slider -->
+        <section class="relative z-20 pt-35 md:pt-50">
+  <div class="bg-yellow-1 absolute top-0 left-0 -z-10 h-full w-full"></div>
+
+  <div class="container mx-auto h-full px-4">
+    <div
+      class="mb-6 flex flex-col items-center justify-center text-center"
+      data-aos="fade-up"
+      data-aos-delay="0"
+    >
+      <h1
+        class="md:text-60 text-dark-1 text-3xl leading-tight font-semibold sm:text-4xl"
+      >
+        Search for the Best Car Hire Deals
+      </h1>
+      <p class="text-dark-1 mt-3">
+        Book better cars from local hosts across the US and around the world.
+      </p>
+    </div>
+
+    <!-- Search form -->
+    <div
+      class="relative z-20 mx-auto w-full max-w-[900px] rounded bg-white shadow-[0_20px_40px_0_rgba(5,16,54,0.07)] lg:p-5"
+    >
+      <div
+        class="flex w-full items-center max-lg:flex-col lg:gap-7.5"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+        <div class="grid w-full lg:grid-cols-3 lg:gap-7.5">
+          <!-- Location -->
+          <div
+            class="relative max-lg:p-5 lg:pl-6.5"
+            x-data="locationPicker()"
+            @click.outside="open = false"
+          >
+            <div>
+              <span class="text-15 text-dark-1 block font-medium">
+                Location
+              </span>
+              <input
+                placeholder="Where are you going?"
+                class="outline-none"
+                x-model="query"
+                @focus="open = true"
+                @input="open = true; activeIndex = -1"
+                @keydown.down.prevent="move(1)"
+                @keydown.up.prevent="move(-1)"
+                @keydown.enter.prevent="select(activeIndex >= 0 ? activeIndex : 0)"
+                @keydown.escape="open = false"
+              />
+            </div>
+
+            <!-- Location Picker Component -->
+<div
+  class="absolute top-full left-0 z-9 mt-5 w-full lg:w-[500px]"
+  x-show="open && filteredLocations().length"
+  x-cloak
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 scale-95"
+  x-transition:enter-end="opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 scale-100"
+  x-transition:leave-end="opacity-0 scale-95"
+  style="display: none"
+>
+  <div class="shadow-2 rounded bg-white p-7.5">
+    <div class="gap-y-1.5">
+      <template x-for="(loc, idx) in filteredLocations()" :key="idx">
+        <button
+          type="button"
+          class="hover:bg-light-2 flex w-full cursor-pointer rounded px-5 py-4 text-left duration-300"
+          @click="select(idx)"
+          :class="{ 'bg-light-2': idx === activeIndex }"
+        >
+          <div class="icon-location-2 text-light-1 pt-1 text-xl"></div>
+          <div class="ml-2.5">
+            <div class="text-15 font-medium" x-text="loc.name"></div>
+            <div class="text-light-1 mt-1.5 text-sm" x-text="loc.sub"></div>
+          </div>
+        </button>
+      </template>
+    </div>
+  </div>
+</div>
+</div>
+
+          <!-- Date Range -->
+          <div
+            class="relative border-[#DADFE6] max-lg:border-y max-lg:p-5 lg:border-x lg:px-7.5"
+            x-data="dateRangePicker"
+            @click.outside="open = false"
+          >
+            <button class="text-left" @click="open = !open">
+              <span class="text-15 text-dark-1 block font-medium">
+                Check in - Check out
+              </span>
+              <span class="text-15 text-light-1">
+                <template x-if="checkIn && checkOut">
+                  <span
+                    x-text="formatDate(checkIn) + ' - ' + formatDate(checkOut)"
+                  ></span>
+                </template>
+                <template x-if="!checkIn || !checkOut">
+                  <span>Select dates</span>
+                </template>
+              </span>
+            </button>
+
+            <!-- Date picker calendar dropdown via include (fixed relative path) -->
+            <!-- Date Range Picker Calendar Component -->
+<div
+  class="absolute top-full left-1/2 z-10 mt-5 w-full -translate-x-1/2 lg:w-[700px]"
+  x-show="open"
+  x-cloak
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 scale-95"
+  x-transition:enter-end="opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 scale-100"
+  x-transition:leave-end="opacity-0 scale-95"
+  style="display: none"
+>
+  <div class="shadow-2 rounded bg-white p-8">
+    <!-- Month Navigation -->
+    <div class="mb-6 flex items-center justify-between">
+      <button
+        @click="prevMonth()"
+        class="hover:bg-light-2 flex size-10 items-center justify-center rounded-full duration-300"
+      >
+        <i class="icon-chevron-left text-base"></i>
+      </button>
+      <div class="flex gap-32">
+        <div
+          class="text-17 font-semibold"
+          x-text="monthName + ' ' + viewYear"
+        ></div>
+        <div
+          class="text-17 font-semibold"
+          x-text="nextMonthName + ' ' + nextMonthYear"
+        ></div>
+      </div>
+      <button
+        @click="nextMonth()"
+        class="hover:bg-light-2 flex size-10 items-center justify-center rounded-full duration-300"
+      >
+        <i class="icon-chevron-right text-base"></i>
+      </button>
+    </div>
+
+    <!-- Two Months Grid -->
+    <div class="grid gap-8 lg:grid-cols-2">
+      <!-- First Month -->
+      <div>
+        <!-- Weekday Headers -->
+        <div class="mb-3 grid grid-cols-7 gap-1">
+          <template
+            x-for="day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']"
+          >
+            <div
+              class="text-13 text-dark-1 text-center font-semibold"
+              x-text="day"
+            ></div>
+          </template>
+        </div>
+
+        <!-- Calendar Days -->
+        <div class="grid grid-cols-7 gap-1">
+          <template x-for="(date, idx) in getDaysInMonth(0)" :key="'m1-' + idx">
+            <button
+              type="button"
+              @click="selectDate(date)"
+              :disabled="!date || isPast(date)"
+              class="text-15 flex aspect-square h-12 items-center justify-center rounded-full duration-200"
+              :class="{
+                'invisible': !date,
+                'text-light-1/40 cursor-not-allowed': date && isPast(date),
+                'bg-blue-1 text-white font-semibold': date && isSelected(date),
+                'bg-light-2': date && isInRange(date),
+                'hover:bg-light-2 cursor-pointer text-dark-1': date && !isPast(date) && !isSelected(date) && !isInRange(date)
+              }"
+              x-text="date ? date.getDate() : ''"
+            ></button>
+          </template>
+        </div>
+      </div>
+
+      <!-- Second Month -->
+      <div class="max-lg:hidden">
+        <!-- Weekday Headers -->
+        <div class="mb-3 grid grid-cols-7 gap-1">
+          <template
+            x-for="day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']"
+          >
+            <div
+              class="text-13 text-dark-1 text-center font-semibold"
+              x-text="day"
+            ></div>
+          </template>
+        </div>
+
+        <!-- Calendar Days -->
+        <div class="grid grid-cols-7 gap-1">
+          <template x-for="(date, idx) in getDaysInMonth(1)" :key="'m2-' + idx">
+            <button
+              type="button"
+              @click="selectDate(date)"
+              :disabled="!date || isPast(date)"
+              class="text-15 flex aspect-square h-12 items-center justify-center rounded-full duration-200"
+              :class="{
+                'invisible': !date,
+                'text-light-1/40 cursor-not-allowed': date && isPast(date),
+                'bg-blue-1 text-white font-semibold': date && isSelected(date),
+                'bg-light-2': date && isInRange(date),
+                'hover:bg-light-2 cursor-pointer text-dark-1': date && !isPast(date) && !isSelected(date) && !isInRange(date)
+              }"
+              x-text="date ? date.getDate() : ''"
+            ></button>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clear Button -->
+    <div class="mt-6 flex justify-end">
+      <button
+        @click="checkIn = null; checkOut = null"
+        class="text-light-1 hover:text-dark-1 text-sm duration-200"
+      >
+        Clear dates
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+          <!-- Guests -->
+          <div
+            class="relative max-lg:p-5"
+            x-data="guestsPicker()"
+            @click.outside="guestsOpen = false"
+          >
+            <button class="text-left" @click="guestsOpen = !guestsOpen">
+              <span class="text-15 text-dark-1 block font-medium"> Guest </span>
+              <span class="text-15 text-light-1">
+                <span x-text="guests.adults"></span> adults -
+                <span x-text="guests.children"></span> children -
+                <span x-text="guests.rooms"></span> room
+                <span x-show="guests.rooms > 1"> s </span>
+              </span>
+            </button>
+
+            <!-- Guests Picker Component Dropdown -->
+<div
+  class="absolute top-full left-0 mt-5 w-full lg:w-[400px]"
+  x-show="guestsOpen"
+  x-cloak
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 scale-95"
+  x-transition:enter-end="opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 scale-100"
+  x-transition:leave-end="opacity-0 scale-95"
+  @click.outside="guestsOpen = false"
+  style="display: none"
+>
+  <div class="shadow-2 rounded bg-white p-7.5">
+    <!-- Adults Row -->
+    <div class="flex items-center justify-between gap-y-2.5">
+      <div class="text-15 font-medium">Adults</div>
+      <div class="flex items-center">
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white disabled:pointer-events-none disabled:opacity-40"
+          @click="dec('adults')"
+          :disabled="guests.adults <= 1"
+        >
+          <i class="icon-minus text-xs"></i>
+        </button>
+        <div class="mx-4 flex size-5 justify-center">
+          <div class="text-15" x-text="guests.adults"></div>
+        </div>
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white"
+          @click="inc('adults')"
+        >
+          <i class="icon-plus text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="border-border my-6 border-t"></div>
+
+    <!-- Children Row -->
+    <div class="flex items-center justify-between gap-y-2.5">
+      <div>
+        <div class="text-15 font-medium">Children</div>
+        <div class="text-light-1 text-sm">Ages 0 - 17</div>
+      </div>
+      <div class="flex items-center">
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white disabled:pointer-events-none disabled:opacity-40"
+          @click="dec('children')"
+          :disabled="guests.children <= 0"
+        >
+          <i class="icon-minus text-xs"></i>
+        </button>
+        <div class="mx-4 flex size-5 justify-center">
+          <div class="text-15" x-text="guests.children"></div>
+        </div>
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white"
+          @click="inc('children')"
+        >
+          <i class="icon-plus text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="border-border my-6 border-t"></div>
+
+    <!-- Rooms Row -->
+    <div class="flex items-center justify-between gap-y-2.5">
+      <div class="text-15 font-medium">Rooms</div>
+      <div class="flex items-center">
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white disabled:pointer-events-none disabled:opacity-40"
+          @click="dec('rooms')"
+          :disabled="guests.rooms <= 1"
+        >
+          <i class="icon-minus text-xs"></i>
+        </button>
+        <div class="mx-4 flex size-5 justify-center">
+          <div class="text-15" x-text="guests.rooms"></div>
+        </div>
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white"
+          @click="inc('rooms')"
+        >
+          <i class="icon-plus text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+        <div class="max-lg:w-full max-lg:px-5 max-lg:pb-5 lg:max-w-max">
+          <button
+            class="bg-dark-1 text-15 hover:bg-blue-1 flex h-15 w-full cursor-pointer items-center justify-center gap-2.5 rounded px-9 text-white duration-300 lg:inline-flex"
+          >
+            <div class="icon-search text-xl"></div>
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div x-data="hero8()" x-init="init()" class="relative z-10 -mt-12.5 px-6">
+    <div
+      class="absolute bottom-0 left-1/2 -z-10 h-1/2 w-dvw -translate-x-1/2 bg-white"
+    ></div>
+    <!-- Slider -->
+    <div
+      class="swiper relative mx-auto max-w-[1500px]"
+      x-ref="masthead"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide overflow-hidden rounded-2xl">
+          <div
+            class="relative aspect-150/65 w-full overflow-hidden rounded-2xl bg-cover bg-center bg-no-repeat max-md:py-40"
+            style="background-image: url(src/images/masthead/8/1.png)"
+          ></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide overflow-hidden rounded-2xl">
+          <div
+            class="relative aspect-150/65 w-full overflow-hidden rounded-2xl bg-cover bg-center bg-no-repeat max-md:py-40"
+            style="background-image: url(src/images/masthead/8/1.png)"
+          ></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide overflow-hidden rounded-2xl">
+          <div
+            class="relative aspect-150/65 w-full overflow-hidden rounded-2xl bg-cover bg-center bg-no-repeat max-md:py-40"
+            style="background-image: url(src/images/masthead/8/1.png)"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <button
+          class="slider-prev hover:text-dark-2 absolute top-1/2 left-3 z-20 flex size-12.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white font-bold text-white duration-300 hover:bg-white"
+        >
+          <span class="icon-arrow-left text-sm"></span>
+        </button>
+        <button
+          class="slider-next hover:text-dark-2 absolute top-1/2 right-3 z-20 flex size-12.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white font-bold text-white duration-300 hover:bg-white"
+        >
+          <span class="icon-arrow-right text-sm"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Why Choose Us -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 mb-3 text-3xl font-semibold">Why Choose Us</h2>
+      <p class="text-light-1 text-base">
+        These popular destinations have a lot to offer
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div
+      class="-mx-4 flex flex-wrap justify-center gap-y-10 md:justify-between"
+    >
+      <!-- Feature 1 -->
+      <div class="w-full px-4 sm:w-1/2 md:w-1/3 xl:w-1/4" data-aos="fade">
+        <div
+          class="mx-auto flex max-w-[300px] flex-col items-center text-center"
+        >
+          <div class="flex items-center justify-center">
+            <img
+              src="src/images/featureIcons/1/1.svg"
+              alt="Best Price Guarantee"
+              class="size-17.5"
+            />
+          </div>
+          <div class="mt-8">
+            <h4 class="text-dark-1 text-lg font-medium">
+              Best Price Guarantee
+            </h4>
+            <p class="text-15 text-light-1 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div
+        class="w-full px-4 sm:w-1/2 md:w-1/3 xl:w-1/4"
+        data-aos="fade"
+        data-aos-delay="100"
+      >
+        <div
+          class="mx-auto flex max-w-[300px] flex-col items-center text-center"
+        >
+          <div class="flex items-center justify-center">
+            <img
+              src="src/images/featureIcons/1/2.svg"
+              alt="Easy & Quick Booking"
+              class="size-17.5"
+            />
+          </div>
+          <div class="mt-8">
+            <h4 class="text-dark-1 text-lg font-medium">
+              Easy & Quick Booking
+            </h4>
+            <p class="text-15 text-light-1 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div
+        class="w-full px-4 sm:w-1/2 md:w-1/3 xl:w-1/4"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+        <div
+          class="mx-auto flex max-w-[300px] flex-col items-center text-center"
+        >
+          <div class="flex items-center justify-center">
+            <img
+              src="src/images/featureIcons/1/3.svg"
+              alt="Customer Care 24/7"
+              class="size-17.5"
+            />
+          </div>
+          <div class="mt-8">
+            <h4 class="text-dark-1 text-lg font-medium">Customer Care 24/7</h4>
+            <p class="text-15 text-light-1 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Popular Car Hire -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 text-3xl font-semibold">Popular Car Hire</h2>
+      <p class="text-light-1 mt-2">Interdum et malesuada fames ac ante ipsum</p>
+    </div>
+
+    <div class="relative" x-data="carsCarousel8()" data-aos="fade-left">
+      <div class="swiper" x-ref="wrap">
+        <div class="swiper-wrapper">
+          <!-- Car Card 1 -->
+          <div class="swiper-slide transition-all duration-300">
+            <a href="car-single.html" class="group block">
+              <!-- Image -->
+              <div
+                class="relative mb-4 aspect-30/25 overflow-hidden rounded border border-gray-200"
+              >
+                <img
+                  src="src/images/cars/1.png"
+                  alt="Car"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                <!-- Wishlist Button -->
+                <button
+                  class="text-dark-1 hover:bg-blue-1 absolute top-3 right-3 z-10 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_10px_35px_rgba(5,16,54,0.10)] transition-colors hover:text-white"
+                >
+                  <span class="icon-heart text-xs"></span>
+                </button>
+              </div>
+
+              <!-- Content -->
+              <div>
+                <div class="text-light-1 mb-2 flex items-center text-sm">
+                  <span>Heathrow Airport</span>
+                  <span class="bg-light-1 mx-2 h-1 w-1 rounded-full"></span>
+                  <span class="uppercase">Luxury</span>
+                </div>
+
+                <h4 class="text-dark-1 mb-2 text-lg leading-tight font-medium">
+                  Mercedes-Benz E-Class
+                  <span class="text-light-1 text-sm font-normal"
+                    >or similar</span
+                  >
+                </h4>
+
+                <!-- Car Features -->
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-user-2 mr-2"></span>
+                    <span>4</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-luggage mr-2"></span>
+                    <span>1</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-transmission mr-2"></span>
+                    <span>Automatic</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-speedometer mr-2"></span>
+                    <span>Unlimited</span>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex items-center gap-2">
+                  <div
+                    class="bg-yellow-1 text-dark-1 flex h-8 w-8 items-center justify-center rounded text-xs font-semibold"
+                  >
+                    4.8
+                  </div>
+                  <div class="text-dark-1 text-sm font-medium">Exceptional</div>
+                  <div class="text-light-1 text-sm">3,014 reviews</div>
+                </div>
+
+                <div class="text-light-1 mt-2">
+                  <span class="text-dark-1 font-medium">US$72</span> total
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Car Card 2 - Image Slider -->
+          <div class="swiper-slide group transition-all duration-300">
+            <a href="car-single.html" class="block">
+              <!-- Image Slider -->
+              <div
+                class="card-container relative mb-4 aspect-30/25 overflow-hidden rounded border border-gray-200"
+              >
+                <div
+                  class="swiper card-image-slider h-full"
+                  x-data="cardSlider()"
+                >
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="src/images/cars/2.png"
+                        alt="Car"
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="src/images/cars/3.png"
+                        alt="Car"
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="src/images/cars/1.png"
+                        alt="Car"
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-pagination" x-ref="pagination"></div>
+                  <button
+                    class="text-blue-1 hover:bg-blue-1 card-slider-prev absolute top-1/2 left-3 z-10 flex size-7.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white opacity-0 duration-300 group-hover:opacity-100 hover:text-white"
+                  >
+                    <span class="icon-chevron-left text-[10px]"></span>
+                  </button>
+                  <button
+                    class="card-slider-next text-blue-1 hover:bg-blue-1 absolute top-1/2 right-3 z-10 flex size-7.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white opacity-0 duration-300 group-hover:opacity-100 hover:text-white"
+                  >
+                    <span class="icon-chevron-right text-[10px]"></span>
+                  </button>
+                </div>
+
+                <!-- Wishlist Button -->
+                <button
+                  class="text-dark-1 hover:bg-blue-1 absolute top-3 right-3 z-10 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_10px_35px_rgba(5,16,54,0.10)] transition-colors hover:text-white"
+                >
+                  <span class="icon-heart text-xs"></span>
+                </button>
+              </div>
+
+              <!-- Content -->
+              <div>
+                <div class="text-light-1 mb-2 flex items-center text-sm">
+                  <span>Heathrow Airport</span>
+                  <span class="bg-light-1 mx-2 h-1 w-1 rounded-full"></span>
+                  <span class="uppercase">Suv</span>
+                </div>
+
+                <h4 class="text-dark-1 mb-2 text-lg leading-tight font-medium">
+                  Jaguar F-Pace
+                  <span class="text-light-1 text-sm font-normal"
+                    >or similar</span
+                  >
+                </h4>
+
+                <!-- Car Features -->
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-user-2 mr-2"></span>
+                    <span>4</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-luggage mr-2"></span>
+                    <span>1</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-transmission mr-2"></span>
+                    <span>Automatic</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-speedometer mr-2"></span>
+                    <span>Unlimited</span>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex items-center gap-2">
+                  <div
+                    class="bg-yellow-1 text-dark-1 flex h-8 w-8 items-center justify-center rounded text-xs font-semibold"
+                  >
+                    4.8
+                  </div>
+                  <div class="text-dark-1 text-sm font-medium">Exceptional</div>
+                  <div class="text-light-1 text-sm">3,014 reviews</div>
+                </div>
+
+                <div class="text-light-1 mt-2">
+                  <span class="text-dark-1 font-medium">US$72</span> total
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Car Card 3 - Best Seller -->
+          <div class="swiper-slide transition-all duration-300">
+            <a href="car-single.html" class="group block">
+              <!-- Image -->
+              <div
+                class="relative mb-4 aspect-30/25 overflow-hidden rounded border border-gray-200"
+              >
+                <img
+                  src="src/images/cars/3.png"
+                  alt="Car"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                <!-- Wishlist Button -->
+                <button
+                  class="text-dark-1 hover:bg-blue-1 absolute top-3 right-3 z-10 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_10px_35px_rgba(5,16,54,0.10)] transition-colors hover:text-white"
+                >
+                  <span class="icon-heart text-xs"></span>
+                </button>
+
+                <!-- Badge -->
+                <div class="absolute top-3 left-0">
+                  <div
+                    class="bg-blue-1 rounded-r px-4 py-1 text-xs font-medium text-white uppercase"
+                  >
+                    Best Seller
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div>
+                <div class="text-light-1 mb-2 flex items-center text-sm">
+                  <span>Heathrow Airport</span>
+                  <span class="bg-light-1 mx-2 h-1 w-1 rounded-full"></span>
+                  <span class="uppercase">Suv</span>
+                </div>
+
+                <h4 class="text-dark-1 mb-2 text-lg leading-tight font-medium">
+                  Volvo XC90
+                  <span class="text-light-1 text-sm font-normal"
+                    >or similar</span
+                  >
+                </h4>
+
+                <!-- Car Features -->
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-user-2 mr-2"></span>
+                    <span>4</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-luggage mr-2"></span>
+                    <span>1</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-transmission mr-2"></span>
+                    <span>Automatic</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-speedometer mr-2"></span>
+                    <span>Unlimited</span>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex items-center gap-2">
+                  <div
+                    class="bg-yellow-1 text-dark-1 flex h-8 w-8 items-center justify-center rounded text-xs font-semibold"
+                  >
+                    4.8
+                  </div>
+                  <div class="text-dark-1 text-sm font-medium">Exceptional</div>
+                  <div class="text-light-1 text-sm">3,014 reviews</div>
+                </div>
+
+                <div class="text-light-1 mt-2">
+                  <span class="text-dark-1 font-medium">US$72</span> total
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Car Card 4 -->
+          <div class="swiper-slide transition-all duration-300">
+            <a href="car-single.html" class="group block">
+              <!-- Image -->
+              <div
+                class="relative mb-4 aspect-30/25 overflow-hidden rounded border border-gray-200"
+              >
+                <img
+                  src="src/images/cars/4.png"
+                  alt="Car"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                <!-- Wishlist Button -->
+                <button
+                  class="text-dark-1 hover:bg-blue-1 absolute top-3 right-3 z-10 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_10px_35px_rgba(5,16,54,0.10)] transition-colors hover:text-white"
+                >
+                  <span class="icon-heart text-xs"></span>
+                </button>
+              </div>
+
+              <!-- Content -->
+              <div>
+                <div class="text-light-1 mb-2 flex items-center text-sm">
+                  <span>Heathrow Airport</span>
+                  <span class="bg-light-1 mx-2 h-1 w-1 rounded-full"></span>
+                  <span class="uppercase">Luxury</span>
+                </div>
+
+                <h4 class="text-dark-1 mb-2 text-lg leading-tight font-medium">
+                  BMW 5 Series
+                  <span class="text-light-1 text-sm font-normal"
+                    >or similar</span
+                  >
+                </h4>
+
+                <!-- Car Features -->
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-user-2 mr-2"></span>
+                    <span>4</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-luggage mr-2"></span>
+                    <span>1</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-transmission mr-2"></span>
+                    <span>Automatic</span>
+                  </div>
+                  <div class="text-dark-1 flex items-center text-sm">
+                    <span class="icon-speedometer mr-2"></span>
+                    <span>Unlimited</span>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex items-center gap-2">
+                  <div
+                    class="bg-yellow-1 text-dark-1 flex h-8 w-8 items-center justify-center rounded text-xs font-semibold"
+                  >
+                    4.8
+                  </div>
+                  <div class="text-dark-1 text-sm font-medium">Exceptional</div>
+                  <div class="text-light-1 text-sm">3,014 reviews</div>
+                </div>
+
+                <div class="text-light-1 mt-2">
+                  <span class="text-dark-1 font-medium">US$72</span> total
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inline Navigation -->
+      <div class="mt-10 flex items-center justify-center space-x-4">
+        <button
+          class="slider-prev hover:text-blue-1 inline-flex size-7.5 cursor-pointer items-center justify-center text-2xl duration-300 hover:scale-125"
+          aria-label="Previous"
+        >
+          <i class="icon-arrow-left"></i>
+        </button>
+        <div class="slider-pagination inline-flex max-w-max"></div>
+        <button
+          class="slider-next hover:text-blue-1 inline-flex size-7.5 cursor-pointer items-center justify-center text-2xl duration-300 hover:scale-125"
+          aria-label="Next"
+        >
+          <i class="icon-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Top Destinations in UK -->
+        <section class="py-20 md:py-30">
+  <div class="container">
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 text-3xl font-semibold">Top Destinations in UK</h2>
+      <p class="text-light-1 mt-2">
+        These popular destinations have a lot to offer
+      </p>
+    </div>
+
+    <div class="xs:grid-cols-2 grid gap-7.5 md:grid-cols-3 xl:grid-cols-6">
+      <!-- 1 -->
+      <a
+        href="#"
+        class="group block text-center"
+        data-aos="fade"
+        data-aos-delay="100"
+      >
+        <div class="mx-auto size-40 overflow-hidden rounded-full">
+          <img
+            src="src/images/destinations/5/1.png"
+            class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            alt="London, UK"
+          />
+        </div>
+        <div class="mt-3">
+          <h4
+            class="group-hover:text-blue-1 text-dark-1 text-lg font-medium duration-300"
+          >
+            London, UK
+          </h4>
+          <div class="text-light-1 text-sm">From US$29.52 per day</div>
+        </div>
+      </a>
+      <!-- 2 -->
+      <a
+        href="#"
+        class="group block text-center"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+        <div class="mx-auto size-40 overflow-hidden rounded-full">
+          <img
+            src="src/images/destinations/5/2.png"
+            class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            alt="Edinburgh, UK"
+          />
+        </div>
+        <div class="mt-3">
+          <h4
+            class="group-hover:text-blue-1 text-dark-1 text-lg font-medium duration-300"
+          >
+            Edinburgh, UK
+          </h4>
+          <div class="text-light-1 text-sm">From US$29.52 per day</div>
+        </div>
+      </a>
+      <!-- 3 -->
+      <a
+        href="#"
+        class="group block text-center"
+        data-aos="fade"
+        data-aos-delay="300"
+      >
+        <div class="mx-auto size-40 overflow-hidden rounded-full">
+          <img
+            src="src/images/destinations/5/3.png"
+            class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            alt="Manchester, UK"
+          />
+        </div>
+        <div class="mt-3">
+          <h4
+            class="group-hover:text-blue-1 text-dark-1 text-lg font-medium duration-300"
+          >
+            Manchester, UK
+          </h4>
+          <div class="text-light-1 text-sm">From US$29.52 per day</div>
+        </div>
+      </a>
+      <!-- 4 -->
+      <a
+        href="#"
+        class="group block text-center"
+        data-aos="fade"
+        data-aos-delay="400"
+      >
+        <div class="mx-auto size-40 overflow-hidden rounded-full">
+          <img
+            src="src/images/destinations/5/4.png"
+            class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            alt="Liverpool, UK"
+          />
+        </div>
+        <div class="mt-3">
+          <h4
+            class="group-hover:text-blue-1 text-dark-1 text-lg font-medium duration-300"
+          >
+            Liverpool, UK
+          </h4>
+          <div class="text-light-1 text-sm">From US$29.52 per day</div>
+        </div>
+      </a>
+      <!-- 5 -->
+      <a
+        href="#"
+        class="group block text-center"
+        data-aos="fade"
+        data-aos-delay="500"
+      >
+        <div class="mx-auto size-40 overflow-hidden rounded-full">
+          <img
+            src="src/images/destinations/5/5.png"
+            class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            alt="Birmingham, UK"
+          />
+        </div>
+        <div class="mt-3">
+          <h4
+            class="group-hover:text-blue-1 text-dark-1 text-lg font-medium duration-300"
+          >
+            Birmingham, UK
+          </h4>
+          <div class="text-light-1 text-sm">From US$29.52 per day</div>
+        </div>
+      </a>
+      <!-- 6 -->
+      <a
+        href="#"
+        class="group block text-center"
+        data-aos="fade"
+        data-aos-delay="600"
+      >
+        <div class="mx-auto size-40 overflow-hidden rounded-full">
+          <img
+            src="src/images/destinations/5/6.png"
+            class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            alt="Glasgow, UK"
+          />
+        </div>
+        <div class="mt-3">
+          <h4
+            class="group-hover:text-blue-1 text-dark-1 text-lg font-medium duration-300"
+          >
+            Glasgow, UK
+          </h4>
+          <div class="text-light-1 text-sm">From US$29.52 per day</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Customer Reviews -->
+        <section class="bg-dark-1 relative py-20 lg:py-30">
+  <div class="container" x-data="testimonialsCarousel()">
+    <!-- Section Header -->
+    <div class="mb-10 text-center">
+      <h2 class="mb-3 text-3xl font-semibold text-white">
+        Overheard from travelers
+      </h2>
+      <p class="text-white">These popular destinations have a lot to offer</p>
+    </div>
+
+    <!-- Testimonials Swiper -->
+    <div class="relative mb-10" data-aos="fade-left" data-aos-delay="100">
+      <div class="swiper testimonials-swiper overflow-visible!">
+        <div class="swiper-wrapper">
+          <!-- Testimonial Card 1 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card xs:p-10 rounded bg-white p-5">
+              <h4 class="text-blue-1 mb-5 text-base font-medium">
+                Hotel Equatorial Melaka
+              </h4>
+              <p class="text-dark-1 mb-7 leading-relaxed font-medium">
+                "Our family was traveling via bullet train between cities in
+                Japan with our luggage - the location for this hotel made that
+                so easy. Agoda price was fantastic."
+              </p>
+
+              <div
+                class="flex items-center gap-5 border-t border-gray-200 pt-5"
+              >
+                <img
+                  src="src/images/avatars/1.png"
+                  alt="Courtney Henry"
+                  class="h-15 w-15 rounded-full"
+                />
+                <div>
+                  <div class="text-dark-1 text-sm font-medium">
+                    Courtney Henry
+                  </div>
+                  <div class="text-light-1 mt-1 text-sm">Web Designer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card xs:p-10 rounded bg-white p-5">
+              <h4 class="text-blue-1 mb-5 text-base font-medium">
+                Hotel Equatorial Melaka
+              </h4>
+              <p class="text-dark-1 mb-7 leading-relaxed font-medium">
+                "Our family was traveling via bullet train between cities in
+                Japan with our luggage - the location for this hotel made that
+                so easy. Agoda price was fantastic."
+              </p>
+
+              <div
+                class="flex items-center gap-5 border-t border-gray-200 pt-5"
+              >
+                <img
+                  src="src/images/avatars/1.png"
+                  alt="Courtney Henry"
+                  class="h-15 w-15 rounded-full"
+                />
+                <div>
+                  <div class="text-dark-1 text-sm font-medium">
+                    Courtney Henry
+                  </div>
+                  <div class="text-light-1 mt-1 text-sm">Web Designer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card xs:p-10 rounded bg-white p-5">
+              <h4 class="text-blue-1 mb-5 text-base font-medium">
+                Hotel Equatorial Melaka
+              </h4>
+              <p class="text-dark-1 mb-7 leading-relaxed font-medium">
+                "Our family was traveling via bullet train between cities in
+                Japan with our luggage - the location for this hotel made that
+                so easy. Agoda price was fantastic."
+              </p>
+
+              <div
+                class="flex items-center gap-5 border-t border-gray-200 pt-5"
+              >
+                <img
+                  src="src/images/avatars/1.png"
+                  alt="Courtney Henry"
+                  class="h-15 w-15 rounded-full"
+                />
+                <div>
+                  <div class="text-dark-1 text-sm font-medium">
+                    Courtney Henry
+                  </div>
+                  <div class="text-light-1 mt-1 text-sm">Web Designer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 4 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card xs:p-10 rounded bg-white p-5">
+              <h4 class="text-blue-1 mb-5 text-base font-medium">
+                Hotel Equatorial Melaka
+              </h4>
+              <p class="text-dark-1 mb-7 leading-relaxed font-medium">
+                "Our family was traveling via bullet train between cities in
+                Japan with our luggage - the location for this hotel made that
+                so easy. Agoda price was fantastic."
+              </p>
+
+              <div
+                class="flex items-center gap-5 border-t border-gray-200 pt-5"
+              >
+                <img
+                  src="src/images/avatars/1.png"
+                  alt="Courtney Henry"
+                  class="h-15 w-15 rounded-full"
+                />
+                <div>
+                  <div class="text-dark-1 text-sm font-medium">
+                    Courtney Henry
+                  </div>
+                  <div class="text-light-1 mt-1 text-sm">Web Designer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 5 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card xs:p-10 rounded bg-white p-5">
+              <h4 class="text-blue-1 mb-5 text-base font-medium">
+                Hotel Equatorial Melaka
+              </h4>
+              <p class="text-dark-1 mb-7 leading-relaxed font-medium">
+                "Our family was traveling via bullet train between cities in
+                Japan with our luggage - the location for this hotel made that
+                so easy. Agoda price was fantastic."
+              </p>
+
+              <div
+                class="flex items-center gap-5 border-t border-gray-200 pt-5"
+              >
+                <img
+                  src="src/images/avatars/1.png"
+                  alt="Courtney Henry"
+                  class="h-15 w-15 rounded-full"
+                />
+                <div>
+                  <div class="text-dark-1 text-sm font-medium">
+                    Courtney Henry
+                  </div>
+                  <div class="text-light-1 mt-1 text-sm">Web Designer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button
+        class="swiper-button-custom testimonials-prev hover:bg-blue-1 shadow-1 absolute top-1/2 left-0 z-10 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+      >
+        <span class="icon-chevron-left text-xs"></span>
+      </button>
+      <button
+        class="swiper-button-custom testimonials-next hover:bg-blue-1 shadow-1 absolute top-1/2 right-0 z-10 flex h-10 w-10 -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+      >
+        <span class="icon-chevron-right text-xs"></span>
+      </button>
+    </div>
+
+    <!-- Stats and Client Logos -->
+    <div
+      class="animate-fade-in grid grid-cols-1 items-center gap-8 pt-10 delay-6 sm:pt-5 xl:grid-cols-12"
+    >
+      <!-- Stats -->
+      <div class="xl:col-span-4">
+        <div
+          class="grid grid-cols-2 gap-8 text-white max-xl:justify-items-center"
+        >
+          <div>
+            <div class="text-3xl leading-tight font-semibold">13m+</div>
+            <div class="leading-tight">Happy People</div>
+          </div>
+          <div>
+            <div class="text-3xl leading-tight font-semibold">4.88</div>
+            <div class="mb-2.5 leading-tight">Overall rating</div>
+            <div class="flex items-center gap-1.5">
+              <span class="icon-star text-[10px] text-white"></span>
+              <span class="icon-star text-[10px] text-white"></span>
+              <span class="icon-star text-[10px] text-white"></span>
+              <span class="icon-star text-[10px] text-white"></span>
+              <span class="icon-star text-[10px] text-white"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client Logos -->
+      <div class="xl:col-span-8">
+        <div
+          class="grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-4"
+        >
+          <div class="flex justify-center">
+            <img
+              src="src/images/clients/1.svg"
+              alt="Client"
+              class="max-h-12 opacity-70 transition-opacity hover:opacity-100"
+            />
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="src/images/clients/2.svg"
+              alt="Client"
+              class="max-h-12 opacity-70 transition-opacity hover:opacity-100"
+            />
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="src/images/clients/3.svg"
+              alt="Client"
+              class="max-h-12 opacity-70 transition-opacity hover:opacity-100"
+            />
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="src/images/clients/4.svg"
+              alt="Client"
+              class="max-h-12 opacity-70 transition-opacity hover:opacity-100"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Platform stats/CTA block -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+      <div data-aos="fade-right" data-aos-delay="0">
+        <h2 class="text-dark-1 text-3xl font-semibold">
+          GoTrip is a World Leading Car Hire Booking Platform
+        </h2>
+        <p class="text-light-1 mt-10 text-base">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+        <div class="mt-8 inline-block">
+          <a
+            href="#"
+            class="bg-dark-1 text-15 hover:bg-blue-1 inline-flex h-12.5 items-center justify-center gap-3 rounded px-9 font-medium text-white duration-300"
+          >
+            Learn More
+            <i class="icon-arrow-top-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="shadow-2 w-full max-w-[520px] rounded lg:ml-auto"
+        data-aos="fade-left"
+        data-aos-delay="100"
+      >
+        <div class="divide-light-2 xs:grid-cols-2 grid divide-x divide-y">
+          <div class="py-15 text-center">
+            <div
+              class="text-dark-1 xs:text-40 text-3xl font-semibold"
+              data-count="4958"
+            >
+              4,958
+            </div>
+            <div class="text-light-1 text-15 mt-2">Destinations</div>
+          </div>
+          <div class="py-15 text-center">
+            <div
+              class="text-dark-1 xs:text-40 text-3xl font-semibold"
+              data-count="2869"
+            >
+              2,869
+            </div>
+            <div class="text-light-1 text-15 mt-2">Total Properties</div>
+          </div>
+          <div class="py-15 text-center">
+            <div
+              class="text-dark-1 xs:text-40 text-3xl font-semibold"
+              data-count="2000000"
+            >
+              2M
+            </div>
+            <div class="text-light-1 text-15 mt-2">Happy customers</div>
+          </div>
+          <div class="py-15 text-center">
+            <div
+              class="text-dark-1 xs:text-40 text-3xl font-semibold"
+              data-count="574974"
+            >
+              574,974
+            </div>
+            <div class="text-light-1 text-15 mt-2">Our Volunteers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog: Get inspiration for your next trip -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <div
+      class="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+    >
+      <div>
+        <h2 class="text-dark-1 text-3xl font-semibold">
+          Get inspiration for your next trip
+        </h2>
+        <p class="text-light-1 mt-2">Interdum et malesuada fames</p>
+      </div>
+
+      <div>
+        <a
+          href="#"
+          class="text-blue-1 hover:bg-blue-1 inline-flex h-12.5 items-center gap-3 rounded bg-blue-50 px-7.5 font-medium duration-300 hover:text-white"
+        >
+          More
+          <i class="icon-arrow-top-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-7.5 lg:grid-cols-3">
+      <!-- Left: two large blog cards -->
+      <div
+        class="grid gap-7.5 md:grid-cols-2 lg:col-span-2"
+        data-aos="fade"
+        data-aos-delay="0"
+      >
+        <a href="blog-single.html" class="group block">
+          <div class="bg-light-2 aspect-[4/3] overflow-hidden rounded">
+            <img
+              src="src/images/blog/1.png"
+              alt="image"
+              class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <div class="mt-5">
+            <h4
+              class="text-dark-1 group-hover:text-blue-1 text-lg font-medium duration-300"
+            >
+              10 European ski destinations you should visit this winter
+            </h4>
+            <div class="text-light-1 text-15 mt-1.5">April 06, 2026</div>
+          </div>
+        </a>
+
+        <a
+          href="blog-single.html"
+          class="group block"
+          data-aos="fade"
+          data-aos-delay="100"
+        >
+          <div class="bg-light-2 aspect-[4/3] overflow-hidden rounded">
+            <img
+              src="src/images/blog/2.png"
+              alt="image"
+              class="h-full w-full object-cover duration-300 group-hover:scale-110"
+            />
+          </div>
+
+          <div class="mt-5">
+            <h4
+              class="text-dark-1 group-hover:text-blue-1 text-lg font-medium duration-300"
+            >
+              Booking travel during Corona: good advice in an uncertain time
+            </h4>
+            <div class="text-light-1 text-15 mt-1.5">April 06, 2026</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Right: three compact posts -->
+      <div class="lg:col-span-1">
+        <div class="grid grid-cols-12 gap-8">
+          <a
+            href="blog-single.html"
+            class="group col-span-12 flex items-center gap-6 md:col-span-6 lg:col-span-12"
+            data-aos="fade"
+            data-aos-delay="200"
+          >
+            <div
+              class="h-[130px] w-[130px] flex-shrink-0 overflow-hidden rounded"
+            >
+              <img
+                src="src/images/blog/1.png"
+                class="h-full w-full object-cover duration-300 group-hover:scale-110"
+                alt="image"
+              />
+            </div>
+            <div>
+              <h4
+                class="text-dark-1 group-hover:text-blue-1 text-lg font-medium duration-300"
+              >
+                The world’s most romantic destinations
+              </h4>
+              <p class="text-15 mt-1">December 16, 2026</p>
+            </div>
+          </a>
+
+          <a
+            href="blog-single.html"
+            class="group col-span-12 flex items-center gap-6 md:col-span-6 lg:col-span-12"
+            data-aos="fade"
+            data-aos-delay="300"
+          >
+            <div
+              class="h-[130px] w-[130px] flex-shrink-0 overflow-hidden rounded"
+            >
+              <img
+                src="src/images/blog/1.png"
+                class="h-full w-full object-cover duration-300 group-hover:scale-110"
+                alt="image"
+              />
+            </div>
+            <div>
+              <h4
+                class="text-dark-1 group-hover:text-blue-1 text-lg font-medium duration-300"
+              >
+                The world’s most romantic destinations
+              </h4>
+              <p class="text-15 mt-1">December 16, 2026</p>
+            </div>
+          </a>
+
+          <a
+            href="blog-single.html"
+            class="group col-span-12 flex items-center gap-6 md:col-span-6 lg:col-span-12"
+            data-aos="fade"
+            data-aos-delay="300"
+          >
+            <div
+              class="h-[130px] w-[130px] flex-shrink-0 overflow-hidden rounded"
+            >
+              <img
+                src="src/images/blog/1.png"
+                class="h-full w-full object-cover duration-300 group-hover:scale-110"
+                alt="image"
+              />
+            </div>
+            <div>
+              <h4
+                class="text-dark-1 group-hover:text-blue-1 text-lg font-medium duration-300"
+              >
+                The world’s most romantic destinations
+              </h4>
+              <p class="text-15 mt-1">December 16, 2026</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Download the App -->
+        <section class="px-4 pt-20 md:pt-30">
+  <div class="bg-yellow-1 mx-auto w-full max-w-[1500px] py-15 md:py-20">
+    <div class="container">
+      <div class="flex items-center justify-between gap-7.5 max-lg:flex-wrap">
+        <div
+          class="w-full lg:w-6/12 xl:w-5/12"
+          data-aos="fade-left"
+          data-aos-delay="100"
+        >
+          <h2 class="text-dark-1 text-3xl font-semibold">Download the App</h2>
+          <p class="text-dark-1 mt-4 lg:pr-10">
+            Book in advance or last-minute with GoTrip. Receive instant
+            confirmation. Access your booking info offline.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-7.5 pt-2.5 sm:pt-7.5">
+            <a
+              href="#"
+              class="bg-dark-1 hover:bg-blue-1 flex h-15 items-center gap-5 rounded-lg px-5 py-2 text-white duration-300"
+            >
+              <i class="icon-apple text-2xl"></i>
+              <span>
+                <span class="block text-sm">Download on the</span>
+                <span class="text-15 font-medium">Apple Store</span>
+              </span>
+            </a>
+
+            <a
+              href="#"
+              class="bg-dark-1 hover:bg-blue-1 flex h-15 items-center gap-5 rounded-lg px-5 py-2 text-white duration-300"
+            >
+              <i class="icon-play-market text-2xl"></i>
+              <span>
+                <span class="block text-sm">Get in on</span>
+                <span class="text-15 font-medium">Google Play</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="w-full lg:w-6/12"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          <img src="src/images/app/1.png" alt="image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Frequently Asked Questions -->
+        <section class="py-20 md:py-30">
+  <div class="container">
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 text-3xl font-semibold">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-light-1 mt-2">Interdum et malesuada fames</p>
+    </div>
+
+    <div
+      class="mx-auto mt-10 max-w-[850px]"
+      x-data="accordion()"
+      data-aos="fade-up"
+    >
+      <!-- item 1 -->
+      <div class="border-border mb-5 rounded border p-5">
+        <button
+          class="flex w-full items-center gap-4 text-left font-medium"
+          @click="toggle(0)"
+          :aria-expanded="open === 0"
+        >
+          <span
+            class="grid size-10 place-items-center rounded-full text-xs"
+            :class="open === 0 ? 'bg-dark-1 text-white' : 'bg-light-2 text-dark-1'"
+          >
+            <i class="icon-plus" x-show="open !== 0"></i>
+            <i class="icon-minus" x-show="open === 0"></i>
+          </span>
+          <span class="text-dark-1"> What do I need to hire a car? </span>
+        </button>
+        <div
+          x-show="open === 0"
+          x-collapse
+          class="text-15 text-light-1 pt-4 pl-14"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </div>
+      </div>
+      <!-- item 2 -->
+      <div class="border-border mb-5 rounded border p-5">
+        <button
+          class="flex w-full items-center gap-4 text-left font-medium"
+          @click="toggle(1)"
+          :aria-expanded="open === 1"
+        >
+          <span
+            class="grid size-10 place-items-center rounded-full text-xs"
+            :class="open === 1 ? 'bg-dark-1 text-white' : 'bg-light-2 text-dark-1'"
+          >
+            <i class="icon-plus" x-show="open !== 1"></i>
+            <i class="icon-minus" x-show="open === 1"></i>
+          </span>
+          <span class="text-dark-1">
+            How old do I have to be to rent a car?
+          </span>
+        </button>
+        <div
+          x-show="open === 1"
+          x-collapse
+          class="text-15 text-light-1 pt-4 pl-14"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </div>
+      </div>
+      <!-- item 3 -->
+      <div class="border-border mb-5 rounded border p-5">
+        <button
+          class="flex w-full items-center gap-4 text-left font-medium"
+          @click="toggle(2)"
+          :aria-expanded="open === 2"
+        >
+          <span
+            class="grid size-10 place-items-center rounded-full text-xs"
+            :class="open === 2 ? 'bg-dark-1 text-white' : 'bg-light-2 text-dark-1'"
+          >
+            <i class="icon-plus" x-show="open !== 2"></i>
+            <i class="icon-minus" x-show="open === 2"></i>
+          </span>
+          <span class="text-dark-1">
+            Can I book a hire car for someone else?
+          </span>
+        </button>
+        <div
+          x-show="open === 2"
+          x-collapse
+          class="text-15 text-light-1 pt-4 pl-14"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </div>
+      </div>
+      <!-- item 4 -->
+      <div class="border-border mb-5 rounded border p-5">
+        <button
+          class="flex w-full items-center gap-4 text-left font-medium"
+          @click="toggle(3)"
+          :aria-expanded="open === 3"
+        >
+          <span
+            class="grid size-10 place-items-center rounded-full text-xs"
+            :class="open === 3 ? 'bg-dark-1 text-white' : 'bg-light-2 text-dark-1'"
+          >
+            <i class="icon-plus" x-show="open !== 3"></i>
+            <i class="icon-minus" x-show="open === 3"></i>
+          </span>
+          <span class="text-dark-1">
+            How do I find the cheapest car hire deal?
+          </span>
+        </button>
+        <div
+          x-show="open === 3"
+          x-collapse
+          class="text-15 text-light-1 pt-4 pl-14"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </div>
+      </div>
+      <!-- item 5 -->
+      <div class="border-border rounded border p-5">
+        <button
+          class="flex w-full items-center gap-4 text-left font-medium"
+          @click="toggle(4)"
+          :aria-expanded="open === 4"
+        >
+          <span
+            class="grid size-10 place-items-center rounded-full text-xs"
+            :class="open === 4 ? 'bg-dark-1 text-white' : 'bg-light-2 text-dark-1'"
+          >
+            <i class="icon-plus" x-show="open !== 4"></i>
+            <i class="icon-minus" x-show="open === 4"></i>
+          </span>
+          <span class="text-dark-1">
+            What should I look for when I'm choosing a car?
+          </span>
+        </button>
+        <div
+          x-show="open === 4"
+          x-collapse
+          class="text-15 text-light-1 pt-4 pl-14"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+        <footer class="bg-dark-1 text-white">
+  <div class="mx-auto max-w-7xl px-4 py-16">
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-4">
+      <div data-aos="fade-right" data-aos-delay="100">
+        <h5 class="mb-6 text-base font-medium">Contact Us</h5>
+        <div class="mt-4">
+          <div class="text-sm">Toll Free Customer Care</div>
+          <a href="#" class="mt-1 block text-lg font-medium"
+            >+(1) 123 456 7890</a
+          >
+        </div>
+        <div class="mt-7">
+          <div class="text-sm">Need live support?</div>
+          <a href="#" class="mt-1 block text-lg font-medium">hi@gotrip.com</a>
+        </div>
+      </div>
+
+      <div data-aos="fade-right" data-aos-delay="200">
+        <h5 class="mb-6 text-base font-medium">Company</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="#" class="hover:underline">About Us</a></li>
+          <li><a href="#" class="hover:underline">Careers</a></li>
+          <li><a href="#" class="hover:underline">Blog</a></li>
+          <li><a href="#" class="hover:underline">Press</a></li>
+          <li><a href="#" class="hover:underline">Gift Cards</a></li>
+          <li><a href="#" class="hover:underline">Magazine</a></li>
+        </ul>
+      </div>
+
+      <div data-aos="fade-right" data-aos-delay="300">
+        <h5 class="mb-6 text-base font-medium">Support</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="#" class="hover:underline">Contact</a></li>
+          <li><a href="#" class="hover:underline">Legal Notice</a></li>
+          <li>
+            <a href="#" class="hover:underline">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#" class="hover:underline">Terms and Conditions</a>
+          </li>
+          <li><a href="#" class="hover:underline">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div data-aos="fade-right" data-aos-delay="400">
+        <h5 class="mb-6 text-base font-medium">Other Services</h5>
+        <ul class="space-y-2 text-white/90">
+          <li><a href="#" class="hover:underline">Car hire</a></li>
+          <li>
+            <a href="#" class="hover:underline">Activity Finder</a>
+          </li>
+          <li><a href="#" class="hover:underline">Tour List</a></li>
+          <li><a href="#" class="hover:underline">Flight finder</a></li>
+          <li><a href="#" class="hover:underline">Cruise Ticket</a></li>
+          <li>
+            <a href="#" class="hover:underline">Holiday Rental</a>
+          </li>
+          <li><a href="#" class="hover:underline">Travel Agents</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-10 grid grid-cols-1 items-center gap-6 border-t border-white/15 pt-5 md:grid-cols-2"
+      data-aos="fade-right"
+      data-aos-delay="500"
+    >
+      <div class="flex flex-wrap items-center gap-6 text-white/90">
+        <div>© 2026 GoTrip LLC All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+          <a href="#" class="hover:underline">Site Map</a>
+        </div>
+      </div>
+      <div
+        class="flex flex-wrap items-center justify-start gap-6 md:justify-end"
+      >
+        <div class="flex items-center gap-6">
+          <button class="inline-flex items-center gap-2">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm.75 18.45V3.55a8.5 8.5 0 0 1 0 16.9ZM11.25 3.55v16.9a8.5 8.5 0 0 1 0-16.9Z"
+              />
+            </svg>
+            <span class="underline">English (US)</span>
+          </button>
+          <button class="inline-flex items-center gap-2">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 21.75A9.75 9.75 0 1 1 21.75 12 9.76 9.76 0 0 1 12 21.75Zm0-16.5a6.75 6.75 0 1 0 6.75 6.75A6.758 6.758 0 0 0 12 5.25Z"
+              />
+            </svg>
+            <span class="underline">USD</span>
+          </button>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="#" aria-label="Facebook">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13 20v-6h2.5l.5-3H13V9.5c0-.87.24-1.46 1.5-1.46H16V5.11C15.29 5.04 14.58 5 13.87 5 11.63 5 10 6.39 10 9.2V11H7.5v3H10v6h3Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22 5.92c-.75.33-1.55.55-2.39.65a4.12 4.12 0 0 0 1.8-2.27 8.19 8.19 0 0 1-2.6 1 4.09 4.09 0 0 0-7 3.73 11.62 11.62 0 0 1-8.43-4.27 4.08 4.08 0 0 0 1.27 5.46 4.08 4.08 0 0 1-1.85-.51v.05a4.09 4.09 0 0 0 3.28 4 4.1 4.1 0 0 1-1.84.07 4.09 4.09 0 0 0 3.82 2.84A8.22 8.22 0 0 1 2 18.58a11.6 11.6 0 0 0 6.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22 5.92Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Zm6.5-.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm-6.5 2a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M6.94 8.66H4.3V20h2.63V8.66ZM5.6 3.5a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28ZM12.02 8.66H9.47V20h2.55v-5.99c0-1.58.3-3.11 2.27-3.11 1.94 0 1.96 1.82 1.96 3.2V20h2.54v-6.72c0-3.28-.71-5.82-4.49-5.82-1.83 0-3.06.95-3.58 1.86h-.03V8.66Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</main>
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+  <script defer src="bundle.js"></script></body>
+
+<!-- Mirrored from gotrip-tailwind-template.vercel.app/home-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:43:41 GMT -->
+</html>

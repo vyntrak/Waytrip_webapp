@@ -1,0 +1,3671 @@
+<!doctype html>
+<html lang="en">
+  
+<!-- Mirrored from gotrip-tailwind-template.vercel.app/home-9.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:43:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GoTrip - Travel Booking Made Easy</title>
+  <link rel="icon" href="favicon.png"><link href="style.css" rel="stylesheet"></head>
+  <body x-data="{'loaded': true}">
+    <!-- ===== Preloader Start ===== -->
+    <!-- no-JS: if JavaScript is disabled, don't block the page -->
+<noscript>
+  <style>
+    #gt-preloader {
+      display: none !important;
+    }
+  </style>
+</noscript>
+
+<!-- Preloader overlay -->
+<div
+  id="gt-preloader"
+  class="js-preloader fixed inset-0 z-5000 flex flex-col items-center justify-center bg-white transition-opacity duration-500"
+  role="status"
+  aria-live="polite"
+  aria-label="Loading"
+  x-show="loaded"
+  x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
+>
+  <!-- Wrapper (72x72, rounded 30px, soft shadow) -->
+  <div
+    class="animate-gt-wrap relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-[30px] bg-white shadow-[0_2px_24px_rgba(0,0,0,0.08)]"
+  >
+    <!-- Icon moves vertically and scales/rotates similar to original -->
+    <div class="animate-gt-icon absolute">
+      <svg
+        class="h-[37px] w-[38px] text-blue-600"
+        width="38"
+        height="37"
+        viewBox="0 0 38 37"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g clip-path="url(#clip0_1_41)">
+          <path
+            d="M32.9675 13.9422C32.9675 6.25436 26.7129 0 19.0251 0C11.3372 0 5.08289 6.25436 5.08289 13.9422C5.08289 17.1322 7.32025 21.6568 11.7327 27.3906C13.0538 29.1071 14.3656 30.6662 15.4621 31.9166V35.8212C15.4621 36.4279 15.9539 36.92 16.561 36.92H21.4895C22.0965 36.92 22.5883 36.4279 22.5883 35.8212V31.9166C23.6849 30.6662 24.9966 29.1071 26.3177 27.3906C30.7302 21.6568 32.9675 17.1322 32.9675 13.9422V13.9422ZM30.7699 13.9422C30.7699 16.9956 27.9286 21.6204 24.8175 25.7245H23.4375C25.1039 20.7174 25.9484 16.7575 25.9484 13.9422C25.9484 10.3587 25.3079 6.97207 24.1445 4.40684C23.9229 3.91841 3.6857 3.46886 23.4347 3.05761C27.732 4.80457 30.7699 9.02494 30.7699 13.9422ZM20.3906 34.7224H17.6598V32.5991H20.3906V34.7224ZM21.0007 30.4014H17.0587C16.4167 29.6679 15.7024 28.8305 14.9602 27.9224H16.1398C16.1429 27.9224 16.146 27.9227 16.1489 27.9227C16.152 27.9227 23.0902 27.9224 23.0902 27.9224C22.3725 28.8049 21.6658 29.6398 21.0007 30.4014ZM19.0251 2.19765C20.1084 2.19765 21.2447 3.33365 22.1429 5.3144C23.1798 7.60078 23.7508 10.6649 23.7508 13.9422C23.7508 16.6099 22.8415 20.6748 21.1185 25.7245H16.9322C15.2086 20.6743 14.2994 16.6108 14.2994 13.9422C14.2994 10.6649 14.8706 7.60078 15.9075 5.3144C16.8057 3.33365 17.942 2.19765 19.0251 2.19765V2.19765ZM7.28053 13.9422C7.28053 9.02494 10.3184 4.80457 14.6157 3.05761C14.3647 3.46886 14.1273 3.91841 13.9059 4.40684C12.7425 6.97207 12.102 10.3587 12.102 13.9422C12.102 16.7584 12.9462 20.7176 14.6126 25.7245H13.2259C9.33565 20.6126 7.28053 16.5429 7.28053 13.9422Z"
+            fill="currentColor"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_41">
+            <rect
+              width="36.92"
+              height="36.92"
+              fill="white"
+              transform="translate(0.540039)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div
+    class="mt-4 text-4xl leading-[68px] font-semibold text-slate-800 dark:text-slate-100"
+  >
+    GoTrip
+  </div>
+
+  <!-- Screen reader text -->
+  <span class="sr-only">Loading, please wait…</span>
+</div>
+
+<!-- Minimal CSS to support the hide transition and custom keyframes -->
+<style>
+  .js-preloader.-is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  @keyframes gtWrap {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes gtIcon {
+    0% {
+      transform: translateY(150%) scale(1);
+    }
+    50% {
+      transform: translateY(0%) scale(1.2) rotate(20deg);
+    }
+    100% {
+      transform: translateY(-150%) rotate(-20deg);
+    }
+  }
+  .animate-gt-wrap {
+    animation: gtWrap 1.8s ease infinite;
+  }
+  .animate-gt-icon {
+    animation: gtIcon 1.8s ease infinite;
+  }
+</style>
+<!-- ===== Preloader End ===== -->
+
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="flex min-h-screen flex-col justify-between overflow-hidden">
+      <!-- Dark Navbar -->
+<section class="z-20 bg-blue-600 py-4">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="flex items-center justify-between">
+      <!-- Left: contact info -->
+      <div class="flex items-center space-x-4">
+        <div class="hidden text-sm text-white md:block">+(1) 123 456 7890</div>
+        <div class="hidden h-5 w-px bg-white/30 md:block"></div>
+        <div class="text-sm text-white">hi@gotrip.com</div>
+      </div>
+
+      <!-- Right: controls -->
+      <div class="flex items-center space-x-4 text-white">
+        <div class="flex items-center space-x-4">
+          <!-- Currency -->
+          <button
+            class="flex items-center text-sm text-white hover:opacity-90 focus:outline-none"
+            aria-label="Open currency selector"
+          >
+            <span class="mr-2">USD</span>
+            <i class="icon-chevron-sm-down text-[8px]"></i>
+          </button>
+
+          <div class="hidden h-5 w-px bg-white/30 xl:block"></div>
+
+          <!-- Language -->
+          <button
+            class="flex items-center text-sm text-white hover:opacity-90 focus:outline-none"
+            aria-label="Open language selector"
+          >
+            <img
+              src="src/images/general/lang.png"
+              alt="lang"
+              class="mr-2 h-6 w-6 rounded-full"
+            />
+            <span class="hidden sm:inline">United Kingdom</span>
+            <i class="icon-chevron-sm-down text-[8px]"></i>
+          </button>
+        </div>
+
+        <div class="hidden h-5 w-px bg-white/30 md:block"></div>
+
+        <div class="hidden items-center space-x-4 md:flex">
+          <a
+            href="404-2.html"
+            class="text-sm text-white hover:underline"
+          >
+            Become An Expert
+          </a>
+          <div class="h-5 w-px bg-white/30"></div>
+          <a href="login.html" class="text-sm text-white hover:underline">
+            Sign In / Register
+          </a>
+        </div>
+
+        <!-- Small-screen fallback actions -->
+        <div class="flex items-center space-x-2 md:hidden">
+          <a href="#" class="text-sm text-white">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<header
+  x-data="navbar()"
+  :class="isSticky ? 'fixed' : ''"
+  class="bg-dark-1 inset-x-0 top-0 z-50"
+>
+  <div class="container">
+    <div class="flex h-20 items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="index.html" class="mr-5 flex min-w-[140px] items-center">
+          <img
+            src="src/images/general/logo-light.svg"
+            alt="logo"
+            class="w-[140px]"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="flex items-center justify-end gap-5">
+        <!-- Desktop Navigation -->
+        <nav class="hidden xl:flex">
+          <ul class="flex items-center gap-6 text-white">
+            <!-- Home dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['index.html','home-2.html','home-3.html','home-4.html','home-5.html','home-6.html','home-7.html','home-8.html','home-9.html','home-10.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Home</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="text-dark-1 absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === 'index.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="index.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 1
+                </a>
+                <a
+                  :class="currentPage === 'home-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-2.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 2
+                </a>
+                <a
+                  :class="currentPage === 'home-3.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-3.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 3
+                </a>
+                <a
+                  :class="currentPage === 'home-4.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-4.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 4
+                </a>
+                <a
+                  :class="currentPage === 'home-5.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-5.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 5
+                </a>
+                <a
+                  :class="currentPage === 'home-6.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-6.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 6
+                </a>
+                <a
+                  :class="currentPage === 'home-7.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-7.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 7
+                </a>
+                <a
+                  :class="currentPage === 'home-8.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-8.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 8
+                </a>
+                <a
+                  :class="currentPage === 'home-9.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-9.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 9
+                </a>
+                <a
+                  :class="currentPage === 'home-10.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="home-10.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Home 10
+                </a>
+              </div>
+            </li>
+
+            <!-- Categories mega menu -->
+            <li
+              class="relative"
+              x-data="megaMenu()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button class="hover:text-blue-1 flex items-center py-8">
+                <span class="mr-2">Categories</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+
+              <!-- Mega menu dropdown -->
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="absolute top-full left-0 mt-0 w-[900px] max-w-[90vw] rounded bg-white p-6 shadow-xl"
+              >
+                <!-- Tabs -->
+                <div
+                  class="border-border mb-6 flex flex-wrap gap-10 border-b-2 pb-6"
+                >
+                  <button
+                    @click="activeTab='hotel'"
+                    :class="activeTab==='hotel'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Hotel
+                  </button>
+                  <button
+                    @click="activeTab='tour'"
+                    :class="activeTab==='tour'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Tour
+                  </button>
+                  <button
+                    @click="activeTab='activity'"
+                    :class="activeTab==='activity'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Activity
+                  </button>
+                  <button
+                    @click="activeTab='rental'"
+                    :class="activeTab==='rental'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Holiday Rentals
+                  </button>
+                  <button
+                    @click="activeTab='car'"
+                    :class="activeTab==='car'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Car
+                  </button>
+                  <button
+                    @click="activeTab='cruise'"
+                    :class="activeTab==='cruise'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Cruise
+                  </button>
+                  <button
+                    @click="activeTab='flights'"
+                    :class="activeTab==='flights'?'text-dark-1 border-b-2 border-blue-1 -mb-6 pb-6':'text-light-1'"
+                    class="hover:text-blue-1 text-sm font-medium"
+                  >
+                    Flights
+                  </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="flex gap-8">
+                  <!-- Links section -->
+                  <div class="text-dark-1 flex-1">
+                    <!-- Hotel tab -->
+                    <div x-show="activeTab==='hotel'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Hotel List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-list-1.html"
+                            >
+                              Hotel List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-list-2.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-list-2.html"
+                            >
+                              Hotel List v2
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-half-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-half-map.html"
+                            >
+                              Hotel List v3
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-grid-1.html"
+                            >
+                              Hotel List v4
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-grid-2.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-grid-2.html"
+                            >
+                              Hotel List v5
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Hotel Single</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-single-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-single-1.html"
+                            >
+                              Hotel Single v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'hotel-single-2.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="hotel-single-2.html"
+                            >
+                              Hotel Single v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Hotel Booking</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'booking-pages.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="booking-pages.html"
+                            >
+                              Booking Page
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tour tab -->
+                    <div x-show="activeTab==='tour'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Tour List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-list-1.html"
+                            >
+                              Tour List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-grid-1.html"
+                            >
+                              Tour List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Tour Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-map.html"
+                            >
+                              Tour Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'tour-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="tour-single.html"
+                            >
+                              Tour Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Activity tab -->
+                    <div x-show="activeTab==='activity'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Activity List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-list-1.html"
+                            >
+                              Activity List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-grid-1.html"
+                            >
+                              Activity List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">
+                            Activity Pages
+                          </div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-map.html"
+                            >
+                              Activity Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'activity-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="activity-single.html"
+                            >
+                              Activity Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Rental tab -->
+                    <div x-show="activeTab==='rental'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Rental List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-list-1.html"
+                            >
+                              Rental List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-grid-1.html"
+                            >
+                              Rental List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Rental Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-map.html"
+                            >
+                              Rental Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'rental-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="rental-single.html"
+                            >
+                              Rental Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Car tab -->
+                    <div x-show="activeTab==='car'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Car List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-list-1.html"
+                            >
+                              Car List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-grid-1.html"
+                            >
+                              Car List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Car Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-map.html"
+                            >
+                              Car Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'car-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="car-single.html"
+                            >
+                              Car Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cruise tab -->
+                    <div x-show="activeTab==='cruise'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Cruise List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-list-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-list-1.html"
+                            >
+                              Cruise List v1
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-grid-1.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-grid-1.html"
+                            >
+                              Cruise List v2
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="text-sm font-semibold">Cruise Pages</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-map.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-map.html"
+                            >
+                              Cruise Map
+                            </a>
+                            <a
+                              class="block"
+                              :class="currentPage === 'cruise-single.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="cruise-single.html"
+                            >
+                              Cruise Single
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Flights tab -->
+                    <div x-show="activeTab==='flights'">
+                      <div class="grid grid-cols-3 gap-5">
+                        <div>
+                          <div class="text-sm font-semibold">Flight List</div>
+                          <div class="mt-3 space-y-3">
+                            <a
+                              class="block"
+                              :class="currentPage === 'flights-list.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                              href="flights-list.html"
+                            >
+                              Flight list v1
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Promo Image -->
+                  <div class="relative w-64 overflow-hidden rounded">
+                    <img
+                      src="src/images/backgrounds/7.png"
+                      alt="image"
+                      class="h-full w-full object-cover"
+                    />
+                    <div class="absolute inset-0 flex flex-col justify-end p-6">
+                      <div
+                        class="mb-4 text-xl leading-tight font-medium text-white"
+                      >
+                        Things to do on <br />
+                        your trip
+                      </div>
+                      <button
+                        class="text-dark-1 inline-flex h-12 items-center justify-center rounded bg-white px-8 font-medium hover:bg-gray-50"
+                      >
+                        Experinces
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Destinations link -->
+            <li>
+              <a
+                :class="currentPage === 'destinations.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                href="destinations.html"
+                class="block py-8"
+              >
+                Destinations
+              </a>
+            </li>
+
+            <!-- Blog dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['blog-list-1.html','blog-list-2.html','blog-single.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Blog</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="text-dark-1 absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === 'blog-list-1.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="blog-list-1.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Blog list v1
+                </a>
+                <a
+                  :class="currentPage === 'blog-list-2.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="blog-list-2.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Blog list v2
+                </a>
+                <a
+                  :class="currentPage === 'blog-single.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="blog-single.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Blog single
+                </a>
+              </div>
+            </li>
+
+            <!-- Pages dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['404.html','about.html','become-expert.html','help-center.html','login.html','signup.html','terms.html','invoice.html','ui-elements.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Pages</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="text-dark-1 absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === '404.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="404.html"
+                  class="block rounded px-5 py-2"
+                >
+                  404
+                </a>
+                <a
+                  :class="currentPage === 'about.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="about.html"
+                  class="block rounded px-5 py-2"
+                >
+                  About
+                </a>
+                <a
+                  :class="currentPage === 'become-expert.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="become-expert.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Become expert
+                </a>
+                <a
+                  :class="currentPage === 'help-center.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="help-center.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Help center
+                </a>
+                <a
+                  :class="currentPage === 'login.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="login.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Login
+                </a>
+                <a
+                  :class="currentPage === 'signup.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="signup.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Register
+                </a>
+                <a
+                  :class="currentPage === 'terms.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="terms.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Terms
+                </a>
+                <a
+                  :class="currentPage === 'invoice.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="invoice.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Invoice
+                </a>
+                <a
+                  :class="currentPage === 'ui-elements.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="ui-elements.html"
+                  class="block rounded px-5 py-2"
+                >
+                  UI elements
+                </a>
+              </div>
+            </li>
+
+            <!-- Dashboard dropdown -->
+            <li
+              class="relative"
+              x-data="dropdown()"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+            >
+              <button
+                class="flex items-center py-8"
+                :class="['db-dashboard.html','db-booking.html','db-settings.html','db-wishlist.html','db-vendor-dashboard.html','db-vendor-add-hotel.html','db-vendor-booking.html','db-vendor-hotels.html','db-vendor-recovery.html'].includes(currentPage) ? 'text-blue-1' : 'hover:text-blue-1'"
+              >
+                <span class="mr-2">Dashboard</span>
+                <span :class="open?'rotate-180':''">
+                  <i class="icon-chevron-sm-down text-[8px]"></i>
+                </span>
+              </button>
+              <div
+                x-cloak
+                x-show="open"
+                @click.outside="close"
+                x-transition
+                class="text-dark-1 absolute top-full left-0 mt-0 w-55 rounded bg-white p-2.5 text-sm shadow-xl"
+              >
+                <a
+                  :class="currentPage === 'db-dashboard.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-dashboard.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Dashboard
+                </a>
+                <a
+                  :class="currentPage === 'db-booking.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-booking.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Booking
+                </a>
+                <a
+                  :class="currentPage === 'db-settings.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-settings.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Settings
+                </a>
+                <a
+                  :class="currentPage === 'db-wishlist.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-wishlist.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Wishlist
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-dashboard.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-dashboard.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor dashboard
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-add-hotel.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-add-hotel.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor add hotel
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-booking.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-booking.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor booking
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-hotels.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-hotels.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor hotels
+                </a>
+                <a
+                  :class="currentPage === 'db-vendor-recovery.html' ? 'bg-blue-1/5 text-blue-1' : 'hover:text-blue-1 hover:bg-blue-1/5'"
+                  href="db-vendor-recovery.html"
+                  class="block rounded px-5 py-2"
+                >
+                  Vendor recovery
+                </a>
+              </div>
+            </li>
+
+            <!-- Contact link -->
+            <li>
+              <a
+                :class="currentPage === 'contact.html' ? 'text-blue-1' : 'hover:text-blue-1'"
+                href="contact.html"
+                class="block py-8"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Right cluster: Search + Mobile Icons -->
+        <div class="flex items-center">
+          <!-- Search (desktop only) -->
+          <button
+            @click="toggleSearch()"
+            class="hover:text-blue-1 mr-6 hidden items-center justify-center text-white transition-colors md:flex"
+            aria-label="Search"
+          >
+            <i class="icon-search text-xl"></i>
+          </button>
+
+          <!-- Mobile Icons -->
+          <div class="flex items-center space-x-6 text-white xl:hidden">
+            <a
+              href="login.html"
+              class="hover:text-blue-1 transition-colors"
+              aria-label="User"
+            >
+              <i class="icon-user text-xl"></i>
+            </a>
+            <button
+              @click="mobileOpen = !mobileOpen"
+              class="hover:text-blue-1 transition-colors"
+              aria-label="Menu"
+            >
+              <i class="icon-menu text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div
+    x-show="searchOpen"
+    x-cloak
+    @keydown.escape.window="searchOpen=false"
+    class="fixed inset-0 z-50 flex items-start justify-center bg-black/70 pt-32 backdrop-blur-sm"
+  >
+    <div
+      @click.outside="searchOpen=false"
+      class="bg-dark-2 shadow-custom mx-4 w-full max-w-2xl rounded p-6"
+    >
+      <div class="mb-4 flex items-center gap-5">
+        <i class="icon-search text-xl text-white"></i>
+        <input
+          type="text"
+          placeholder="Search..."
+          class="placeholder-light-1 flex-1 bg-transparent text-sm text-white outline-none"
+        />
+        <button
+          @click="searchOpen=false"
+          class="text-light-1 ml-3 hover:text-white"
+          aria-label="Close search"
+        >
+          <i class="icon-close text-lg"></i>
+        </button>
+      </div>
+      <div class="text-light-1 text-xs">Press ESC to close.</div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer (Right Side) -->
+  <div x-cloak x-show="mobileOpen" class="fixed inset-0 z-50">
+    <div
+      @click="mobileOpen=false"
+      x-show="mobileOpen"
+      x-transition.opacity
+      class="absolute inset-0 bg-black/40"
+    ></div>
+
+    <aside
+      x-show="mobileOpen"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+      class="bg-dark-2 absolute top-0 right-0 h-full w-[85%] max-w-md overflow-y-auto p-6 text-white shadow-xl"
+      x-trap.inert.noscroll="mobileOpen"
+    >
+      <!-- Header -->
+      <div class="border-dark-3 border-b pb-6">
+        <div class="flex items-center justify-between">
+          <div class="text-xl font-medium">Main Menu</div>
+          <button
+            @click="mobileOpen=false"
+            class="text-light-1 hover:text-white"
+          >
+            <i class="icon-close"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Content -->
+      <nav class="mt-6" x-data="{ accordionOpen: null }">
+        <ul class="space-y-1">
+          <!-- Home accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 1 ? null : 1"
+              class="flex w-full items-center justify-between py-3 text-left font-medium hover:text-white/60"
+              :class="['index.html','home-2.html','home-3.html','home-4.html','home-5.html','home-6.html','home-7.html','home-8.html','home-9.html','home-10.html'].includes(currentPage) ? 'text-white/60' : ''"
+            >
+              <span>Home</span>
+              <span :class="accordionOpen === 1 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 1"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'index.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="index.html"
+              >
+                Home 1
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-2.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-2.html"
+              >
+                Home 2
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-3.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-3.html"
+              >
+                Home 3
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-4.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-4.html"
+              >
+                Home 4
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-5.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-5.html"
+              >
+                Home 5
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-6.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-6.html"
+              >
+                Home 6
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-7.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-7.html"
+              >
+                Home 7
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-8.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-8.html"
+              >
+                Home 8
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-9.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-9.html"
+              >
+                Home 9
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'home-10.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="home-10.html"
+              >
+                Home 10
+              </a>
+            </div>
+          </li>
+
+          <!-- Categories accordion with nested accordions -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 2 ? null : 2"
+              class="flex w-full items-center justify-between py-3 text-left font-medium hover:text-white/60"
+              :class="['hotel-list-1.html','hotel-list-2.html','hotel-half-map.html','hotel-grid-1.html','hotel-grid-2.html','hotel-single-1.html','hotel-single-2.html','booking-pages.html','tour-list-1.html','tour-grid-1.html','tour-map.html','tour-single.html','activity-list-1.html','activity-grid-1.html','activity-map.html','activity-single.html','rental-list-1.html','rental-grid-1.html','rental-map.html','rental-single.html','car-list-1.html','car-grid-1.html','car-map.html','car-single.html','cruise-list-1.html','cruise-grid-1.html','cruise-map.html','cruise-single.html','flights-list.html'].includes(currentPage) ? 'text-white/60' : ''"
+            >
+              <span>Categories</span>
+              <span :class="accordionOpen === 2 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 2"
+              x-collapse
+              x-data="{ nestedAccordion: null }"
+              class="space-y-2 pb-2 pl-4 text-sm"
+            >
+              <!-- Hotel nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 1 ? null : 1"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['hotel-list-1.html','hotel-list-2.html','hotel-half-map.html','hotel-grid-1.html','hotel-grid-2.html','hotel-single-1.html','hotel-single-2.html','booking-pages.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Hotel</span>
+                  <span :class="nestedAccordion === 1 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 1"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="hotel-list-1.html"
+                  >
+                    Hotel List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-list-2.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="hotel-list-2.html"
+                  >
+                    Hotel List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-single-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="hotel-single-1.html"
+                  >
+                    Hotel Single v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'hotel-single-2.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="hotel-single-2.html"
+                  >
+                    Hotel Single v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'booking-pages.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="booking-pages.html"
+                  >
+                    Booking Page
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tour nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 2 ? null : 2"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['tour-list-1.html','tour-grid-1.html','tour-map.html','tour-single.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Tour</span>
+                  <span :class="nestedAccordion === 2 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 2"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="tour-list-1.html"
+                  >
+                    Tour List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-grid-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="tour-grid-1.html"
+                  >
+                    Tour List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-map.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="tour-map.html"
+                  >
+                    Tour Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'tour-single.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="tour-single.html"
+                  >
+                    Tour Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Activity nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 3 ? null : 3"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['activity-list-1.html','activity-grid-1.html','activity-map.html','activity-single.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Activity</span>
+                  <span :class="nestedAccordion === 3 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 3"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="activity-list-1.html"
+                  >
+                    Activity List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-grid-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="activity-grid-1.html"
+                  >
+                    Activity List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-map.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="activity-map.html"
+                  >
+                    Activity Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'activity-single.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="activity-single.html"
+                  >
+                    Activity Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Rental nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 4 ? null : 4"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['rental-list-1.html','rental-grid-1.html','rental-map.html','rental-single.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Rental</span>
+                  <span :class="nestedAccordion === 4 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 4"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="rental-list-1.html"
+                  >
+                    Rental List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-grid-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="rental-grid-1.html"
+                  >
+                    Rental List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-map.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="rental-map.html"
+                  >
+                    Rental Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'rental-single.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="rental-single.html"
+                  >
+                    Rental Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Car nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 5 ? null : 5"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['car-list-1.html','car-grid-1.html','car-map.html','car-single.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Car</span>
+                  <span :class="nestedAccordion === 5 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 5"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="car-list-1.html"
+                  >
+                    Car List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-grid-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="car-grid-1.html"
+                  >
+                    Car List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-map.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="car-map.html"
+                  >
+                    Car Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'car-single.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="car-single.html"
+                  >
+                    Car Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Cruise nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 6 ? null : 6"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['cruise-list-1.html','cruise-grid-1.html','cruise-map.html','cruise-single.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Cruise</span>
+                  <span :class="nestedAccordion === 6 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 6"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="cruise-list-1.html"
+                  >
+                    Cruise List v1
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-grid-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="cruise-grid-1.html"
+                  >
+                    Cruise List v2
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-map.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="cruise-map.html"
+                  >
+                    Cruise Map
+                  </a>
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'cruise-single.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="cruise-single.html"
+                  >
+                    Cruise Single
+                  </a>
+                </div>
+              </div>
+
+              <!-- Flights nested -->
+              <div>
+                <button
+                  @click="nestedAccordion = nestedAccordion === 7 ? null : 7"
+                  class="flex w-full items-center justify-between py-2"
+                  :class="['flights-list.html'].includes(currentPage) ? 'text-white/60' : ''"
+                >
+                  <span class="font-medium">Flights</span>
+                  <span :class="nestedAccordion === 7 ? 'rotate-180' : ''">
+                    <i class="icon-chevron-sm-down text-[8px]"></i>
+                  </span>
+                </button>
+                <div
+                  x-cloak
+                  x-show="nestedAccordion === 7"
+                  x-collapse
+                  class="space-y-1 pl-3"
+                >
+                  <a
+                    class="block rounded px-3 py-1.5"
+                    :class="currentPage === 'flights-list.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                    href="flights-list.html"
+                  >
+                    Flights List v1
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Destinations link -->
+          <li>
+            <a
+              class="block py-3 font-medium"
+              :class="currentPage === 'destinations.html' ? 'text-white/60' : 'hover:text-white/60'"
+              href="destinations.html"
+            >
+              Destinations
+            </a>
+          </li>
+
+          <!-- Blog accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 3 ? null : 3"
+              class="flex w-full items-center justify-between py-3 text-left font-medium hover:text-white/60"
+              :class="['blog-list-1.html','blog-list-2.html','blog-single.html'].includes(currentPage) ? 'text-white/60' : ''"
+            >
+              <span>Blog</span>
+              <span :class="accordionOpen === 3 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 3"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'blog-list-1.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="blog-list-1.html"
+              >
+                Blog list v1
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'blog-list-2.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="blog-list-2.html"
+              >
+                Blog list v2
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'blog-single.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="blog-single.html"
+              >
+                Blog single
+              </a>
+            </div>
+          </li>
+
+          <!-- Pages accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 4 ? null : 4"
+              class="flex w-full items-center justify-between py-3 text-left font-medium hover:text-white/60"
+              :class="['404.html','about.html','become-expert.html','help-center.html','login.html','signup.html','terms.html','invoice.html','ui-elements.html'].includes(currentPage) ? 'text-white/60' : ''"
+            >
+              <span>Pages</span>
+              <span :class="accordionOpen === 4 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 4"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === '404.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="404.html"
+              >
+                404
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'about.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="about.html"
+              >
+                About
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'become-expert.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="become-expert.html"
+              >
+                Become expert
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'help-center.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="help-center.html"
+              >
+                Help center
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'login.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="login.html"
+              >
+                Login
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'signup.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="signup.html"
+              >
+                Register
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'terms.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="terms.html"
+              >
+                Terms
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'invoice.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="invoice.html"
+              >
+                Invoice
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'ui-elements.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="ui-elements.html"
+              >
+                UI elements
+              </a>
+            </div>
+          </li>
+
+          <!-- Dashboard accordion -->
+          <li>
+            <button
+              @click="accordionOpen = accordionOpen === 5 ? null : 5"
+              class="flex w-full items-center justify-between py-3 text-left font-medium hover:text-white/60"
+              :class="['db-dashboard.html','db-booking.html','db-settings.html','db-wishlist.html','db-vendor-dashboard.html','db-vendor-add-hotel.html','db-vendor-booking.html','db-vendor-hotels.html','db-vendor-recovery.html'].includes(currentPage) ? 'text-white/60' : ''"
+            >
+              <span>Dashboard</span>
+              <span :class="accordionOpen === 5 ? 'rotate-180' : ''">
+                <i class="icon-chevron-sm-down text-[8px]"></i>
+              </span>
+            </button>
+            <div
+              x-cloak
+              x-show="accordionOpen === 5"
+              x-collapse
+              class="space-y-1 pb-2 pl-4 text-sm"
+            >
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-dashboard.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-dashboard.html"
+              >
+                Dashboard
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-booking.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-booking.html"
+              >
+                Booking
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-settings.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-settings.html"
+              >
+                Settings
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-wishlist.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-wishlist.html"
+              >
+                Wishlist
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-dashboard.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-vendor-dashboard.html"
+              >
+                Vendor dashboard
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-add-hotel.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-vendor-add-hotel.html"
+              >
+                Vendor add hotel
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-booking.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-vendor-booking.html"
+              >
+                Vendor booking
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-hotels.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-vendor-hotels.html"
+              >
+                Vendor hotels
+              </a>
+              <a
+                class="block rounded px-3 py-2"
+                :class="currentPage === 'db-vendor-recovery.html' ? 'bg-white/5 text-white' : 'hover:bg-white/5 hover:text-white'"
+                href="db-vendor-recovery.html"
+              >
+                Vendor recovery
+              </a>
+            </div>
+          </li>
+
+          <!-- Contact link -->
+          <li>
+            <a
+              class="block py-3 font-medium"
+              :class="currentPage === 'contact.html' ? 'text-white/60' : ' hover:text-white/60'"
+              href="contact.html"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</header>
+
+<script>
+  function dropdown() {
+    return {
+      open: false,
+      toggle() {
+        this.open = !this.open;
+      },
+      close() {
+        this.open = false;
+      },
+    };
+  }
+
+  function megaMenu() {
+    return {
+      open: false,
+      activeTab: "hotel",
+      toggle() {
+        this.open = !this.open;
+      },
+      close() {
+        this.open = false;
+      },
+    };
+  }
+
+  // Navbar Component
+  function navbar() {
+    return {
+      mobileOpen: false,
+      searchOpen: false,
+      isSticky: false,
+      currentPage: "",
+
+      toggleSearch() {
+        this.searchOpen = !this.searchOpen;
+      },
+
+      handleScroll() {
+        this.isSticky = window.scrollY > 50;
+      },
+
+      init() {
+        // set initial state
+        this.handleScroll();
+        this.currentPage = this.getCurrentPage();
+        // attach a stable listener bound to this component
+        this._scrollHandler = () => this.handleScroll();
+        window.addEventListener("scroll", this._scrollHandler, {
+          passive: true,
+        });
+      },
+
+      getCurrentPage() {
+        const path = window.location.pathname;
+        const page = path.substring(path.lastIndexOf("index-2.html") + 1);
+        return page || "index.html";
+      },
+
+      isActive(href) {
+        if (!href) return false;
+        const linkPage = href.includes("index-2.html")
+          ? href.substring(href.lastIndexOf("index-2.html") + 1)
+          : href;
+        return this.currentPage === linkPage;
+      },
+
+      // optional cleanup if Alpine's cleanup hook is available
+      destroy() {
+        if (this._scrollHandler)
+          window.removeEventListener("scroll", this._scrollHandler);
+      },
+    };
+  }
+</script>
+<main class="flex-grow">
+        <!-- Masthead slider + search -->
+        <section class="relative" x-data="masthead9()" x-init="init()">
+  <div class="swiper" x-ref="mast">
+    <div class="swiper-wrapper">
+      <div
+        class="swiper-slide after:bg-dark-1/30 relative z-10 flex! items-center justify-center bg-cover bg-center bg-no-repeat py-30 after:absolute after:inset-0 after:-z-10 lg:min-h-[calc(100vh-120px)]"
+        style="background-image: url(src/images/masthead/9/bg.png)"
+      >
+        <div
+          class="mx-auto flex max-w-6xl items-center justify-center px-4"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="text-center">
+            <div class="mb-2 font-medium text-white uppercase">
+              TOUR EXPERIENCE
+            </div>
+            <h1
+              class="md:text-60 text-4xl leading-tight font-semibold text-white sm:text-5xl lg:text-[80px]"
+            >
+              Find The Best Cruise<br />
+              For You
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide after:bg-dark-1/30 relative z-10 flex! items-center justify-center bg-cover bg-center bg-no-repeat py-30 after:absolute after:inset-0 after:-z-10 lg:min-h-[calc(100vh-120px)]"
+        style="background-image: url(src/images/masthead/9/bg.png)"
+      >
+        <div class="mx-auto flex max-w-6xl items-center justify-center px-4">
+          <div class="text-center">
+            <div class="mb-2 font-medium text-white uppercase">
+              TOUR EXPERIENCE
+            </div>
+            <h1
+              class="md:text-60 text-4xl leading-tight font-semibold text-white sm:text-5xl lg:text-[80px]"
+            >
+              Find The Best Cruise<br />
+              For You
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div
+        class="swiper-slide after:bg-dark-1/30 relative z-10 flex! items-center justify-center bg-cover bg-center bg-no-repeat py-30 after:absolute after:inset-0 after:-z-10 lg:min-h-[calc(100vh-120px)]"
+        style="background-image: url(src/images/masthead/9/bg.png)"
+      >
+        <div class="mx-auto flex max-w-6xl items-center justify-center px-4">
+          <div class="text-center">
+            <div class="mb-2 font-medium text-white uppercase">
+              TOUR EXPERIENCE
+            </div>
+            <h1
+              class="md:text-60 text-4xl leading-tight font-semibold text-white sm:text-5xl lg:text-[80px]"
+            >
+              Find The Best Cruise<br />
+              For You
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav bars -->
+    <button
+      class="absolute top-1/2 left-4 z-10 -translate-y-1/2 py-2"
+      x-ref="prev"
+      aria-label="Prev"
+    >
+      <span class="block h-px w-12 bg-white"></span>
+    </button>
+    <button
+      class="absolute top-1/2 right-4 z-10 -translate-y-1/2 py-2"
+      x-ref="next"
+      aria-label="Next"
+    >
+      <span class="block h-px w-12 bg-white"></span>
+    </button>
+  </div>
+
+  <!-- Scroll down link -->
+  <a href="#secondSection" class="group absolute right-15 bottom-5 z-10">
+    <div class="flex items-center">
+      <div class="mr-3 text-right leading-tight text-white">
+        <div class="font-medium">Scroll Down</div>
+        <div class="text-15">to discover more</div>
+      </div>
+      <div class="relative h-10 w-6.5">
+        <div
+          class="absolute inset-x-0 top-0 h-10 rounded-full border-2 border-white/80"
+        ></div>
+        <div
+          class="absolute top-2 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full border-2 border-white transition-transform duration-300 group-hover:translate-y-3.5"
+        ></div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Search Bar -->
+  <div class="bottom-0 left-0 w-full max-lg:px-6 max-lg:py-10 lg:absolute">
+    <div class="2xl:container">
+      <div
+        class="relative z-20 w-full max-w-[900px] rounded-tr bg-white lg:p-5"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <div
+          class="absolute right-0 bottom-0 -z-20 h-full w-[200%] bg-white shadow-[0_20px_40px_0px_#05103612] max-lg:hidden"
+        ></div>
+        <div class="flex w-full items-center max-lg:flex-col lg:gap-7.5">
+          <div class="grid w-full lg:grid-cols-3 lg:gap-7.5">
+            <!-- Location -->
+            <div
+              class="relative max-lg:p-5 lg:pl-6.5"
+              x-data="locationPicker()"
+              @click.outside="open = false"
+            >
+              <div>
+                <span class="text-15 text-dark-1 block font-medium">
+                  Location
+                </span>
+                <input
+                  placeholder="Where are you going?"
+                  class="outline-none"
+                  x-model="query"
+                  @focus="open = true"
+                  @input="open = true; activeIndex = -1"
+                  @keydown.down.prevent="move(1)"
+                  @keydown.up.prevent="move(-1)"
+                  @keydown.enter.prevent="select(activeIndex >= 0 ? activeIndex : 0)"
+                  @keydown.escape="open = false"
+                />
+              </div>
+
+              <!-- Location Picker Component -->
+<div
+  class="absolute top-full left-0 z-9 mt-5 w-full lg:w-[500px]"
+  x-show="open && filteredLocations().length"
+  x-cloak
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 scale-95"
+  x-transition:enter-end="opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 scale-100"
+  x-transition:leave-end="opacity-0 scale-95"
+  style="display: none"
+>
+  <div class="shadow-2 rounded bg-white p-7.5">
+    <div class="gap-y-1.5">
+      <template x-for="(loc, idx) in filteredLocations()" :key="idx">
+        <button
+          type="button"
+          class="hover:bg-light-2 flex w-full cursor-pointer rounded px-5 py-4 text-left duration-300"
+          @click="select(idx)"
+          :class="{ 'bg-light-2': idx === activeIndex }"
+        >
+          <div class="icon-location-2 text-light-1 pt-1 text-xl"></div>
+          <div class="ml-2.5">
+            <div class="text-15 font-medium" x-text="loc.name"></div>
+            <div class="text-light-1 mt-1.5 text-sm" x-text="loc.sub"></div>
+          </div>
+        </button>
+      </template>
+    </div>
+  </div>
+</div>
+</div>
+
+            <!-- Date Range -->
+            <div
+              class="relative border-[#DADFE6] max-lg:border-y max-lg:p-5 lg:border-x lg:px-7.5"
+              x-data="dateRangePicker"
+              @click.outside="open = false"
+            >
+              <button class="text-left" @click="open = !open">
+                <span class="text-15 text-dark-1 block font-medium">
+                  Check in - Check out
+                </span>
+                <span class="text-15 text-light-1">
+                  <template x-if="checkIn && checkOut">
+                    <span
+                      x-text="formatDate(checkIn) + ' - ' + formatDate(checkOut)"
+                    ></span>
+                  </template>
+                  <template x-if="!checkIn || !checkOut">
+                    <span>Select dates</span>
+                  </template>
+                </span>
+              </button>
+
+              <!-- Date picker calendar dropdown via include (fixed relative path) -->
+              <!-- Date Range Picker Calendar Component -->
+<div
+  class="absolute top-full left-1/2 z-10 mt-5 w-full -translate-x-1/2 lg:w-[700px]"
+  x-show="open"
+  x-cloak
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 scale-95"
+  x-transition:enter-end="opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 scale-100"
+  x-transition:leave-end="opacity-0 scale-95"
+  style="display: none"
+>
+  <div class="shadow-2 rounded bg-white p-8">
+    <!-- Month Navigation -->
+    <div class="mb-6 flex items-center justify-between">
+      <button
+        @click="prevMonth()"
+        class="hover:bg-light-2 flex size-10 items-center justify-center rounded-full duration-300"
+      >
+        <i class="icon-chevron-left text-base"></i>
+      </button>
+      <div class="flex gap-32">
+        <div
+          class="text-17 font-semibold"
+          x-text="monthName + ' ' + viewYear"
+        ></div>
+        <div
+          class="text-17 font-semibold"
+          x-text="nextMonthName + ' ' + nextMonthYear"
+        ></div>
+      </div>
+      <button
+        @click="nextMonth()"
+        class="hover:bg-light-2 flex size-10 items-center justify-center rounded-full duration-300"
+      >
+        <i class="icon-chevron-right text-base"></i>
+      </button>
+    </div>
+
+    <!-- Two Months Grid -->
+    <div class="grid gap-8 lg:grid-cols-2">
+      <!-- First Month -->
+      <div>
+        <!-- Weekday Headers -->
+        <div class="mb-3 grid grid-cols-7 gap-1">
+          <template
+            x-for="day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']"
+          >
+            <div
+              class="text-13 text-dark-1 text-center font-semibold"
+              x-text="day"
+            ></div>
+          </template>
+        </div>
+
+        <!-- Calendar Days -->
+        <div class="grid grid-cols-7 gap-1">
+          <template x-for="(date, idx) in getDaysInMonth(0)" :key="'m1-' + idx">
+            <button
+              type="button"
+              @click="selectDate(date)"
+              :disabled="!date || isPast(date)"
+              class="text-15 flex aspect-square h-12 items-center justify-center rounded-full duration-200"
+              :class="{
+                'invisible': !date,
+                'text-light-1/40 cursor-not-allowed': date && isPast(date),
+                'bg-blue-1 text-white font-semibold': date && isSelected(date),
+                'bg-light-2': date && isInRange(date),
+                'hover:bg-light-2 cursor-pointer text-dark-1': date && !isPast(date) && !isSelected(date) && !isInRange(date)
+              }"
+              x-text="date ? date.getDate() : ''"
+            ></button>
+          </template>
+        </div>
+      </div>
+
+      <!-- Second Month -->
+      <div class="max-lg:hidden">
+        <!-- Weekday Headers -->
+        <div class="mb-3 grid grid-cols-7 gap-1">
+          <template
+            x-for="day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']"
+          >
+            <div
+              class="text-13 text-dark-1 text-center font-semibold"
+              x-text="day"
+            ></div>
+          </template>
+        </div>
+
+        <!-- Calendar Days -->
+        <div class="grid grid-cols-7 gap-1">
+          <template x-for="(date, idx) in getDaysInMonth(1)" :key="'m2-' + idx">
+            <button
+              type="button"
+              @click="selectDate(date)"
+              :disabled="!date || isPast(date)"
+              class="text-15 flex aspect-square h-12 items-center justify-center rounded-full duration-200"
+              :class="{
+                'invisible': !date,
+                'text-light-1/40 cursor-not-allowed': date && isPast(date),
+                'bg-blue-1 text-white font-semibold': date && isSelected(date),
+                'bg-light-2': date && isInRange(date),
+                'hover:bg-light-2 cursor-pointer text-dark-1': date && !isPast(date) && !isSelected(date) && !isInRange(date)
+              }"
+              x-text="date ? date.getDate() : ''"
+            ></button>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clear Button -->
+    <div class="mt-6 flex justify-end">
+      <button
+        @click="checkIn = null; checkOut = null"
+        class="text-light-1 hover:text-dark-1 text-sm duration-200"
+      >
+        Clear dates
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+            <!-- Guests -->
+            <div
+              class="relative max-lg:p-5"
+              x-data="guestsPicker()"
+              @click.outside="guestsOpen = false"
+            >
+              <button class="text-left" @click="guestsOpen = !guestsOpen">
+                <span class="text-15 text-dark-1 block font-medium">
+                  Guests
+                </span>
+                <span class="text-15 text-light-1">
+                  <span x-text="guests.adults"></span> adults -
+                  <span x-text="guests.children"></span> children -
+                  <span x-text="guests.rooms"></span> room
+                  <span x-show="guests.rooms > 1"> s </span>
+                </span>
+              </button>
+
+              <!-- Guests Picker Component Dropdown -->
+<div
+  class="absolute top-full left-0 mt-5 w-full lg:w-[400px]"
+  x-show="guestsOpen"
+  x-cloak
+  x-transition:enter="transition ease-out duration-200"
+  x-transition:enter-start="opacity-0 scale-95"
+  x-transition:enter-end="opacity-100 scale-100"
+  x-transition:leave="transition ease-in duration-150"
+  x-transition:leave-start="opacity-100 scale-100"
+  x-transition:leave-end="opacity-0 scale-95"
+  @click.outside="guestsOpen = false"
+  style="display: none"
+>
+  <div class="shadow-2 rounded bg-white p-7.5">
+    <!-- Adults Row -->
+    <div class="flex items-center justify-between gap-y-2.5">
+      <div class="text-15 font-medium">Adults</div>
+      <div class="flex items-center">
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white disabled:pointer-events-none disabled:opacity-40"
+          @click="dec('adults')"
+          :disabled="guests.adults <= 1"
+        >
+          <i class="icon-minus text-xs"></i>
+        </button>
+        <div class="mx-4 flex size-5 justify-center">
+          <div class="text-15" x-text="guests.adults"></div>
+        </div>
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white"
+          @click="inc('adults')"
+        >
+          <i class="icon-plus text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="border-border my-6 border-t"></div>
+
+    <!-- Children Row -->
+    <div class="flex items-center justify-between gap-y-2.5">
+      <div>
+        <div class="text-15 font-medium">Children</div>
+        <div class="text-light-1 text-sm">Ages 0 - 17</div>
+      </div>
+      <div class="flex items-center">
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white disabled:pointer-events-none disabled:opacity-40"
+          @click="dec('children')"
+          :disabled="guests.children <= 0"
+        >
+          <i class="icon-minus text-xs"></i>
+        </button>
+        <div class="mx-4 flex size-5 justify-center">
+          <div class="text-15" x-text="guests.children"></div>
+        </div>
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white"
+          @click="inc('children')"
+        >
+          <i class="icon-plus text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="border-border my-6 border-t"></div>
+
+    <!-- Rooms Row -->
+    <div class="flex items-center justify-between gap-y-2.5">
+      <div class="text-15 font-medium">Rooms</div>
+      <div class="flex items-center">
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white disabled:pointer-events-none disabled:opacity-40"
+          @click="dec('rooms')"
+          :disabled="guests.rooms <= 1"
+        >
+          <i class="icon-minus text-xs"></i>
+        </button>
+        <div class="mx-4 flex size-5 justify-center">
+          <div class="text-15" x-text="guests.rooms"></div>
+        </div>
+        <button
+          class="border-blue-1 text-blue-1 hover:bg-blue-1 inline-flex size-9.5 cursor-pointer items-center justify-center rounded border duration-300 hover:text-white"
+          @click="inc('rooms')"
+        >
+          <i class="icon-plus text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+          </div>
+          <div class="max-lg:w-full max-lg:px-5 max-lg:pb-5 lg:max-w-max">
+            <button
+              class="bg-yellow-1 text-15 hover:bg-dark-1 text-dark-1 flex h-15 w-full cursor-pointer items-center justify-center gap-2.5 rounded px-9 duration-300 hover:text-white lg:inline-flex"
+            >
+              <div class="icon-search text-xl"></div>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Popular Destinations -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 text-3xl font-semibold">Popular Destinations</h2>
+      <p class="text-light-1 mt-2">Interdum et malesuada fames ac ante ipsum</p>
+    </div>
+
+    <div
+      class="xs:grid-cols-2 grid gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7"
+      data-aos="fade-down"
+    >
+      <!-- 1: New York -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            New York
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+      <!-- 2: London -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            London
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+      <!-- 3: Los Angeles -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            Los Angeles
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+      <!-- 4: Paris -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            Paris
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+      <!-- 5: Istanbul -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            Istanbul
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+      <!-- 6: Rome -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            Rome
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+      <!-- 7: Madrid -->
+      <a
+        href="#"
+        class="group hover:bg-blue-1 bg-light-2 flex items-center gap-3 overflow-hidden rounded p-5 duration-300"
+      >
+        <i
+          class="icon-destination text-dark-1 text-2xl group-hover:text-white"
+        ></i>
+        <div>
+          <h4 class="text-dark-1 text-base font-medium group-hover:text-white">
+            Madrid
+          </h4>
+          <p class="text-light-1 text-sm group-hover:text-white">
+            4,090 properties
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Featured Cruise Deals -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 text-3xl font-semibold">Featured Cruise Deals</h2>
+      <p class="text-light-1 mt-2">Interdum et malesuada fames ac ante ipsum</p>
+    </div>
+
+    <!-- Cruises Grid -->
+    <div class="grid grid-cols-1 gap-7.5 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Cruise Card 1 -->
+      <div
+        class="cruise-card group transition-all duration-300"
+        data-aos="fade"
+      >
+        <a href="cruise-single.html" class="block">
+          <!-- Image -->
+          <div class="relative mb-4 aspect-6/5 overflow-hidden rounded">
+            <img
+              src="src/images/cruises/1.png"
+              alt="Cruise"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <!-- Wishlist Button -->
+            <button
+              class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+            >
+              <span class="icon-heart text-xs"></span>
+            </button>
+
+            <!-- Badge -->
+            <div class="absolute top-5 left-0">
+              <div
+                class="bg-dark-1 rounded-r px-4 py-1 text-xs font-medium text-white uppercase"
+              >
+                Cruise only
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <div class="text-light-1 mb-2 text-sm">Norwegian Getawayy</div>
+
+            <h4
+              class="text-dark-1 title-underline mb-2 text-lg leading-tight font-medium"
+            >
+              7 Night Cruise to the Western Mediterranean
+            </h4>
+
+            <!-- Cruise Details Grid -->
+            <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+              <div>
+                <div class="text-dark-1 font-medium">Sailing Date</div>
+                <div class="text-light-1">18/06/2026</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Departs</div>
+                <div class="text-light-1">Southampton</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Ports (7)</div>
+                <div class="text-light-1">Sete, Toulon...</div>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <span class="icon-star text-yellow-1 text-xs"></span>
+                <div class="text-light-1 text-sm">
+                  <span class="text-dark-1 text-sm font-medium">4.82</span>
+                  94 reviews
+                </div>
+              </div>
+              <div class="text-light-1 text-sm">
+                From
+                <span class="text-dark-1 text-base font-medium">US$72</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Cruise Card 2 - Image Slider -->
+      <div
+        class="cruise-card group transition-all duration-300"
+        data-aos="fade"
+        data-aos="fade"
+        data-aos-delay="100"
+      >
+        <a href="cruise-single.html" class="block">
+          <!-- Image Slider -->
+          <div
+            class="card-container relative mb-4 aspect-6/5 overflow-hidden rounded"
+          >
+            <div class="swiper card-image-slider h-full" x-data="cardSlider()">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide w-full overflow-hidden">
+                  <img
+                    src="src/images/cruises/2.png"
+                    alt="Cruise"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div class="swiper-slide w-full overflow-hidden">
+                  <img
+                    src="src/images/cruises/3.png"
+                    alt="Cruise"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div class="swiper-slide w-full overflow-hidden">
+                  <img
+                    src="src/images/cruises/1.png"
+                    alt="Cruise"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+              <div class="swiper-pagination z-10 *:bg-white!"></div>
+              <!-- Navigation -->
+              <button
+                class="card-slider-prev text-blue-1 hover:bg-blue-1 absolute top-1/2 left-3 z-10 flex size-7.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white opacity-0 duration-300 group-hover:opacity-100 hover:text-white"
+              >
+                <span class="icon-chevron-left text-[10px]"></span>
+              </button>
+              <button
+                class="card-slider-next text-blue-1 hover:bg-blue-1 absolute top-1/2 right-3 z-10 flex size-7.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white opacity-0 duration-300 group-hover:opacity-100 hover:text-white"
+              >
+                <span class="icon-chevron-right text-[10px]"></span>
+              </button>
+            </div>
+
+            <!-- Wishlist Button -->
+            <button
+              class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 z-10 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+            >
+              <span class="icon-heart text-xs"></span>
+            </button>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <div class="text-light-1 mb-2 text-sm">Norwegian Getaway</div>
+
+            <h4
+              class="text-dark-1 title-underline mb-2 text-lg leading-tight font-medium"
+            >
+              12 Night Cruise to the British Isles & Western Europe
+            </h4>
+
+            <!-- Cruise Details Grid -->
+            <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+              <div>
+                <div class="text-dark-1 font-medium">Sailing Date</div>
+                <div class="text-light-1">18/06/2026</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Departs</div>
+                <div class="text-light-1">Southampton</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Ports (7)</div>
+                <div class="text-light-1">Sete, Toulon...</div>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <span class="icon-star text-yellow-1 text-xs"></span>
+                <div class="text-light-1 text-sm">
+                  <span class="text-dark-1 text-sm font-medium">4.82</span>
+                  94 reviews
+                </div>
+              </div>
+              <div class="text-light-1 text-sm">
+                From
+                <span class="text-dark-1 text-base font-medium">US$72</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Cruise Card 3 - Best Seller -->
+      <div
+        class="cruise-card group transition-all duration-300"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+        <a href="cruise-single.html" class="block">
+          <!-- Image -->
+          <div class="relative mb-4 aspect-6/5 overflow-hidden rounded">
+            <img
+              src="src/images/cruises/3.png"
+              alt="Cruise"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <!-- Wishlist Button -->
+            <button
+              class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+            >
+              <span class="icon-heart text-xs"></span>
+            </button>
+
+            <!-- Badge -->
+            <div class="absolute top-5 left-0">
+              <div
+                class="bg-blue-1 rounded-r px-4 py-1 text-xs font-medium text-white uppercase"
+              >
+                Best Seller
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <div class="text-light-1 mb-2 text-sm">Norwegian Getaway</div>
+
+            <h4
+              class="text-dark-1 title-underline mb-2 text-lg leading-tight font-medium"
+            >
+              11 Night Cruise to the Eastern Mediterranean
+            </h4>
+
+            <!-- Cruise Details Grid -->
+            <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+              <div>
+                <div class="text-dark-1 font-medium">Sailing Date</div>
+                <div class="text-light-1">18/06/2026</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Departs</div>
+                <div class="text-light-1">Southampton</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Ports (7)</div>
+                <div class="text-light-1">Sete, Toulon...</div>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <span class="icon-star text-yellow-1 text-xs"></span>
+                <div class="text-light-1 text-sm">
+                  <span class="text-dark-1 text-sm font-medium">4.82</span>
+                  94 reviews
+                </div>
+              </div>
+              <div class="text-light-1 text-sm">
+                From
+                <span class="text-dark-1 text-base font-medium">US$72</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Cruise Card 4 - Top Rated -->
+      <div
+        class="cruise-card group transition-all duration-300"
+        data-aos="fade"
+        data-aos-delay="300"
+      >
+        <a href="cruise-single.html" class="block">
+          <!-- Image -->
+          <div class="relative mb-4 aspect-6/5 overflow-hidden rounded">
+            <img
+              src="src/images/cruises/4.png"
+              alt="Cruise"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <!-- Wishlist Button -->
+            <button
+              class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+            >
+              <span class="icon-heart text-xs"></span>
+            </button>
+
+            <!-- Badge -->
+            <div class="absolute top-5 left-0">
+              <div
+                class="bg-yellow-1 text-dark-1 rounded-r px-4 py-1 text-xs font-medium uppercase"
+              >
+                Top Rated
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <div class="text-light-1 mb-2 text-sm">Norwegian Getawayy</div>
+
+            <h4
+              class="text-dark-1 title-underline mb-2 text-lg leading-tight font-medium"
+            >
+              13 Night Cruise to the Baltic Sea Western Europe
+            </h4>
+
+            <!-- Cruise Details Grid -->
+            <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+              <div>
+                <div class="text-dark-1 font-medium">Sailing Date</div>
+                <div class="text-light-1">18/06/2026</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Departs</div>
+                <div class="text-light-1">Southampton</div>
+              </div>
+              <div>
+                <div class="text-dark-1 font-medium">Ports (7)</div>
+                <div class="text-light-1">Sete, Toulon...</div>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <span class="icon-star text-yellow-1 text-xs"></span>
+                <div class="text-light-1 text-sm">
+                  <span class="text-dark-1 text-sm font-medium">4.82</span>
+                  94 reviews
+                </div>
+              </div>
+              <div class="text-light-1 text-sm">
+                From
+                <span class="text-dark-1 text-base font-medium">US$72</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Leading Cruise Booking Platform -->
+        <section class="pt-20 md:pt-30">
+  <div class="relative overflow-hidden">
+    <!-- Right background panel -->
+    <div
+      class="bg-light-2 absolute top-0 right-0 bottom-0 -z-10 w-full max-w-[1165px]"
+    ></div>
+
+    <div class="container" data-aos="fade-right">
+      <div class="grid lg:grid-cols-12">
+        <div class="py-20 lg:col-span-5 lg:col-start-8 lg:py-50">
+          <h2 class="text-dark-1 text-3xl font-semibold">
+            GoTrip is a World Leading Cruise Booking Platform
+          </h2>
+          <p class="text-dark-1 mt-10 text-base leading-relaxed">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </p>
+
+          <div class="mt-10 inline-block">
+            <a
+              href="#"
+              class="bg-yellow-1 text-dark-1 hover:bg-blue-1 inline-flex h-12.5 items-center gap-3 rounded px-9 font-medium duration-300 hover:text-white"
+            >
+              Learn More
+              <i class="icon-arrow-top-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bottom-0 left-0 z-10 flex h-full items-center lg:absolute lg:w-1/2 lg:max-w-[810px]"
+      data-aos="fade-left"
+      data-aos-delay="100"
+    >
+      <!-- Left imagery -->
+      <div class="grid h-[550px] grid-cols-2 gap-4">
+        <div class="col-span-1 h-full">
+          <img
+            src="src/images/video/1.png"
+            alt="Airport boarding"
+            class="h-full object-cover"
+          />
+        </div>
+        <div class="col-span-1">
+          <img
+            src="src/images/video/2.png"
+            alt="Airplane wing"
+            class="h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Why Choose Us -->
+        <section class="pt-20 md:pt-30">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-12">
+      <!-- Left column -->
+      <div class="col-span-12 lg:col-span-5 xl:col-span-4" data-aos="fade-up">
+        <h2 class="text-dark-1 text-3xl font-semibold">Why Choose Us</h2>
+        <p class="text-light-1 mt-2">
+          These popular destinations have a lot to offer
+        </p>
+
+        <p class="text-dark-1 mt-10">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+
+        <div class="mt-10 inline-block md:mt-8">
+          <a
+            href="#"
+            class="bg-yellow-1 text-dark-1 hover:bg-blue-1 text-15 inline-flex h-12.5 items-center gap-3 rounded px-9 font-medium duration-300 hover:text-white"
+          >
+            Learn More
+            <i class="icon-arrow-top-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right column: features grid -->
+      <div
+        class="col-span-12 lg:col-span-7 xl:col-start-6"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        <div class="grid gap-x-7.5 gap-y-16 sm:grid-cols-2">
+          <!-- Feature 1 -->
+          <div class="w-full max-w-[300px]">
+            <img src="src/images/featureIcons/3/1.svg" alt="icon" class="size-15" />
+            <h5 class="text-dark-1 mt-2.5 text-lg font-medium">
+              Best Price Guarantee
+            </h5>
+            <p class="text-light-1 mt-2.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="w-full max-w-[300px]">
+            <img src="src/images/featureIcons/3/2.svg" alt="icon" class="size-15" />
+            <h5 class="text-dark-1 mt-2.5 text-lg font-medium">
+              Best Price Guarantee
+            </h5>
+            <p class="text-light-1 mt-2.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="w-full max-w-[300px]">
+            <img src="src/images/featureIcons/3/3.svg" alt="icon" class="size-15" />
+            <h5 class="text-dark-1 mt-2.5 text-lg font-medium">
+              Best Price Guarantee
+            </h5>
+            <p class="text-light-1 mt-2.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="w-full max-w-[300px]">
+            <img src="src/images/featureIcons/3/4.svg" alt="icon" class="size-15" />
+            <h5 class="text-dark-1 mt-2.5 text-lg font-medium">
+              Best Price Guarantee
+            </h5>
+            <p class="text-light-1 mt-2.5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Recommended Cruise -->
+        <section class="py-20 md:py-30">
+  <div class="container">
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 text-3xl font-semibold">Recommended Cruise</h2>
+      <p class="text-light-1 mt-2">Interdum et malesuada fames ac ante ipsum</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1: Cruise only -->
+      <a
+        href="cruise-single.html"
+        class="group block rounded"
+        data-aos="fade"
+        data-aos-delay="100"
+      >
+        <div class="relative aspect-[6/5] overflow-hidden rounded">
+          <img
+            src="src/images/cruises/1.png"
+            alt="cruise"
+            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+
+          <!-- Wishlist -->
+          <button
+            class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+          >
+            <span class="icon-heart text-xs"></span>
+          </button>
+
+          <!-- Badge -->
+
+          <div
+            class="bg-dark-1 absolute top-5 left-0 rounded-r px-3 py-1.5 text-xs font-semibold text-white uppercase"
+          >
+            Cruise only
+          </div>
+        </div>
+
+        <div class="mt-2.5">
+          <div class="text-light-1 mb-2 text-sm">Norwegian Getaway</div>
+          <h4
+            class="text-dark-1 title-underline text-lg leading-tight font-medium duration-300"
+          >
+            7 Night Cruise to the Western Mediterranean
+          </h4>
+
+          <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+            <div>
+              <div class="text-dark-1 font-medium">Sailing Date</div>
+              <div class="text-light-1">18/06/2026</div>
+            </div>
+            <div>
+              <div class="text-dark-1 font-medium">Departs</div>
+              <div class="text-light-1">Southampton</div>
+            </div>
+            <div>
+              <div class="text-dark-1 font-medium">Ports (7)</div>
+              <div class="text-light-1">Sete, Toulon...</div>
+            </div>
+          </div>
+
+          <div class="mt-2 flex items-center justify-between">
+            <div class="flex items-center">
+              <i class="icon-star text-yellow-1"></i>
+              <div class="text-light-1 ml-1 text-sm">
+                <span class="text-dark-1 text-15 font-medium">4.82</span>
+                94 reviews
+              </div>
+            </div>
+            <div class="text-light-1 text-sm">
+              From
+              <span class="text-dark-1 text-base font-medium">US$72</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: With nested slider -->
+      <a
+        href="cruise-single.html"
+        class="group card-container block rounded"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+        <div
+          class="relative aspect-[6/5] overflow-hidden rounded"
+          x-data="cardSlider()"
+        >
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide w-full overflow-hidden">
+                <img
+                  src="src/images/cruises/2.png"
+                  alt="cruise"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="swiper-slide w-full overflow-hidden">
+                <img
+                  src="src/images/cruises/3.png"
+                  alt="cruise"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="swiper-slide w-full overflow-hidden">
+                <img
+                  src="src/images/cruises/1.png"
+                  alt="cruise"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination z-10 *:bg-white!"></div>
+
+            <!-- Navigation -->
+            <button
+              class="card-slider-prev text-blue-1 hover:bg-blue-1 absolute top-1/2 left-3 z-10 flex size-7.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white opacity-0 duration-300 group-hover:opacity-100 hover:text-white"
+            >
+              <span class="icon-chevron-left text-[10px]"></span>
+            </button>
+            <button
+              class="card-slider-next text-blue-1 hover:bg-blue-1 absolute top-1/2 right-3 z-10 flex size-7.5 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white opacity-0 duration-300 group-hover:opacity-100 hover:text-white"
+            >
+              <span class="icon-chevron-right text-[10px]"></span>
+            </button>
+          </div>
+
+          <!-- Wishlist -->
+          <button
+            class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 z-10 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+          >
+            <span class="icon-heart text-xs"></span>
+          </button>
+        </div>
+
+        <div class="mt-2.5">
+          <div class="text-light-1 mb-2 text-sm">Norwegian Getaway</div>
+          <h4
+            class="text-dark-1 title-underline text-lg leading-tight font-medium duration-300"
+          >
+            12 Night Cruise to the British Isles & Western Europe
+          </h4>
+
+          <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+            <div>
+              <div class="text-dark-1 font-medium">Sailing Date</div>
+              <div class="text-light-1">18/06/2026</div>
+            </div>
+            <div>
+              <div class="text-dark-1 font-medium">Departs</div>
+              <div class="text-light-1">Southampton</div>
+            </div>
+            <div>
+              <div class="text-dark-1 font-medium">Ports (7)</div>
+              <div class="text-light-1">Sete, Toulon...</div>
+            </div>
+          </div>
+
+          <div class="mt-2 flex items-center justify-between">
+            <div class="flex items-center">
+              <i class="icon-star text-yellow-1"></i>
+              <div class="text-light-1 ml-1 text-sm">
+                <span class="text-dark-1 text-15 font-medium">4.82</span>
+                94 reviews
+              </div>
+            </div>
+            <div class="text-light-1 text-sm">
+              From
+              <span class="text-dark-1 text-base font-medium">US$72</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: Best Seller -->
+      <a
+        href="cruise-single.html"
+        class="group block rounded"
+        data-aos="fade"
+        data-aos-delay="200"
+      >
+        <div class="relative aspect-[6/5] overflow-hidden rounded">
+          <img
+            src="src/images/cruises/3.png"
+            alt="cruise"
+            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+
+          <!-- Wishlist -->
+          <button
+            class="text-blue-1 hover:bg-blue-1 absolute top-5 right-5 flex size-7.5 cursor-pointer items-center justify-center rounded-full bg-white duration-300 hover:text-white"
+          >
+            <span class="icon-heart text-xs"></span>
+          </button>
+
+          <!-- Badge -->
+
+          <div
+            class="bg-blue-1 absolute top-5 left-0 rounded-r px-3 py-1.5 text-xs font-semibold text-white uppercase"
+          >
+            Best Seller
+          </div>
+        </div>
+
+        <div class="mt-2.5">
+          <div class="text-light-1 mb-2 text-sm">Norwegian Getaway</div>
+          <h4
+            class="text-dark-1 title-underline text-lg leading-tight font-medium duration-300"
+          >
+            11 Night Cruise to the Eastern Mediterranean
+          </h4>
+
+          <div class="mt-3 grid grid-cols-3 gap-2 text-sm">
+            <div>
+              <div class="text-dark-1 font-medium">Sailing Date</div>
+              <div class="text-light-1">18/06/2026</div>
+            </div>
+            <div>
+              <div class="text-dark-1 font-medium">Departs</div>
+              <div class="text-light-1">Southampton</div>
+            </div>
+            <div>
+              <div class="text-dark-1 font-medium">Ports (7)</div>
+              <div class="text-light-1">Sete, Toulon...</div>
+            </div>
+          </div>
+
+          <div class="mt-2 flex items-center justify-between">
+            <div class="flex items-center">
+              <i class="icon-star text-yellow-1"></i>
+              <div class="text-light-1 ml-1 text-sm">
+                <span class="text-dark-1 text-15 font-medium">4.82</span>
+                94 reviews
+              </div>
+            </div>
+            <div class="text-light-1 text-sm">
+              From
+              <span class="text-dark-1 text-base font-medium">US$72</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Slider -->
+        <section class="relative overflow-hidden py-20 md:py-30">
+  <!-- Background image -->
+  <div
+    class="absolute inset-0 w-full bg-cover bg-center bg-no-repeat"
+    style="background-image: url(src/images/backgrounds/11.png)"
+  ></div>
+
+  <div class="relative container" data-aos="fade-up" data-aos-delay="100">
+    <div class="flex justify-center">
+      <div class="w-full max-w-[770px]">
+        <div x-data="testimonialsSlider9()" x-init="init()">
+          <div class="swiper overflow-hidden" x-ref="slider">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="mb-10 flex justify-center">
+                    <img
+                      src="src/images/misc/quote-2.svg"
+                      alt="quote"
+                      class="size-15"
+                    />
+                  </div>
+                  <div
+                    class="sm:text-22 text-xl leading-relaxed font-semibold text-white"
+                  >
+                    "Our family was traveling via bullet train between cities in
+                    Japan with our luggage - the location for this hotel made
+                    that so easy. Agoda price was fantastic."
+                  </div>
+                  <div class="mt-10 text-white md:mt-8">
+                    <h5 class="text-15 font-medium">Ali Tufan</h5>
+                    <div class="mt-1 text-sm">Product Manager, Apple Inc</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="mb-10 flex justify-center">
+                    <img
+                      src="src/images/misc/quote-2.svg"
+                      alt="quote"
+                      class="size-15"
+                    />
+                  </div>
+                  <div
+                    class="sm:text-22 text-xl leading-relaxed font-semibold text-white"
+                  >
+                    "Our family was traveling via bullet train between cities in
+                    Japan with our luggage - the location for this hotel made
+                    that so easy. Agoda price was fantastic."
+                  </div>
+                  <div class="mt-10 text-white md:mt-8">
+                    <h5 class="text-15 font-medium">Ali Tufan</h5>
+                    <div class="mt-1 text-sm">Product Manager, Apple Inc</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="mb-10 flex justify-center">
+                    <img
+                      src="src/images/misc/quote-2.svg"
+                      alt="quote"
+                      class="size-15"
+                    />
+                  </div>
+                  <div
+                    class="sm:text-22 text-xl leading-relaxed font-semibold text-white"
+                  >
+                    "Our family was traveling via bullet train between cities in
+                    Japan with our luggage - the location for this hotel made
+                    that so easy. Agoda price was fantastic."
+                  </div>
+                  <div class="mt-10 text-white md:mt-8">
+                    <h5 class="text-15 font-medium">Ali Tufan</h5>
+                    <div class="mt-1 text-sm">Product Manager, Apple Inc</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="mb-10 flex justify-center">
+                    <img
+                      src="src/images/misc/quote-2.svg"
+                      alt="quote"
+                      class="size-15"
+                    />
+                  </div>
+                  <div
+                    class="sm:text-22 text-xl leading-relaxed font-semibold text-white"
+                  >
+                    "Our family was traveling via bullet train between cities in
+                    Japan with our luggage - the location for this hotel made
+                    that so easy. Agoda price was fantastic."
+                  </div>
+                  <div class="mt-10 text-white md:mt-8">
+                    <h5 class="text-15 font-medium">Ali Tufan</h5>
+                    <div class="mt-1 text-sm">Product Manager, Apple Inc</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="mb-10 flex justify-center">
+                    <img
+                      src="src/images/misc/quote-2.svg"
+                      alt="quote"
+                      class="size-15"
+                    />
+                  </div>
+                  <div
+                    class="sm:text-22 text-xl leading-relaxed font-semibold text-white"
+                  >
+                    "Our family was traveling via bullet train between cities in
+                    Japan with our luggage - the location for this hotel made
+                    that so easy. Agoda price was fantastic."
+                  </div>
+                  <div class="mt-10 text-white md:mt-8">
+                    <h5 class="text-15 font-medium">Ali Tufan</h5>
+                    <div class="mt-1 text-sm">Product Manager, Apple Inc</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inline Navigation -->
+            <div class="mt-10 flex items-center justify-center space-x-4">
+              <button
+                class="slider-prev inline-flex size-7.5 cursor-pointer items-center justify-center text-2xl text-white duration-300 hover:scale-125"
+                aria-label="Previous"
+              >
+                <i class="icon-arrow-left"></i>
+              </button>
+              <div
+                class="slider-pagination inline-flex max-w-max *:bg-white!"
+              ></div>
+              <button
+                class="slider-next inline-flex size-7.5 cursor-pointer items-center justify-center text-2xl text-white duration-300 hover:scale-125"
+                aria-label="Next"
+              >
+                <i class="icon-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog / Get inspiration -->
+        <section class="py-20 lg:py-30">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="mb-10 text-center">
+      <h2 class="text-dark-1 mb-3 text-3xl font-semibold">
+        Get inspiration for your next trip
+      </h2>
+      <p class="text-light-1">Interdum et malesuada fames</p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Blog Card 1 -->
+      <div data-aos="fade">
+        <a
+          href="blog-single.html"
+          class="blog-card shadow-2 group block overflow-hidden rounded bg-white"
+        >
+          <div class="relative aspect-square overflow-hidden rounded-t">
+            <img
+              src="src/images/blog/1.png"
+              alt="Blog Post"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="p-5">
+            <h4
+              class="text-dark-1 hover:text-blue-1 text-base leading-snug font-medium transition-colors"
+            >
+              10 European ski destinations you should visit this winter
+            </h4>
+            <div class="text-light-1 mt-2.5 text-sm">April 06, 2026</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div data-aos="fade" data-aos-delay="100">
+        <a
+          href="blog-single.html"
+          class="blog-card shadow-2 group block overflow-hidden rounded bg-white"
+        >
+          <div class="relative aspect-square overflow-hidden rounded-t">
+            <img
+              src="src/images/blog/2.png"
+              alt="Blog Post"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="p-5">
+            <h4
+              class="text-dark-1 hover:text-blue-1 text-base leading-snug font-medium transition-colors"
+            >
+              Booking travel during Corona: good advice in an uncertain time
+            </h4>
+            <div class="text-light-1 mt-2.5 text-sm">April 06, 2026</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div data-aos="fade" data-aos-delay="200">
+        <a
+          href="blog-single.html"
+          class="blog-card shadow-2 group block overflow-hidden rounded bg-white"
+        >
+          <div class="relative aspect-square overflow-hidden rounded-t">
+            <img
+              src="src/images/blog/3.png"
+              alt="Blog Post"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="p-5">
+            <h4
+              class="text-dark-1 hover:text-blue-1 text-base leading-snug font-medium transition-colors"
+            >
+              Where can I go? 5 amazing countries that are open right now
+            </h4>
+            <div class="text-light-1 mt-2.5 text-sm">April 06, 2026</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Blog Card 4 -->
+      <div data-aos="fade" data-aos-delay="300">
+        <a
+          href="blog-single.html"
+          class="blog-card shadow-2 group block overflow-hidden rounded bg-white"
+        >
+          <div class="relative aspect-square overflow-hidden rounded-t">
+            <img
+              src="src/images/blog/4.png"
+              alt="Blog Post"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div class="p-5">
+            <h4
+              class="text-dark-1 hover:text-blue-1 text-base leading-snug font-medium transition-colors"
+            >
+              The best times & places to see the Northern Lights in Iceland
+            </h4>
+            <div class="text-light-1 mt-2.5 text-sm">April 06, 2026</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Newsletter CTA -->
+        <section class="bg-blue-1 py-16" data-aos="fade-up">
+  <div class="container">
+    <div
+      class="flex flex-col justify-between gap-8 lg:flex-row lg:items-center"
+    >
+      <div class="flex items-center gap-9">
+        <!-- Mail Icon -->
+        <div class="shrink-0">
+          <div class="icon-newsletter sm:text-60 text-40 text-white"></div>
+        </div>
+        <div>
+          <h4 class="md:text-26 text-2xl font-semibold text-white">
+            Your Travel Journey Starts Here
+          </h4>
+          <p class="text-base text-white">
+            Sign up and we'll send the best deals to you
+          </p>
+        </div>
+      </div>
+
+      <form
+        class="flex w-full flex-col gap-2.5 sm:flex-row lg:max-w-[460px] xl:max-w-[560px]"
+        onsubmit="event.preventDefault()"
+      >
+        <input
+          type="email"
+          required
+          placeholder="Your Email"
+          class="text-dark-1 h-15 w-full rounded bg-white px-5 text-base outline-none"
+        />
+        <button
+          type="submit"
+          class="bg-yellow-1 text-15 hover:bg-dark-1 text-dark-1 h-15 cursor-pointer rounded px-9 font-medium duration-300 hover:text-white"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+        <footer class="bg-blue-1" data-aos="fade-up">
+  <div class="container">
+    <!-- top -->
+    <div class="py-15">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+        <!-- Contact Us -->
+        <div>
+          <h5 class="mb-7.5 text-base font-medium text-white">Contact Us</h5>
+
+          <div>
+            <div class="text-sm text-white">Toll Free Customer Care</div>
+            <a
+              href="tel:+11234567890"
+              class="mt-1 inline-block text-lg font-medium text-white duration-300 hover:underline"
+            >
+              +(1) 123 456 7890
+            </a>
+          </div>
+
+          <div class="mt-9">
+            <div class="text-sm text-white">Need live support?</div>
+            <a
+              href="mailto:hi@gotrip.com"
+              class="mt-1 inline-block text-lg font-medium text-white duration-300 hover:underline"
+            >
+              hi@gotrip.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h5 class="mb-7.5 text-base font-medium text-white">Company</h5>
+          <ul class="space-y-4 text-white">
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> About Us </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Careers </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Blog </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Press </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Gift Cards </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Magazine </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h5 class="mb-7.5 text-base font-medium text-white">Support</h5>
+          <ul class="space-y-4 text-white">
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Contact </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Legal Notice
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Terms and Conditions
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Sitemap </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Other Services -->
+        <div>
+          <h5 class="mb-7.5 text-base font-medium text-white">
+            Other Services
+          </h5>
+          <ul class="space-y-4 text-white">
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Car hire </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Activity Finder
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#"> Tour List </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Flight finder
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Cruise Ticket
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Holiday Rental
+              </a>
+            </li>
+            <li>
+              <a class="duration-300 hover:text-white" href="#">
+                Travel Agents
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile -->
+        <div>
+          <h5 class="mb-7.5 text-base font-medium text-white">Mobile</h5>
+
+          <div class="flex flex-wrap gap-5">
+            <a
+              href="#"
+              class="flex min-w-[190px] items-center gap-4 rounded border border-white/15 px-5 py-2.5 duration-300 hover:bg-white/5"
+            >
+              <i class="icon-apple text-2xl text-white"></i>
+              <span>
+                <span class="block text-sm text-white">Download on the</span>
+                <span class="text-15 font-medium text-white">
+                  Apple Store
+                </span>
+              </span>
+            </a>
+
+            <a
+              href="#"
+              class="flex min-w-[190px] items-center gap-4 rounded border border-white/15 px-5 py-2.5 duration-300 hover:bg-white/5"
+            >
+              <i class="icon-play-market text-2xl text-white"></i>
+              <span>
+                <span class="block text-sm text-white">Get it on</span>
+                <span class="text-15 font-medium text-white">
+                  Google Play
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom -->
+    <div
+      class="border-t border-white/15 py-5"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <div class="flex flex-col items-center justify-between gap-4 lg:flex-row">
+        <!-- left -->
+        <div
+          class="flex flex-col gap-4 text-sm max-sm:items-center sm:flex-row sm:gap-8"
+        >
+          <div class="text-white">
+            © <span x-text="new Date().getFullYear()"></span> GoTrip LLC All
+            rights reserved.
+          </div>
+          <nav class="flex items-center gap-4 text-sm text-white">
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Terms</a>
+            <a href="#" class="hover:underline">Site Map</a>
+          </nav>
+        </div>
+
+        <!-- right -->
+        <div class="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+          <div class="flex items-center gap-3">
+            <button
+              class="hover:text-dark-2 flex items-center text-sm font-medium text-white"
+            >
+              <i class="icon-globe mr-2.5 text-base"></i>
+              <span class="underline">English (US)</span>
+            </button>
+
+            <button
+              class="hover:text-dark-2 flex items-center text-sm font-medium text-white"
+            >
+              <i class="icon-dollar-sign mr-2.5 text-base"></i>
+              <span class="underline">USD</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-5 text-white">
+            <a href="#" aria-label="Facebook" class="hover:text-white/60">
+              <i class="icon-facebook text-sm"></i>
+            </a>
+            <a href="#" aria-label="Twitter" class="hover:text-white/60">
+              <i class="icon-twitter text-sm"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="hover:text-white/60">
+              <i class="icon-instagram text-sm"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="hover:text-white/60">
+              <i class="icon-linkedin text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</main>
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+  <script defer src="bundle.js"></script></body>
+
+<!-- Mirrored from gotrip-tailwind-template.vercel.app/home-9.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 18:43:45 GMT -->
+</html>
