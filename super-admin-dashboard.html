@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Admin Website Settings | WAYTRIP</title>
+  <link rel="icon" href="favicon.png" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="min-h-screen bg-light-2 p-8">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 class="text-dark-1 text-3xl font-semibold">Super Admin Website Settings</h1>
+      <a href="dashboard.html" class="text-blue-1 text-sm font-medium">Back to Dashboard</a>
+    </div>
+
+    <div class="space-y-6">
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-2 text-xl font-semibold">Homepage Banners (JSON Array)</h2>
+        <textarea id="settings-homepage-banners" class="border-border h-36 w-full rounded border p-3 text-sm"></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-2 text-xl font-semibold">Featured Destinations (JSON Array)</h2>
+        <textarea id="settings-featured-destinations" class="border-border h-36 w-full rounded border p-3 text-sm"></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-2 text-xl font-semibold">Section Enable/Disable (JSON Object)</h2>
+        <textarea id="settings-section-toggles" class="border-border h-32 w-full rounded border p-3 text-sm"></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-2 text-xl font-semibold">Promotional Content (JSON Array)</h2>
+        <textarea id="settings-promotional-content" class="border-border h-36 w-full rounded border p-3 text-sm"></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-2 text-xl font-semibold">Menu Links (JSON Array)</h2>
+        <textarea id="settings-menu-links" class="border-border h-36 w-full rounded border p-3 text-sm"></textarea>
+      </div>
+
+      <button id="settings-save-btn" class="bg-blue-1 rounded px-6 py-3 text-sm text-white">Save Website Settings</button>
+    </div>
+  </div>
+
+  <script defer src="super-admin-auth-guard.js"></script>
+  <script defer src="super-admin-dashboard.js"></script>
+</body>
+</html>
