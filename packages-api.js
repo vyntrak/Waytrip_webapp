@@ -23,7 +23,7 @@
     const image = item.cover_image || 'src/images/hotels/1/1.png';
 
     return `
-      <article class="group overflow-hidden rounded bg-white shadow-[0_10px_30px_0_#0510360d]" data-package-card>
+      <article class="group overflow-hidden rounded bg-white shadow-[0_10px_30px_0_#0510360d]">
         <div class="overflow-hidden">
           <img src="${image}" alt="${title}" class="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
         </div>
@@ -42,11 +42,6 @@
           >
             Book Now
           </button>
-          <input
-            class="coupon-input border-border mt-2 h-10 w-full rounded border px-3 text-sm"
-            data-package-id="${item.id}"
-            placeholder="Coupon code (optional)"
-          />
         </div>
       </article>
     `;
@@ -63,9 +58,6 @@
 
         button.disabled = true;
         button.textContent = 'Booking...';
-        const card = button.closest('[data-package-card]') || button.parentElement;
-        const couponInput = card.querySelector('.coupon-input');
-        const couponCode = couponInput && couponInput.value ? couponInput.value.trim() : '';
 
         fetch('/api/bookings', {
           method: 'POST',
@@ -73,10 +65,7 @@
             'Content-Type': 'application/json',
             Authorization: 'Bearer ' + token,
           },
-          body: JSON.stringify({
-            packageId: Number(button.dataset.packageId),
-            couponCode: couponCode || undefined,
-          }),
+          body: JSON.stringify({ packageId: Number(button.dataset.packageId) }),
         })
           .then(function (response) {
             if (!response.ok) throw new Error('Booking failed');
@@ -84,7 +73,6 @@
           })
           .then(function () {
             button.textContent = 'Booked (Upcoming)';
-            if (couponInput) couponInput.disabled = true;
           })
           .catch(function () {
             button.disabled = false;

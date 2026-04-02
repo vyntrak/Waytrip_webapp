@@ -14,9 +14,6 @@ async function initializeDatabase() {
     );
   `);
 
-  await pool.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS phone VARCHAR(40);`);
-  await pool.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS contact_notes TEXT;`);
-
   await pool.query(`
     CREATE TABLE IF NOT EXISTS destinations (
       id SERIAL PRIMARY KEY,
@@ -78,82 +75,6 @@ async function initializeDatabase() {
       created_at TIMESTAMP NOT NULL DEFAULT NOW(),
       updated_at TIMESTAMP NOT NULL DEFAULT NOW()
     );
-  `);
-
-  await pool.query(`ALTER TABLE bookings ADD COLUMN IF NOT EXISTS notes TEXT;`);
-  await pool.query(`ALTER TABLE bookings ADD COLUMN IF NOT EXISTS base_price NUMERIC(10,2);`);
-  await pool.query(`ALTER TABLE bookings ADD COLUMN IF NOT EXISTS discount_percentage NUMERIC(5,2) DEFAULT 0;`);
-  await pool.query(`ALTER TABLE bookings ADD COLUMN IF NOT EXISTS final_price NUMERIC(10,2);`);
-  await pool.query(`ALTER TABLE bookings ADD COLUMN IF NOT EXISTS coupon_code VARCHAR(60);`);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS notifications (
-      id SERIAL PRIMARY KEY,
-      title VARCHAR(180) NOT NULL,
-      message TEXT NOT NULL,
-      sent_by INTEGER REFERENCES users(id) ON DELETE SET NULL,
-      audience VARCHAR(40) NOT NULL DEFAULT 'all',
-      target_user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
-      created_at TIMESTAMP NOT NULL DEFAULT NOW()
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS user_notifications (
-      id SERIAL PRIMARY KEY,
-      notification_id INTEGER NOT NULL REFERENCES notifications(id) ON DELETE CASCADE,
-      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-      is_read BOOLEAN NOT NULL DEFAULT FALSE,
-      read_at TIMESTAMP,
-      created_at TIMESTAMP NOT NULL DEFAULT NOW()
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS offers (
-      id SERIAL PRIMARY KEY,
-      title VARCHAR(180) NOT NULL,
-      coupon_code VARCHAR(60) UNIQUE NOT NULL,
-      discount_percentage NUMERIC(5,2) NOT NULL,
-      package_id INTEGER REFERENCES travel_packages(id) ON DELETE CASCADE,
-      expiry_date TIMESTAMP NOT NULL,
-      is_active BOOLEAN NOT NULL DEFAULT TRUE,
-      created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-      updated_at TIMESTAMP NOT NULL DEFAULT NOW()
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS booking_experiences (
-      id SERIAL PRIMARY KEY,
-      booking_id INTEGER UNIQUE NOT NULL REFERENCES bookings(id) ON DELETE CASCADE,
-      timeline TEXT,
-      daily_activities JSONB NOT NULL DEFAULT '[]'::jsonb,
-      travel_tasks JSONB NOT NULL DEFAULT '[]'::jsonb,
-      memory_gallery JSONB NOT NULL DEFAULT '[]'::jsonb,
-      achievement_badges JSONB NOT NULL DEFAULT '[]'::jsonb,
-      created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-      updated_at TIMESTAMP NOT NULL DEFAULT NOW()
-    );
-  `);
-
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS website_settings (
-      id INTEGER PRIMARY KEY DEFAULT 1,
-      homepage_banners JSONB NOT NULL DEFAULT '[]'::jsonb,
-      featured_destinations JSONB NOT NULL DEFAULT '[]'::jsonb,
-      section_toggles JSONB NOT NULL DEFAULT '{}'::jsonb,
-      promotional_content JSONB NOT NULL DEFAULT '[]'::jsonb,
-      menu_links JSONB NOT NULL DEFAULT '[]'::jsonb,
-      updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
-      CONSTRAINT website_settings_single_row CHECK (id = 1)
-    );
-  `);
-
-  await pool.query(`
-    INSERT INTO website_settings (id)
-    VALUES (1)
-    ON CONFLICT (id) DO NOTHING;
   `);
 }
 

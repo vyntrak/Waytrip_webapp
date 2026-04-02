@@ -90,29 +90,6 @@ Base URL: `http://localhost:4000/api`
 - `DELETE /packages/:id`
 - `POST /bookings` (requires JWT)
 - `GET /bookings/me` (requires JWT)
-- `POST /admin/destinations` (admin/super_admin)
-- `POST /admin/packages` (admin/super_admin)
-- `GET /admin/users` (admin/super_admin)
-- `GET /admin/bookings` (admin/super_admin)
-- `POST /admin/notifications` (admin/super_admin)
-- `GET /admin/notifications` (admin/super_admin)
-- `GET /crm/bookings` (CRM_MANAGER/super_admin)
-- `PATCH /crm/bookings/:id/status` (CRM_MANAGER/super_admin)
-- `PATCH /crm/bookings/:id/notes` (CRM_MANAGER/super_admin)
-- `GET /crm/users?search=` (CRM_MANAGER/super_admin)
-- `GET /crm/users/:id/history` (CRM_MANAGER/super_admin)
-- `PATCH /crm/users/:id/contact` (CRM_MANAGER/super_admin)
-- `GET /notifications/my` (authenticated user)
-- `PATCH /notifications/:id/read` (authenticated user)
-- `GET /offers`
-- `GET /offers/validate?code=&packageId=`
-- `POST /admin/offers` (admin/super_admin)
-- `GET /admin/website-settings` (super_admin)
-- `PUT /admin/website-settings` (super_admin)
-- `GET /analytics/overview` (admin/super_admin/CRM_MANAGER)
-- `GET /experiences/my` (authenticated user)
-- `GET /experiences/booking/:bookingId` (authenticated booking owner)
-- `PUT /experiences/booking/:bookingId` (authenticated booking owner)
 
 ### Register body
 
@@ -125,8 +102,6 @@ Base URL: `http://localhost:4000/api`
   "role": "traveler"
 }
 ```
-
-To grant CRM access, update a user role to `CRM_MANAGER` in your database.
 
 ### Login body
 

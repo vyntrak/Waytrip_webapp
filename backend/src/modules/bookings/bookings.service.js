@@ -1,11 +1,11 @@
 const pool = require('../../db/pool');
 
-async function createBooking({ userId, packageId, couponCode = null, basePrice = null, discountPercentage = 0, finalPrice = null }) {
+async function createBooking({ userId, packageId }) {
   const result = await pool.query(
-    `INSERT INTO bookings (user_id, package_id, status, coupon_code, base_price, discount_percentage, final_price)
-     VALUES ($1, $2, 'upcoming', $3, $4, $5, $6)
+    `INSERT INTO bookings (user_id, package_id, status)
+     VALUES ($1, $2, 'upcoming')
      RETURNING *`,
-    [userId, packageId || null, couponCode, basePrice, discountPercentage, finalPrice],
+    [userId, packageId || null],
   );
 
   return result.rows[0];
@@ -27,27 +27,7 @@ async function listUserBookings(userId) {
   return result.rows;
 }
 
-async function getPackageById(packageId) {
-  const result = await pool.query('SELECT id, title, price FROM travel_packages WHERE id = $1', [packageId]);
-  return result.rows[0] || null;
-}
-
-async function getValidOfferByCode(couponCode, packageId) {
-  const result = await pool.query(
-    `SELECT * FROM offers
-     WHERE coupon_code = $1
-       AND package_id = $2
-       AND is_active = TRUE
-       AND expiry_date > NOW()
-     LIMIT 1`,
-    [String(couponCode).trim().toUpperCase(), packageId],
-  );
-  return result.rows[0] || null;
-}
-
 module.exports = {
   createBooking,
   listUserBookings,
-  getPackageById,
-  getValidOfferByCode,
 };
