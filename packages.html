@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Packages | WayTrip.in - WAYTRIP</title>
+  <link rel="icon" href="favicon.png" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body x-data="{ loaded: true }">
+  <div class="flex min-h-screen flex-col">
+    <header class="border-border border-b py-5">
+      <div class="container flex items-center justify-between">
+        <a href="index.html" class="flex items-center">
+          <img src="src/images/general/logo-dark.svg" alt="WayTrip.in" class="w-[140px]" />
+        </a>
+        <a href="index.html" class="text-blue-1 text-sm font-medium">Back to Home</a>
+      </div>
+    </header>
+
+    <main class="flex-grow py-20 md:py-30">
+      <section>
+        <div class="container">
+          <div class="mb-10 flex items-end justify-between gap-4">
+            <div>
+              <h1 class="text-dark-1 text-3xl font-semibold md:text-4xl">Travel Packages</h1>
+              <p class="text-light-1 mt-3">Discover curated packages from our database.</p>
+            </div>
+            <span id="packages-count" class="text-light-1 text-sm"></span>
+          </div>
+
+          <div id="packages-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <p id="packages-loading" class="text-light-1 text-sm">Loading packages...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="bundle.js"></script>
+  <script defer src="packages-api.js"></script>
+</body>
+</html>
