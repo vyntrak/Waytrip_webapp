@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traveler Experience | WAYTRIP</title>
+  <link rel="icon" href="favicon.png" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="min-h-screen bg-light-2 p-8">
+    <div class="mb-6 flex items-center justify-between">
+      <h1 class="text-dark-1 text-3xl font-semibold">Traveler Experience Center</h1>
+      <a href="dashboard.html" class="text-blue-1 text-sm font-medium">Back to Dashboard</a>
+    </div>
+
+    <div class="mb-6 rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+      <label class="text-dark-1 mb-2 block text-sm font-medium">Select Booking</label>
+      <select id="experience-booking-select" class="border-border h-11 w-full rounded border px-3 text-sm"></select>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-3 text-xl font-semibold">Trip Timeline</h2>
+        <textarea id="experience-timeline" class="border-border h-32 w-full rounded border p-3 text-sm" placeholder="Add timeline..."></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-3 text-xl font-semibold">Daily Activities (one per line)</h2>
+        <textarea id="experience-activities" class="border-border h-32 w-full rounded border p-3 text-sm" placeholder="Day 1: ..."></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-3 text-xl font-semibold">Travel Tasks / Challenges (one per line)</h2>
+        <textarea id="experience-tasks" class="border-border h-32 w-full rounded border p-3 text-sm" placeholder="Task 1: ..."></textarea>
+      </div>
+
+      <div class="rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+        <h2 class="text-dark-1 mb-3 text-xl font-semibold">Memory Gallery URLs (one per line)</h2>
+        <textarea id="experience-gallery" class="border-border h-32 w-full rounded border p-3 text-sm" placeholder="https://..."></textarea>
+      </div>
+    </div>
+
+    <div class="mt-6 rounded bg-white p-6 shadow-[0_10px_30px_0_#05103608]">
+      <h2 class="text-dark-1 mb-3 text-xl font-semibold">Achievement Badges (comma separated)</h2>
+      <input id="experience-badges" class="border-border h-11 w-full rounded border px-3 text-sm" placeholder="Explorer, Adventurer" />
+      <button id="experience-save-btn" class="bg-blue-1 mt-4 rounded px-5 py-2 text-sm text-white">Save Experience</button>
+    </div>
+  </div>
+
+  <script defer src="traveler-experience.js"></script>
+</body>
+</html>
